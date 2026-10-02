@@ -201,7 +201,9 @@ def sayfa_icerigi_js(url, auth):
 def sayfa_icerigi_jina(url):
     """Yedek 1 (ücretsiz): r.jina.ai okuyucusu sayfayı tarayıcıda çalıştırıp markdown döndürür. JavaScript ile
     oluşan ve doğrudan indirmede boş gelen rakip sayfalarda (ör. lcw) çalışır; bot korumalı sayfalar yine boş kalır."""
-    h = getir("https://r.jina.ai/" + url, saniye=60, deneme=1)
+    # tarayıcı User-Agent'ı gönderilmez: jina tarayıcı gibi görünen istekleri Cloudflare doğrulamasına yönlendiriyor
+    h = subprocess.run(["curl", "-sSL", "-m", "60", "-H", "Accept: text/plain", "https://r.jina.ai/" + url],
+                       capture_output=True, text=True).stdout
     if not h or len(h.split()) < 150 or "Just a moment" in h[:500]:
         return None
     bas = [(f"H{len(m.group(1))}", m.group(2).strip()) for m in re.finditer(r"^(#{1,4})\s+(.+)$", h, re.M)]
