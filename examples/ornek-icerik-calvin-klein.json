@@ -4,88 +4,325 @@
  "main_kw": "calvin klein",
  "meta": "Marka sayfası içeriği · 02.10.2026 · kullanıcı revizeleri sonrası 3. sürüm (tablo yok, madde satırları, genişletilmiş kapsam)",
  "linkler": {
-  "LINK1": ["Calvin Klein iç giyim", "https://www.boyner.com.tr/calvin-klein-ic-giyim-x-b568-c23896630"],
-  "LINK2": ["Calvin Klein çanta", "https://www.boyner.com.tr/calvin-klein-canta-x-b568-c647"],
-  "LINK3": ["Calvin Klein ayakkabı", "https://www.boyner.com.tr/calvin-klein-ayakkabi-x-b568-c648"],
-  "LINK4": ["Calvin Klein saat", "https://www.boyner.com.tr/calvin-klein-saat-x-b568-c604"],
-  "LINK5": ["Calvin Klein Jeans", "https://www.boyner.com.tr/calvin-klein-jeans-x-b559"],
-  "LINK6": ["Calvin Klein parfüm", "https://www.boyner.com.tr/calvin-klein-parfum-x-b568-c4001"],
-  "LINK7": ["Calvin Klein kadın", "https://www.boyner.com.tr/calvin-klein-kadin-x-b568-g3731"],
-  "LINK8": ["Calvin Klein erkek", "https://www.boyner.com.tr/calvin-klein-erkek-x-b568-g3730"]
+  "LINK1": [
+   "Calvin Klein iç giyim",
+   "https://www.boyner.com.tr/calvin-klein-ic-giyim-x-b568-c23896630"
+  ],
+  "LINK2": [
+   "Calvin Klein çanta",
+   "https://www.boyner.com.tr/calvin-klein-canta-x-b568-c647"
+  ],
+  "LINK3": [
+   "Calvin Klein ayakkabı",
+   "https://www.boyner.com.tr/calvin-klein-ayakkabi-x-b568-c648"
+  ],
+  "LINK4": [
+   "Calvin Klein saat",
+   "https://www.boyner.com.tr/calvin-klein-saat-x-b568-c604"
+  ],
+  "LINK5": [
+   "Calvin Klein Jeans",
+   "https://www.boyner.com.tr/calvin-klein-jeans-x-b559"
+  ],
+  "LINK6": [
+   "Calvin Klein parfüm",
+   "https://www.boyner.com.tr/calvin-klein-parfum-x-b568-c4001"
+  ],
+  "LINK7": [
+   "Calvin Klein kadın",
+   "https://www.boyner.com.tr/calvin-klein-kadin-x-b568-g3731"
+  ],
+  "LINK8": [
+   "Calvin Klein erkek",
+   "https://www.boyner.com.tr/calvin-klein-erkek-x-b568-g3730"
+  ]
  },
  "govde": [
-  ["p", "Calvin Klein, 1968'de New York'ta kurulan, iç giyimi, günlük giyimi, çantaları, saatleri ve parfümleriyle tanınan Amerikan moda markasıdır. Markanın tasarım dili sade çizgilere, az renkli bir palete ve yalın harflerle yazılan logoya dayanır. Bu sadelik sayesinde bir Calvin Klein parçasını gardırobunuzdaki diğer ürünlerle kolayca eşleştirebilirsiniz."],
-  ["p", "Boyner'de Calvin Klein ürünleri kadın, erkek ve çocuk için sunuluyor. Boyner Calvin Klein modelleri boxer ve sütyenden t-shirt ve sweatshirte, omuz çantasından sneakera, kol saatinden parfüme uzanmaktadır. Renklerde **siyah, beyaz, bej ve mavi** ağırlıktadır. Logolu ve düz tasarımları aynı sayfada karşılaştırabilirsiniz."],
-  ["H2", "Calvin Klein Modelleri ve Ürün Çeşitleri"],
-  ["p", "Calvin Klein modelleri Boyner'de başlıca sekiz ürün ailesinde toplanıyor. Aradığınız parçaya daha kısa yoldan ulaşabilmeniz için bu ürün ailelerini ve her birinde bulunan ürünleri sizin için derledik:"],
-  ["mad", "[LINK1]**:** İç giyim, markanın Boyner'de en geniş seçenekli ürün ailelerinden biridir. Erkekte tekli ve çoklu paket boxerlar, kadında bikini, tanga ve brazilian külotlar ile balenli, bralet ve straplez sütyenler bulunmaktadır. Atlet, pijama ve gecelik de aynı ürün ailesinde yer alıyor."],
-  ["mad", "**Calvin Klein giyim:** Giyim ürünlerinde t-shirt, polo t-shirt, sweatshirt, kazak ve gömleğin yanında ceket, mont, pantolon, eşofman altı ve elbise bulunuyor. T-shirt, bu ürün ailesinin en çok seçenek sunan parçasıdır. Çocuk seçkisi daha dardır ve zıbın, tulum gibi bebek parçalarını da içermektedir."],
-  ["mad", "[LINK2] **ve cüzdan:** Çanta ürün ailesinde kadınlar için omuz çantası, çapraz çanta, tote çanta ve hobo çanta modelleri bulunuyor. Erkekler için postacı çantası, sırt çantası, bel çantası ve laptop çantası seçenekleri sunuluyor. Çantaların yanında cüzdan ve kartlıklar da listelenmektedir."],
-  ["mad", "[LINK3]**:** Ayakkabı ürün ailesinin büyük bölümünü deri sneaker ve kanvas sneaker modelleri oluşturuyor. Ayakkabı seçenekleri arasında bot, loafer, babet, sandalet ve terlik de yer almaktadır."],
-  ["mad", "[LINK4] **ve takı:** Saat ve takı ürün ailesinde kadın, erkek ve unisex kol saatleri paslanmaz çelik kordon ya da deri kayışla sunuluyor. Kol saatlerinde sade ve minimalist kadranlar ağırlıktadır. Bileklik ve bileklik setleri, kolye ve küpeler bu ürün ailesini tamamlıyor."],
-  ["mad", "[LINK6]**:** Parfüm ürün ailesinde EDT ve EDP kokular kadın, erkek ve unisex seçeneklerle satılıyor. CK One, Euphoria, Eternity ve Obsession serilerinin yanında vücut spreyi, deodorant ve parfüm setleri bulunmaktadır."],
-  ["mad", "**Calvin Klein plaj giyim:** Plaj giyim ürün ailesi bikini üstü ve bikini altı, mayo ile erkek şort mayolardan oluşuyor. Plaj terlikleri bu ürünlerle birlikte tercih edilebilir."],
-  ["mad", "**Calvin Klein aksesuar:** Aksesuar ürün ailesi kemer, şapka, bere, atkı, şal ve güneş gözlüğünden oluşuyor. Tıraş çantası ve pasaportluk gibi seyahat ürünleri de bu grupta yer almaktadır."],
-  ["p", "Markanın denim ağırlıklı günlük giyim çizgisi ise Boyner'de ayrı bir sayfada, [LINK5] adıyla listelenmektedir."],
-  ["H2", "Calvin Klein Hangi Ülkenin Markası?"],
-  ["p", "Calvin Klein bir **Amerika Birleşik Devletleri** markasıdır. Markayı moda tasarımcısı Calvin Klein ile iş ortağı Barry Schwartz 1968'de New York'ta, bir kaban koleksiyonuyla kurdu. Ürün gamına 1982'de erkek iç giyim, 1994'te de unisex parfüm CK One eklendi. Marka bugün, yine New York merkezli PVH Corp. çatısı altında faaliyet gösteriyor."],
-  ["H2", "Calvin Klein Nasıl Okunur?"],
-  ["p", "Calvin Klein, Türkçede \"Kelvin Klayn\" diye okunur. İlk kelimedeki \"a\" harfi \"e\" sesine yakın, ikinci kelimedeki \"ei\" ise \"ay\" olarak söylenir. Ürünlerde ve günlük konuşmada kullanılan **CK** kısaltması iki kelimenin baş harflerinden gelir ve İngilizce harf adlarıyla \"si key\" diye okunur."],
-  ["H2", "Calvin Klein Ürünleri Nasıl Seçilir?"],
-  ["p", "Calvin Klein ürünleri arasında seçim yaparken sırayla kullanım amacına, ürün çeşidine, kalıba, malzemeye ve bedene karar verebilirsiniz. Şu beş adımı izleyebilirsiniz:"],
-  ["li", "Ürünü ne için alacağınızı belirleyin: gün boyu kullanım, günlük kombin, iş ya da hediye."],
-  ["li", "Ürün Çeşidi filtresinden o ihtiyaca uyan türü seçin."],
-  ["li", "Ürün sayfasındaki kalıp bilgisine bakın. Dar ve rahat kesimler aynı bedende farklı durabilir."],
-  ["li", "Ürün özelliklerindeki malzeme satırını okuyun. İç giyimde ve t-shirtte kumaş içeriği, çantada ve ayakkabıda deri ya da tekstil yüzey belirleyicidir."],
-  ["li", "Bedeni, kendi ölçünüzü alarak ürün sayfasındaki beden bilgisiyle doğrulayın."],
-  ["p", "Hızlı bir seçim yapabilmeniz için hangi ihtiyaçta hangi ürünlere bakabileceğinizi sizin için eşleştirdik:"],
-  ["mad", "**Gün boyu rahat iç giyim için:** Gün boyu rahat iç giyim arıyorsanız boxer, bikini külot ve bralet sütyen modellerini tercih edebilirsiniz. Kumaş içeriğine, bel lastiğinin genişliğine ve ürünün tekli ya da çoklu paket olmasına bakabilirsiniz."],
-  ["mad", "**Günlük kombin için:** Günlük kombinlerde t-shirt, polo t-shirt ve sweatshirt modelleri öne çıkıyor. Bu ürünlerde kalıba, logonun boyutuna ve yerine bakabilirsiniz."],
-  ["mad", "**İş ve okul için:** İş ve okul kullanımında tote çanta, postacı çantası, sırt çantası ve laptop çantası modellerine bakabilirsiniz. Bölme düzenine, askı tipine ve yüzey malzemesine bakmanız seçimi kolaylaştırabilir."],
-  ["mad", "**Yaz ve tatil için:** Yaz ve tatil alışverişinde bikini, mayo, şort mayo ve plaj terliği modelleri uygun seçeneklerdir. Astar ile bağlama ve ayar detayları genellikle belirleyici olur."],
-  ["p", "İç giyimde sık karşılaşılan ikilem balenli ve bralet modeller arasındadır. Bu iki seçeneğin farkını sizin için özetledik:"],
-  ["mad", "**Balenli sütyen:** Balenli sütyenler, kabın altındaki yarım ay biçimli tel sayesinde göğsü alttan destekler ve biçim verir. Genellikle dolgun göğüslerde ve daha belirgin bir biçim istendiğinde tercih edilir."],
-  ["mad", "**Bralet sütyen:** Bralet sütyenler telsiz ve çoğunlukla dolgusuzdur, bu yüzden daha yumuşak bir tutuş sunar. Günlük kullanımda ve hafif destek yeterli olduğunda tercih edilebilir. Calvin Klein bralet modellerindeki logolu geniş alt bant, markanın tanınan detaylarından biridir."],
-  ["H3", "Calvin Klein Beden Tablosu ve Beden Seçimi"],
-  ["p", "Calvin Klein beden tablosu ürün ailesine göre değişiklik göstermektedir. Bu nedenle her ürünün kendi sayfasındaki beden bilgisini esas alabilirsiniz. Giyimde göğüs ve bel, sütyende göğüs altı ve göğüs çevresi, ayakkabıda ayak uzunluğu ölçülür."],
-  ["p", "Boyner'deki Beden filtresinde XS'ten başlayan harf bedenler ile pantolonlar için bel ve boy ölçülü bedenler bulunmaktadır. Bel ve boy ölçüsüyle satılan pantolonlarda beden iki sayıyla yazılır. İlk sayı bel çevresini, ikinci sayı iç bacak boyunu inç olarak gösterir. İki beden arasında kaldığınızda **dar kesimli üründe büyük bedeni**, rahat kesimli üründe küçük bedeni tercih edebilirsiniz."],
-  ["H2", "Calvin Klein Ürün Adlarındaki Terimler Ne Anlama Gelir?"],
-  ["p", "Calvin Klein ürün adlarında modelin kesimini, kumaşını ya da tabanını anlatan yabancı terimler ve kısaltmalar yer alır. Boyner'deki ürün adlarında sık görülen terimleri sizin için açıkladık:"],
-  ["mad", "**Trunk boxer:** Trunk, paçası kısa tutulan ve bacağa oturan boxer kesimidir. \"Low rise\" ifadesi aynı kesimin düşük belli olduğunu, \"3PK\" ise ürünün üçlü paket halinde satıldığını gösterir."],
-  ["mad", "**Supima pamuklu t-shirt ve kazak:** Supima, Amerika Birleşik Devletleri'nde yetiştirilen ekstra uzun elyaflı pima pamuğunun tescilli adıdır. Uzun elyaf, ipliğin daha ince ve dayanıklı eğrilmesine olanak tanır. Bu kumaş genellikle daha yumuşak bir tutum sunar."],
-  ["mad", "**Stretch cotton t-shirt:** Stretch cotton, pamuğa az miktarda elastan eklenerek esneklik kazandırılan kumaştır. Bu kumaştan üretilen t-shirtler çoğunlukla vücuda daha yakın durur."],
-  ["mad", "**Relaxed ve slim kalıp:** Relaxed, gövdede ve kolda bolluk bırakan rahat kalıptır. Slim ise vücuda yakın, dar kalıbı anlatır. Kalıp bilgisi ürün sayfasında ayrıca belirtilmektedir."],
-  ["mad", "**Cupsole sneaker:** Cupsole, kenarları ayakkabının üst kısmını çanak gibi saran, tek parça kalıplanmış kauçuk tabandır. Ürün adındaki \"chunky\" ifadesi tabanın kalın ve hacimli olduğunu gösterir."],
-  ["mad", "**Vulcanized (vulc) sneaker:** Vulcanized sneaker, kauçuk tabanı ısıyla pişirilerek üst kısma kaynaştırılan ayakkabıdır. Bu sneakerlar genellikle daha ince tabanlı ve esnektir. Kanvas sneaker modellerinde sık görülür."],
-  ["mad", "**EDT ve EDP parfüm:** EDT (eau de toilette) ve EDP (eau de parfum), parfümdeki koku özü oranını anlatır. EDP'de bu oran daha yüksektir, bu nedenle EDP parfümler çoğunlukla daha yoğun ve kalıcı olur. EDT parfümler ise daha hafif bir koku arayanlarca tercih edilebilir."],
-  ["H2", "Calvin Klein Ürünlerinin Bakımı Nasıl Yapılır?"],
-  ["p", "Calvin Klein ürünlerinin bakımı ürün ailesine ve malzemeye göre değişiklik göstermektedir. Her üründe iç etiketteki bakım talimatı esastır. Ürün ailelerine göre genel önerileri şöyle sıralayabiliriz:"],
-  ["mad", "**Calvin Klein iç giyim bakımı:** İç giyim bakımında boxer ve külotların genellikle benzer renklerle, düşük ısıda yıkanması önerilir. Balenli sütyenlerin elde ya da çamaşır filesi içinde yıkanması, telin ve kabın biçimini korumaya yardımcı olabilir."],
-  ["mad", "**Calvin Klein t-shirt ve sweatshirt bakımı:** Logo baskılı t-shirt ve sweatshirtlerin ters çevrilerek yıkanması ve baskının üzerinden ütülenmemesi önerilir. Bu yöntem baskının daha uzun süre canlı kalmasına yardımcı olabilir."],
-  ["mad", "**Calvin Klein deri sneaker ve çanta bakımı:** Deri yüzeyler genellikle nemli ve yumuşak bir bezle silinerek temizlenir. Deri ürünlerin doğrudan güneş ışığından ve ısı kaynağından uzakta kurutulması önerilir."],
-  ["mad", "**Calvin Klein kol saati ve takı bakımı:** Saatin suya dayanıklılık derecesi genellikle kasanın arkasında ve ürün sayfasında belirtilir. Bu bilgi kontrol edilmeden saatle suya girilmemesi önerilir. Takıların parfüm ve kremle temas etmeden, kuru bir yerde saklanması önerilir."],
-  ["mad", "**Calvin Klein parfüm saklama:** Parfümlerin kutusunda ya da kapalı bir dolapta, ışıktan ve sıcaklık değişiminden uzak tutulması önerilir. Bu koşullar kokunun yapısının daha uzun süre korunmasına yardımcı olabilir."],
-  ["H2", "Hediye İçin Calvin Klein Ürünleri"],
-  ["p", "Hediye için Calvin Klein ürünleri arasında parfüm setleri, kol saatleri, bileklik setleri, cüzdan ve kartlıklar öne çıkıyor. Beden bilgisi gerektirmediği için bu ürünler genellikle daha güvenli bir hediye seçimi olur."],
-  ["p", "Parfüm setleri çoğunlukla parfümü aynı kokudaki bakım ürünü ya da küçük boy şişeyle bir arada sunar. Bileklik setlerinde birden fazla bileklik tek kutuda yer almaktadır. Saat hediye edecekseniz kayış malzemesine ve kadran boyutuna, cüzdanda ise kartlık bölmesi sayısına bakabilirsiniz. Giyim ya da iç giyim hediye edecekseniz hediye alacağınız kişinin bedenini bilmeniz, değişim ihtiyacını azaltabilir."],
-  ["H2", "Calvin Klein Orijinal Ürün Nasıl Anlaşılır?"],
-  ["p", "Bir Calvin Klein ürününün orijinal olup olmadığını anlamak için karton etiketteki model koduna, iç etiketteki bilgilere, logoya ve dikiş işçiliğine bakabilirsiniz. En güvenli yol ürünü yetkili satıcıdan almaktır. Kontrol ederken şu üç noktaya bakabilirsiniz:"],
-  ["mad", "**Calvin Klein model kodu:** Model kodu ürünün karton etiketinde ve iç etiketinde yazar. Boyner'de bu kod çoğu ürünün adında da yer almaktadır. Elinizdeki ürünün etiketindeki kodu, Boyner'deki ürün adında yazan kodla karşılaştırabilirsiniz."],
-  ["mad", "**Calvin Klein iç etiketi:** İç etiket kumaş içeriğini, üretim yerini ve bakım sembollerini taşır. Yeni bir üründe baskısı silik ya da bilgisi eksik bir etiket şüphe nedeni olabilir."],
-  ["mad", "**Calvin Klein logosu ve işçilik:** Orijinal ürünlerde logo baskısı genellikle net, harfleri düzgün hizalıdır. Dikişlerin düz ilerlemesi ve iplik uçlarının temiz kesilmesi de özenli üretimin işaretlerindendir."],
-  ["H2", "Calvin Klein Fiyatları"],
-  ["p", "Calvin Klein fiyatları ürün ailesine, malzemeye ve paket içeriğine göre değişiklik göstermektedir. İç giyim, t-shirt, kartlık ve vücut spreyi markanın daha uygun fiyatlı ürünleridir. Deri çanta, deri sneaker, mont ve çelik kordonlu kol saatleri ise genellikle üst fiyat grubunda yer alır. Çoklu paket boxer ve külotlar, tekli ürüne göre parça başına çoğunlukla daha ekonomiktir."],
-  ["p", "Parfümlerde fiyat çoğunlukla seriye, şişenin hacmine ve ürünün EDT ya da EDP olmasına göre değişiklik göstermektedir. Sayfadaki fiyat filtresiyle bütçenize uyan aralığı seçebilir, \"Fiyat - Düşükten Yükseğe\" sıralamasıyla ekonomik modelleri üste alabilirsiniz."],
-  ["H2", "Boyner'de Calvin Klein Alışverişi"],
-  ["p", "Boyner'de Calvin Klein seçeneklerini cinsiyet seçimi ile Ürün Çeşidi, Beden, Renk ve fiyat filtreleriyle daraltabilirsiniz. Kadın ürünlerinde çanta, iç giyim ve saat öne çıkıyor. Bu ürünlere [LINK7] sayfasından ulaşabilirsiniz. T-shirt, boxer ve sneaker ağırlıklı seçki ise [LINK8] sayfasında listelenmektedir."],
-  ["p", "\"En Yeni Ürünler\" sıralaması yeni eklenen modelleri, \"En Çok Satanlar\" sıralaması ise ilgi gören modelleri üste alır. Boyner Now'ın geçerli olduğu ürün ve adreslerde, ürünleri teslimat adresinizde deneyip beğendiklerinizi satın alabilirsiniz."]
+  [
+   "p",
+   "Calvin Klein, 1968'de New York'ta kurulan, iç giyimi, günlük giyimi, çantaları, saatleri ve parfümleriyle tanınan Amerikan moda markasıdır. Markanın tasarım dili sade çizgilere, az renkli bir palete ve yalın harflerle yazılan logoya dayanır. Bu sadelik sayesinde bir Calvin Klein ürününü gardırobunuzdaki diğer ürünlerle kolayca eşleştirebilirsiniz."
+  ],
+  [
+   "p",
+   "Boyner'de Calvin Klein ürünleri kadın, erkek ve çocuk için sunuluyor. Boyner Calvin Klein modelleri boxer ve sütyenden t-shirt ve sweatshirte, omuz çantasından sneakera, kol saatinden parfüme uzanmaktadır. Renklerde **siyah, beyaz, bej ve mavi** ağırlıktadır. Logolu ve düz tasarımları aynı sayfada karşılaştırabilirsiniz."
+  ],
+  [
+   "H2",
+   "Calvin Klein Modelleri ve Ürün Çeşitleri"
+  ],
+  [
+   "p",
+   "Calvin Klein modelleri Boyner'de başlıca sekiz ürün ailesinde toplanıyor. Aradığınız ürüne daha kısa yoldan ulaşabilmeniz için bu ürün ailelerini ve her birinde bulunan ürünleri sizin için derledik:"
+  ],
+  [
+   "mad",
+   "[LINK1]**:** İç giyim, markanın Boyner'de en geniş seçenekli ürün ailelerinden biridir. Erkekte tekli ve çoklu paket boxerlar, kadında bikini, tanga ve brazilian külotlar ile balenli, bralet ve straplez sütyenler bulunmaktadır. Atlet, pijama ve gecelik de aynı ürün ailesinde yer alıyor."
+  ],
+  [
+   "mad",
+   "**Calvin Klein giyim:** Giyim ürünlerinde t-shirt, polo t-shirt, sweatshirt, kazak ve gömleğin yanında ceket, mont, pantolon, eşofman altı ve elbise bulunuyor. T-shirt, bu ürün ailesinin en çok seçenek sunan ürünüdür. Çocuk seçkisi daha dardır ve zıbın, tulum gibi bebek ürünlerini da içermektedir."
+  ],
+  [
+   "mad",
+   "[LINK2] **ve cüzdan:** Çanta ürün ailesinde kadınlar için omuz çantası, çapraz çanta, tote çanta ve hobo çanta modelleri bulunuyor. Erkekler için postacı çantası, sırt çantası, bel çantası ve laptop çantası seçenekleri sunuluyor. Çantaların yanında cüzdan ve kartlıklar da listelenmektedir."
+  ],
+  [
+   "mad",
+   "[LINK3]**:** Ayakkabı ürün ailesinin büyük bölümünü deri sneaker ve kanvas sneaker modelleri oluşturuyor. Ayakkabı seçenekleri arasında bot, loafer, babet, sandalet ve terlik de yer almaktadır."
+  ],
+  [
+   "mad",
+   "[LINK4] **ve takı:** Saat ve takı ürün ailesinde kadın, erkek ve unisex kol saatleri paslanmaz çelik kordon ya da deri kayışla sunuluyor. Kol saatlerinde sade ve minimalist kadranlar ağırlıktadır. Bileklik ve bileklik setleri, kolye ve küpeler bu ürün ailesini tamamlıyor."
+  ],
+  [
+   "mad",
+   "[LINK6]**:** Parfüm ürün ailesinde EDT ve EDP kokular kadın, erkek ve unisex seçeneklerle satılıyor. CK One, Euphoria, Eternity ve Obsession serilerinin yanında vücut spreyi, deodorant ve parfüm setleri bulunmaktadır."
+  ],
+  [
+   "mad",
+   "**Calvin Klein plaj giyim:** Plaj giyim ürün ailesi bikini üstü ve bikini altı, mayo ile erkek şort mayolardan oluşuyor. Plaj terlikleri bu ürünlerle birlikte tercih edilebilir."
+  ],
+  [
+   "mad",
+   "**Calvin Klein aksesuar:** Aksesuar ürün ailesi kemer, şapka, bere, atkı, şal ve güneş gözlüğünden oluşuyor. Tıraş çantası ve pasaportluk gibi seyahat ürünleri de bu grupta yer almaktadır."
+  ],
+  [
+   "p",
+   "Markanın denim ağırlıklı günlük giyim çizgisi ise Boyner'de ayrı bir sayfada, [LINK5] adıyla listelenmektedir."
+  ],
+  [
+   "H2",
+   "Calvin Klein Hangi Ülkenin Markası?"
+  ],
+  [
+   "p",
+   "Calvin Klein bir **Amerika Birleşik Devletleri** markasıdır. Markayı moda tasarımcısı Calvin Klein ile iş ortağı Barry Schwartz 1968'de New York'ta, bir kaban koleksiyonuyla kurdu. Ürün gamına 1982'de erkek iç giyim, 1994'te de unisex parfüm CK One eklendi. Marka bugün, yine New York merkezli PVH Corp. çatısı altında faaliyet gösteriyor."
+  ],
+  [
+   "H2",
+   "Calvin Klein Nasıl Okunur?"
+  ],
+  [
+   "p",
+   "Calvin Klein, Türkçede \"Kelvin Klayn\" diye okunur. İlk kelimedeki \"a\" harfi \"e\" sesine yakın, ikinci kelimedeki \"ei\" ise \"ay\" olarak söylenir. Ürünlerde ve günlük konuşmada kullanılan **CK** kısaltması iki kelimenin baş harflerinden gelir ve İngilizce harf adlarıyla \"si key\" diye okunur."
+  ],
+  [
+   "H2",
+   "Calvin Klein Ürünleri Nasıl Seçilir?"
+  ],
+  [
+   "p",
+   "Calvin Klein ürünleri arasında seçim yaparken sırayla kullanım amacına, ürün çeşidine, kalıba, malzemeye ve bedene karar verebilirsiniz. Şu beş adımı izleyebilirsiniz:"
+  ],
+  [
+   "li",
+   "Ürünü ne için alacağınızı belirleyin: gün boyu kullanım, günlük kombin, iş ya da hediye."
+  ],
+  [
+   "li",
+   "Ürün Çeşidi filtresinden o ihtiyaca uyan türü seçin."
+  ],
+  [
+   "li",
+   "Ürün sayfasındaki kalıp bilgisine bakın. Dar ve rahat kesimler aynı bedende farklı durabilir."
+  ],
+  [
+   "li",
+   "Ürün özelliklerindeki malzeme satırını okuyun. İç giyimde ve t-shirtte kumaş içeriği, çantada ve ayakkabıda deri ya da tekstil yüzey belirleyicidir."
+  ],
+  [
+   "li",
+   "Bedeni, kendi ölçünüzü alarak ürün sayfasındaki beden bilgisiyle doğrulayın."
+  ],
+  [
+   "p",
+   "Hızlı bir seçim yapabilmeniz için hangi ihtiyaçta hangi ürünlere bakabileceğinizi sizin için eşleştirdik:"
+  ],
+  [
+   "mad",
+   "**Gün boyu rahat iç giyim için:** Gün boyu rahat iç giyim arıyorsanız boxer, bikini külot ve bralet sütyen modellerini tercih edebilirsiniz. Kumaş içeriğine, bel lastiğinin genişliğine ve ürünün tekli ya da çoklu paket olmasına bakabilirsiniz."
+  ],
+  [
+   "mad",
+   "**Günlük kombin için:** Günlük kombinlerde t-shirt, polo t-shirt ve sweatshirt modelleri öne çıkıyor. Bu ürünlerde kalıba, logonun boyutuna ve yerine bakabilirsiniz."
+  ],
+  [
+   "mad",
+   "**İş ve okul için:** İş ve okul kullanımında tote çanta, postacı çantası, sırt çantası ve laptop çantası modellerine bakabilirsiniz. Bölme düzenine, askı tipine ve yüzey malzemesine bakmanız seçimi kolaylaştırabilir."
+  ],
+  [
+   "mad",
+   "**Yaz ve tatil için:** Yaz ve tatil alışverişinde bikini, mayo, şort mayo ve plaj terliği modelleri uygun seçeneklerdir. Astar ile bağlama ve ayar detayları genellikle belirleyici olur."
+  ],
+  [
+   "p",
+   "İç giyimde sık karşılaşılan ikilem balenli ve bralet modeller arasındadır. Bu iki seçeneğin farkını sizin için özetledik:"
+  ],
+  [
+   "mad",
+   "**Balenli sütyen:** Balenli sütyenler, kabın altındaki yarım ay biçimli tel sayesinde göğsü alttan destekler ve biçim verir. Genellikle dolgun göğüslerde ve daha belirgin bir biçim istendiğinde tercih edilir."
+  ],
+  [
+   "mad",
+   "**Bralet sütyen:** Bralet sütyenler telsiz ve çoğunlukla dolgusuzdur, bu yüzden daha yumuşak bir tutuş sunar. Günlük kullanımda ve hafif destek yeterli olduğunda tercih edilebilir. Calvin Klein bralet modellerindeki logolu geniş alt bant, markanın tanınan detaylarından biridir."
+  ],
+  [
+   "H3",
+   "Calvin Klein Beden Tablosu ve Beden Seçimi"
+  ],
+  [
+   "p",
+   "Calvin Klein beden tablosu ürün ailesine göre değişiklik göstermektedir. Bu nedenle her ürünün kendi sayfasındaki beden bilgisini esas alabilirsiniz. Giyimde göğüs ve bel, sütyende göğüs altı ve göğüs çevresi, ayakkabıda ayak uzunluğu ölçülür."
+  ],
+  [
+   "p",
+   "Boyner'deki Beden filtresinde XS'ten başlayan harf bedenler ile pantolonlar için bel ve boy ölçülü bedenler bulunmaktadır. Bel ve boy ölçüsüyle satılan pantolonlarda beden iki sayıyla yazılır. İlk sayı bel çevresini, ikinci sayı iç bacak boyunu inç olarak gösterir. İki beden arasında kaldığınızda **dar kesimli üründe büyük bedeni**, rahat kesimli üründe küçük bedeni tercih edebilirsiniz."
+  ],
+  [
+   "H2",
+   "Calvin Klein Ürün Adlarındaki Terimler Ne Anlama Gelir?"
+  ],
+  [
+   "p",
+   "Calvin Klein ürün adlarında modelin kesimini, kumaşını ya da tabanını anlatan yabancı terimler ve kısaltmalar yer alır. Boyner'deki ürün adlarında sık görülen terimleri sizin için açıkladık:"
+  ],
+  [
+   "mad",
+   "**Trunk boxer:** Trunk, paçası kısa tutulan ve bacağa oturan boxer kesimidir. \"Low rise\" ifadesi aynı kesimin düşük belli olduğunu, \"3PK\" ise ürünün üçlü paket halinde satıldığını gösterir."
+  ],
+  [
+   "mad",
+   "**Supima pamuklu t-shirt ve kazak:** Supima, Amerika Birleşik Devletleri'nde yetiştirilen ekstra uzun elyaflı pima pamuğunun tescilli adıdır. Uzun elyaf, ipliğin daha ince ve dayanıklı eğrilmesine olanak tanır. Bu kumaş genellikle daha yumuşak bir tutum sunar."
+  ],
+  [
+   "mad",
+   "**Stretch cotton t-shirt:** Stretch cotton, pamuğa az miktarda elastan eklenerek esneklik kazandırılan kumaştır. Bu kumaştan üretilen t-shirtler çoğunlukla vücuda daha yakın durur."
+  ],
+  [
+   "mad",
+   "**Relaxed ve slim kalıp:** Relaxed, gövdede ve kolda bolluk bırakan rahat kalıptır. Slim ise vücuda yakın, dar kalıbı anlatır. Kalıp bilgisi ürün sayfasında ayrıca belirtilmektedir."
+  ],
+  [
+   "mad",
+   "**Cupsole sneaker:** Cupsole, kenarları ayakkabının üst kısmını çanak gibi saran, tek parça kalıplanmış kauçuk tabandır. Ürün adındaki \"chunky\" ifadesi tabanın kalın ve hacimli olduğunu gösterir."
+  ],
+  [
+   "mad",
+   "**Vulcanized (vulc) sneaker:** Vulcanized sneaker, kauçuk tabanı ısıyla pişirilerek üst kısma kaynaştırılan ayakkabıdır. Bu sneakerlar genellikle daha ince tabanlı ve esnektir. Kanvas sneaker modellerinde sık görülür."
+  ],
+  [
+   "mad",
+   "**EDT ve EDP parfüm:** EDT (eau de toilette) ve EDP (eau de parfum), parfümdeki koku özü oranını anlatır. EDP'de bu oran daha yüksektir, bu nedenle EDP parfümler çoğunlukla daha yoğun ve kalıcı olur. EDT parfümler ise daha hafif bir koku arayanlarca tercih edilebilir."
+  ],
+  [
+   "H2",
+   "Calvin Klein Ürünlerinin Bakımı Nasıl Yapılır?"
+  ],
+  [
+   "p",
+   "Calvin Klein ürünlerinin bakımı ürün ailesine ve malzemeye göre değişiklik göstermektedir. Her üründe iç etiketteki bakım talimatı esastır. Ürün ailelerine göre genel önerileri şöyle sıralayabiliriz:"
+  ],
+  [
+   "mad",
+   "**Calvin Klein iç giyim bakımı:** İç giyim bakımında boxer ve külotların genellikle benzer renklerle, düşük ısıda yıkanması önerilir. Balenli sütyenlerin elde ya da çamaşır filesi içinde yıkanması, telin ve kabın biçimini korumaya yardımcı olabilir."
+  ],
+  [
+   "mad",
+   "**Calvin Klein t-shirt ve sweatshirt bakımı:** Logo baskılı t-shirt ve sweatshirtlerin ters çevrilerek yıkanması ve baskının üzerinden ütülenmemesi önerilir. Bu yöntem baskının daha uzun süre canlı kalmasına yardımcı olabilir."
+  ],
+  [
+   "mad",
+   "**Calvin Klein deri sneaker ve çanta bakımı:** Deri yüzeyler genellikle nemli ve yumuşak bir bezle silinerek temizlenir. Deri ürünlerin doğrudan güneş ışığından ve ısı kaynağından uzakta kurutulması önerilir."
+  ],
+  [
+   "mad",
+   "**Calvin Klein kol saati ve takı bakımı:** Saatin suya dayanıklılık derecesi genellikle kasanın arkasında ve ürün sayfasında belirtilir. Bu bilgi kontrol edilmeden saatle suya girilmemesi önerilir. Takıların parfüm ve kremle temas etmeden, kuru bir yerde saklanması önerilir."
+  ],
+  [
+   "mad",
+   "**Calvin Klein parfüm saklama:** Parfümlerin kutusunda ya da kapalı bir dolapta, ışıktan ve sıcaklık değişiminden uzak tutulması önerilir. Bu koşullar kokunun yapısının daha uzun süre korunmasına yardımcı olabilir."
+  ],
+  [
+   "H2",
+   "Hediye İçin Calvin Klein Ürünleri"
+  ],
+  [
+   "p",
+   "Hediye için Calvin Klein ürünleri arasında parfüm setleri, kol saatleri, bileklik setleri, cüzdan ve kartlıklar öne çıkıyor. Beden bilgisi gerektirmediği için bu ürünler genellikle daha güvenli bir hediye seçimi olur."
+  ],
+  [
+   "p",
+   "Parfüm setleri çoğunlukla parfümü aynı kokudaki bakım ürünü ya da küçük boy şişeyle bir arada sunar. Bileklik setlerinde birden fazla bileklik tek kutuda yer almaktadır. Saat hediye edecekseniz kayış malzemesine ve kadran boyutuna, cüzdanda ise kartlık bölmesi sayısına bakabilirsiniz. Giyim ya da iç giyim hediye edecekseniz hediye alacağınız kişinin bedenini bilmeniz, değişim ihtiyacını azaltabilir."
+  ],
+  [
+   "H2",
+   "Calvin Klein Orijinal Ürün Nasıl Anlaşılır?"
+  ],
+  [
+   "p",
+   "Bir Calvin Klein ürününün orijinal olup olmadığını anlamak için karton etiketteki model koduna, iç etiketteki bilgilere, logoya ve dikiş işçiliğine bakabilirsiniz. En güvenli yol ürünü yetkili satıcıdan almaktır. Kontrol ederken şu üç noktaya bakabilirsiniz:"
+  ],
+  [
+   "mad",
+   "**Calvin Klein model kodu:** Model kodu ürünün karton etiketinde ve iç etiketinde yazar. Boyner'de bu kod çoğu ürünün adında da yer almaktadır. Elinizdeki ürünün etiketindeki kodu, Boyner'deki ürün adında yazan kodla karşılaştırabilirsiniz."
+  ],
+  [
+   "mad",
+   "**Calvin Klein iç etiketi:** İç etiket kumaş içeriğini, üretim yerini ve bakım sembollerini taşır. Yeni bir üründe baskısı silik ya da bilgisi eksik bir etiket şüphe nedeni olabilir."
+  ],
+  [
+   "mad",
+   "**Calvin Klein logosu ve işçilik:** Orijinal ürünlerde logo baskısı genellikle net, harfleri düzgün hizalıdır. Dikişlerin düz ilerlemesi ve iplik uçlarının temiz kesilmesi de özenli üretimin işaretlerindendir."
+  ],
+  [
+   "H2",
+   "Calvin Klein Fiyatları"
+  ],
+  [
+   "p",
+   "Calvin Klein fiyatları ürün ailesine, malzemeye ve paket içeriğine göre değişiklik göstermektedir. İç giyim, t-shirt, kartlık ve vücut spreyi markanın daha uygun fiyatlı ürünleridir. Deri çanta, deri sneaker, mont ve çelik kordonlu kol saatleri ise genellikle üst fiyat grubunda yer alır. Çoklu paket boxer ve külotlar, tekli ürüne göre parça başına çoğunlukla daha ekonomiktir."
+  ],
+  [
+   "p",
+   "Parfümlerde fiyat çoğunlukla seriye, şişenin hacmine ve ürünün EDT ya da EDP olmasına göre değişiklik göstermektedir. Sayfadaki fiyat filtresiyle bütçenize uyan aralığı seçebilir, \"Fiyat - Düşükten Yükseğe\" sıralamasıyla ekonomik modelleri üste alabilirsiniz."
+  ],
+  [
+   "H2",
+   "Boyner'de Calvin Klein Alışverişi"
+  ],
+  [
+   "p",
+   "Boyner'de Calvin Klein seçeneklerini cinsiyet seçimi ile Ürün Çeşidi, Beden, Renk ve fiyat filtreleriyle daraltabilirsiniz. Kadın ürünlerinde çanta, iç giyim ve saat öne çıkıyor. Bu ürünlere [LINK7] sayfasından ulaşabilirsiniz. T-shirt, boxer ve sneaker ağırlıklı seçki ise [LINK8] sayfasında listelenmektedir."
+  ],
+  [
+   "p",
+   "\"En Yeni Ürünler\" sıralaması yeni eklenen modelleri, \"En Çok Satanlar\" sıralaması ise ilgi gören modelleri üste alır. Boyner Now'ın geçerli olduğu ürün ve adreslerde, ürünleri teslimat adresinizde deneyip beğendiklerinizi satın alabilirsiniz."
+  ]
  ],
  "sss": [
-  ["Calvin Klein kimdir?", "Calvin Klein, kendi adını taşıyan markayı kuran Amerikalı moda tasarımcısıdır. 19 Kasım 1942'de New York'un Bronx bölgesinde doğdu ve markasını 1968'de çocukluk arkadaşı Barry Schwartz ile birlikte kurdu. Sade kesimleri ve iç giyim koleksiyonlarıyla tanınan tasarımcı 2003'te şirketini sattı. Marka onun adıyla yoluna devam ediyor."],
-  ["Calvin Klein markasının sahibi kim?", "Calvin Klein markasının sahibi, merkezi New York'ta bulunan Amerikan giyim şirketi PVH Corp.'tur. Şirket, markayı 2003'te, o günkü adı Phillips-Van Heusen iken kurucularından satın aldı. Saat, takı ve parfüm gibi bazı ürün aileleri ise lisans anlaşmalarıyla farklı üreticiler tarafından üretilir."],
-  ["Calvin Klein lüks marka mı?", "Calvin Klein, ağırlıklı olarak premium segmentte konumlanan bir hazır giyim ve yaşam tarzı markasıdır. Boyner'de bulunan iç giyim, günlük giyim ve aksesuar ürünleri bu segmentte yer alır. Günlük kullanıma uygun ürünleri sayesinde marka, premium markalar arasında ulaşılabilir seçeneklerden biri sayılır."],
-  ["Calvin Klein nerede üretiliyor?", "Calvin Klein ürünleri tek bir ülkede üretilmez. Üretim yeri ürün ailesine ve modele göre değişiklik göstermektedir. Bir ürünün nerede üretildiğini iç etiketindeki \"Made in\" satırından öğrenebilirsiniz. Markanın genel merkezi ise New York'tadır."],
-  ["Calvin Klein ne demek?", "Calvin Klein bir kelime anlamı taşımaz, markanın kurucusu olan tasarımcının adı ve soyadıdır. Bu nedenle Türkçe bir çevirisi yoktur. Calvin erkek adı, Klein ise Almanca kökenli bir soyadıdır. Marka adı ürünlerde kısaca CK olarak da yazılır."],
-  ["Calvin Klein Türkiye'de satılıyor mu?", "Evet, Calvin Klein ürünleri Türkiye'de satılıyor. Boyner'de markanın iç giyim, giyim, çanta ve cüzdan, ayakkabı, saat ve takı, parfüm, plaj giyim ve aksesuar ürünlerini kadın, erkek ve çocuk seçenekleriyle bulabilirsiniz."]
+  [
+   "Calvin Klein kimdir?",
+   "Calvin Klein, kendi adını taşıyan markayı kuran Amerikalı moda tasarımcısıdır. 19 Kasım 1942'de New York'un Bronx bölgesinde doğdu ve markasını 1968'de çocukluk arkadaşı Barry Schwartz ile birlikte kurdu. Sade kesimleri ve iç giyim koleksiyonlarıyla tanınan tasarımcı 2003'te şirketini sattı. Marka onun adıyla yoluna devam ediyor."
+  ],
+  [
+   "Calvin Klein markasının sahibi kim?",
+   "Calvin Klein markasının sahibi, merkezi New York'ta bulunan Amerikan giyim şirketi PVH Corp.'tur. Şirket, markayı 2003'te, o günkü adı Phillips-Van Heusen iken kurucularından satın aldı. Saat, takı ve parfüm gibi bazı ürün aileleri ise lisans anlaşmalarıyla farklı üreticiler tarafından üretilir."
+  ],
+  [
+   "Calvin Klein lüks marka mı?",
+   "Calvin Klein, ağırlıklı olarak premium segmentte konumlanan bir hazır giyim ve yaşam tarzı markasıdır. Boyner'de bulunan iç giyim, günlük giyim ve aksesuar ürünleri bu segmentte yer alır. Günlük kullanıma uygun ürünleri sayesinde marka, premium markalar arasında ulaşılabilir seçeneklerden biri sayılır."
+  ],
+  [
+   "Calvin Klein nerede üretiliyor?",
+   "Calvin Klein ürünleri tek bir ülkede üretilmez. Üretim yeri ürün ailesine ve modele göre değişiklik göstermektedir. Bir ürünün nerede üretildiğini iç etiketindeki \"Made in\" satırından öğrenebilirsiniz. Markanın genel merkezi ise New York'tadır."
+  ],
+  [
+   "Calvin Klein ne demek?",
+   "Calvin Klein bir kelime anlamı taşımaz, markanın kurucusu olan tasarımcının adı ve soyadıdır. Bu nedenle Türkçe bir çevirisi yoktur. Calvin erkek adı, Klein ise Almanca kökenli bir soyadıdır. Marka adı ürünlerde kısaca CK olarak da yazılır."
+  ],
+  [
+   "Calvin Klein Türkiye'de satılıyor mu?",
+   "Evet, Calvin Klein ürünleri Türkiye'de satılıyor. Boyner'de markanın iç giyim, giyim, çanta ve cüzdan, ayakkabı, saat ve takı, parfüm, plaj giyim ve aksesuar ürünlerini kadın, erkek ve çocuk seçenekleriyle bulabilirsiniz."
+  ]
  ]
 }

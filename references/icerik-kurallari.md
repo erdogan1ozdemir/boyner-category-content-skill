@@ -68,6 +68,27 @@ modelleri" yerine "likit fondöten formülleri, pudra fondöten formları, skin 
 niteleyiciyle birlikte geçmesi hem anlamı netleştirir hem uzun kuyruk kelimeyi ("pudra fondöten") karşılar.
 Sınır yoğunluktur: aynı cümlede ürün adı üç dört kezden fazla geçmez.
 
+**Ürün "parça" diye anılmaz; ailesinin adıyla anılır** (kullanıcı kararı, 02.10.2026). TDK gömleği "...yakalı
+giysi" diye tanımlar; Google sonuçlarındaki tanım cümleleri de ürün ailesinin adını kullanır ("giysidir", "mont
+türüdür", "ayakkabı türüdür", "makyaj ürünüdür"). "Parçası / parçasıdır / parçalar" yalnız gerçek bir fiziksel
+parça için kalır (kürk parçası, tek parça taban, nevresim takımının parçaları, gömleğin ön parçası).
+
+| Aile | Tanım ve gönderme sözcüğü |
+|---|---|
+| Giyim | giysi, kıyafet, ürün ("bir dış giysidir", "her kıyafetle uyum sağlar", "sade kıyafetlerle") |
+| Ayakkabı | ayakkabı türü / modeli ("günlük kullanım için tasarlanan bir ayakkabı türüdür") |
+| Kozmetik | makyaj ürünü, bakım ürünü, formül |
+| Aksesuar, saat, gözlük | aksesuar, model ("vintage tarzın tanınan modellerindendir") |
+| Ev tekstili | takım, örtü, ürün ("yatağın üzerine serilen örtüdür") |
+| Elektronik | cihaz, ses cihazı, model |
+
+| Yazma | Yaz |
+|---|---|
+| "...dokuma kumaştan dikilen bir üst giyim parçasıdır." | "...dokuma kumaştan dikilen bir üst giysidir." |
+| "...kadın dış giyim parçaları arasında" | "...kadın dış giyim ürünleri arasında" |
+| "hemen her parçayla uyum sağlar" | "hemen her kıyafetle uyum sağlar" |
+| "bir Calvin Klein parçasını" | "bir Calvin Klein ürününü" |
+
 **Kesinlik yumuşatılır.** Kural, tavsiye ve genelleme bildiren cümleler "genellikle", "çoğunlukla", "-abilir",
 "önerilir", "tercih edilebilir", "öncelik verilen özelliklerdendir" gibi kalıplarla yazılır; özellikle iddialı
 duracak kesin yargılarda. Tanım cümleleri ("Şişme mont, ... bir mont türüdür") düz bildirir.

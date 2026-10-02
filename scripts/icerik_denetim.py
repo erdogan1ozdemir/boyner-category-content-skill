@@ -37,6 +37,8 @@ UYARI_DESEN = [
     (r"(?i)tedavi ed|iyileştir|kesin çözüm|garanti(?! süre)|yüzde yüz|%\s?100 (?:etkili|sonuç)", "sağlık / kesinlik iddiası"),
     (r"(?i)\b\w+(?:ıyoruz|iyoruz|uyoruz|üyoruz|acağız|eceğiz)\b|\btavsiye ederiz\b", "birinci çoğul (yalnız liste girişlerinde 'sizin için grupladık' gibi kalıplarda serbest)"),
     (r"[^.!?]{140,};", "noktalı virgülle uzatılmış uzun cümle (iki cümleye bölünebilir)"),
+    (r"(?i)giyim parças|\bparçasıdır\b|(?:her|sade|ince bir|bir) parça(?:yla|nın|larla)|parçalar(?:ı)? arasında",
+     "ürün 'parça' diye anılmış (giysi / kıyafet / ürün / model; fiziksel parça değilse)"),
     (r"(?i)tıklayın|buraya tıkla|göz atabilirsiniz|inceleyebilirsiniz", "link taşımak için kurulmuş cümle olabilir"),
 ]
 JENERIK_ANCHOR = {"buraya", "tiklayin", "burada", "bu sayfa", "link", "sayfa", "detaylar", "incele", "urunler", "tumu"}
