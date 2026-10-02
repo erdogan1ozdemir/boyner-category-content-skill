@@ -98,8 +98,9 @@ taşımalıdır:
 | "Asetat (kemik) çerçeve:" | "Kemik (asetat) çerçeve güneş gözlüğü:" |
 | "Kalın taban:" | "Kalın tabanlı kadın sneaker:" |
 
-Etiket başka bir sayfanın kelimesiyle birebir aynıysa (o türün kendi sayfası varsa) etiketin hemen ardından
-gelen cümlede o sayfaya link verilir; etiket yine de yazılır.
+Etiket başka bir sayfanın kelimesiyle birebir aynıysa (o türün kendi sayfası varsa) **etiketin kendisi link
+olur**: `**[LINK2]:**` (belgede kalın köprü olarak basılır). Böylece sahipli kelime metinde bir kez, anchor
+olarak geçer; ardından gelen cümlede aynı öbek tekrarlanmaz.
 
 ## 2. Zaman kipi
 
@@ -109,7 +110,7 @@ kararı, 02.10.2026). Kip cümlenin işine göre değişir:
 | Cümle ne yapıyor | Kip | Örnek |
 |---|---|---|
 | Tanım, her zaman geçerli bilgi | Geniş zaman | "Şişme mont, dolgulu kanallarıyla ısıyı gövdede tutar." |
-| Boyner'deki ürün gamı, katalog | Şimdiki zaman | "Kategoride kapüşonlu, uzun ve kısa modeller yer alıyor." |
+| Boyner'deki ürün gamı, katalog | Şimdiki zaman | "Boyner kadın mont modelleri arasında kapüşonlu, uzun ve kısa seçenekler yer alıyor." |
 | Tasarım amacı | `-mıştır` | "Kayak montu pist için tasarlanmıştır." |
 | Boyner'deki durum, tespit | `-mektedir / -maktadır` | "Outdoor, spor ve şehir giyimi markaları bir arada yer almaktadır.", "Renk filtresinde mavi ve pembe seçenekler bulunmaktadır." |
 | Okuyucuya öneri | İkinci çoğul, olasılık | "Bel hizasında biten bir model tercih edebilirsiniz." |
@@ -241,8 +242,8 @@ altında kalan taslakta şu soruların karşılığı aranır:
 - Hediye, mevsim, kullanım yeri gibi bir senaryo ekseni araştırmada çıkıyor mu?
 
 Eklenen her bölüm yeni bilgi taşır; aynı bilgi ikinci kez farklı cümleyle yazılmaz (bkz. Tutarlılık kuralları,
-"tek yerde anlatım"). Gam çok darsa (ör. 30 ürünlü uç kategori) içerik 800-1.200 kelimede kalabilir; bu durum
-teslim notunda söylenir.
+"tek yerde anlatım"). Gam çok darsa (ör. 30 ürünlü uç kategori) içerik 800-1.200 kelimede kalabilir; marka
+sayfasında hedef 1.200-1.800 kelimedir. Bandın altında kalındıysa gerekçesi teslim notunda söylenir.
 
 Paragraf 3-4 cümleyi, 110 kelimeyi geçmez. Bir H2'nin altında 250 kelimeden fazla düz metin varsa H3'e ya da
 "•" maddelerine bölünür.
@@ -271,8 +272,10 @@ derinleştirir, bilgi sorgularında alıntılanabilir yanıt üretir.
 - **Uzun kuyruk doğal cümlede geçer.** "Kışlık kadın mont" H3 olabilir; "kışlık mont bayan" gibi devrik
   arama ifadesi metne olduğu gibi yazılmaz, doğal sırasıyla ("kışlık kadın mont") karşılanır. "Bayan"
   kelimesi kullanılmaz; "kadın" yazılır.
-- Ana kelime giriş, bir iki H2 ve kapanışta geçer; yoğunluk %3'ü geçmez (tek kelimelik ana kelimede ve marka
-  sayfasında %4-5'e çıkabilir; başlık ve anchor'lar bunu doğal olarak yükseltir).
+- Ana kelime giriş, bir iki H2 ve kapanışta geçer. Yoğunluk madde etiketleri ve anchor'lar **dışında** sayılır
+  (`icerik_denetim.py` böyle sayar) ve %3'ü geçmez; tek kelimelik ana kelimede ve marka sayfasında %4'e
+  çıkabilir. Cinsiyetli etiketten sonraki cümlelerde ürün adı kısa biçimiyle sürer: etiket "Deri kadın
+  sneaker:" ise cümle "Deri sneaker modelleri..." diye açılır.
 - Rakip kelime sayısı yanıltabilir: `arastirma.py` ürün kartı metinlerini de sayar. Medyana değil, rakibin
   gerçekten yazılmış metnine bakılır; ürün adı başlıkları (H3'te ürün listesi) konu başlığı sayılmaz. Çoğul, iyelik ve eş anlamlı
   biçimler ("montlar", "kadın mont modelleri", "dış giyim") tekrarın yerini alır.
@@ -349,6 +352,7 @@ Paralel kurulan bu satırlar tablonun işini görür: taranır ve AI yanıtları
 - Ürün sayfasında hangi bilginin nerede olduğu (materyal, beden bilgisi, içerik listesi) bir cümleyle.
 - Teyit edilebiliyorsa doğrulanmış bir mağaza bilgisi (bkz. bölüm 10, kapanış); zorunlu değildir.
 - Karşılaştırmanın konusu gamda olmalıdır; sahipli bir kelime etikette geçebilir ama başlık ve SSS olamaz.
+  Karşılaştırılan seçenekler sahipliyse karşılaştırma **başlıksız** verilir: bir giriş cümlesi ve iki "•" satırı.
 
 **Kalın vurgu:** madde etiketleri kalındır. Bunun dışında bölüm başına iki üç yerde, okuyucunun aradığı net
 bilgi için (malzeme adı, ölçüt, karar cümlesi). Tam cümle, bölümün ilk kelimeleri ve başlıkta geçen ifade kalın

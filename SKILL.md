@@ -193,8 +193,9 @@ Ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontroller geç
 bilgi doğruluğu ve iç çelişki ancak okuyarak yakalanır. `seo-content` ajanına (yoksa `seo-content` skill'i
 ile satır içi) içerik JSON'u verilir ve şunlar istenir: dil ve anlam (özne-yüklem, kayan özne, mantık), kip
 kullanımı, başlıkların arama diline uygunluğu, bilgi doğruluğu, iç çelişki, SEO/GEO ve 100 üzerinden puan.
-Ajana bilinçli kısıtlar (rakam yok, sahipli kelimelere başlık yok, link sayısı) söylenir ki bunları eksik
-saymasın. Değerlendirici "şart düzeltme" listesi verdiyse düzeltmelerden sonra **ikinci bir puanlama turu**
+Ajana bilinçli kısıtlar (rakam yok, sahipli kelimelere başlık yok, link sayısı, tablo ve liste biçimi yok,
+yumuşatma ve etiket tekrarı bilinçli) söylenir ve `kayit.json` yolu verilir ki teyitli filtre ve markaları
+yeniden sormasın, kısıtları eksik saymasın. Değerlendirici "şart düzeltme" listesi verdiyse düzeltmelerden sonra **ikinci bir puanlama turu**
 yapılır; teslim notunda hangi sürümün puanlandığı açıkça yazılır. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
 kelimeye başlık) alınmaz. Düzeltmelerden sonra denetim betiği yeniden çalıştırılır ve Word dosyası üretilir.
 

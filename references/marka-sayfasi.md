@@ -73,6 +73,10 @@ sayfası olmayan ürün ailesi (SERBEST) gövdede bir paragraf alabilir.
   serilerini karşılaştırır; alt marka ile ana markayı karşılaştıran tablo sahipli kelimeye bölüm açmak olur,
   kullanılmaz.
 - **Link istisnası:** "Modelleri / Ürünleri" bölümünde 5-6 link bulunabilir (genel kural tek H2'de 4).
+- **Etiket link olur:** ürün ailesi maddelerinde etiket marka adını taşır ve ailenin kendi sayfası varsa
+  etiketin kendisi linktir (`**[LINK1]:**` -> "Calvin Klein çanta:"); cümlede öbek tekrarlanmaz.
+- **Uzunluk:** hedef 1.200-1.800 kelime gövde. Genişletme konuları: ürün aileleri, ürün adlarındaki terimler
+  (kalıp ve seri kısaltmaları), beden, bakım, hediye.
 - **Linkler (5-8):** marka + cinsiyet sayfaları (2-3), marka + kategori ya da marka + cinsiyet + kategori
   sayfaları (2-4; Google'da sıralananlar öncelikli), 0-1 genel kategori sayfası (markanın ana ürün ailesi).
   Anchor her zaman marka adını taşır ("Skechers kadın ayakkabı"); çıplak "kadın ayakkabı" anchor'ı genel

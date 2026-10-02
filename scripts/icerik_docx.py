@@ -36,7 +36,7 @@ def renk(run, hex_kod):
     run.font.color.rgb = RGBColor.from_string(hex_kod)
 
 
-def kopru(p, metin, url, boyut):
+def kopru(p, metin, url, boyut, kalin=False):
     from docx.oxml.shared import OxmlElement, qn
     r_id = p.part.relate_to(url, "http://schemas.openxmlformats.org/officeDocument/2006/relationships/hyperlink",
                             is_external=True)
@@ -46,6 +46,8 @@ def kopru(p, metin, url, boyut):
         e = OxmlElement(etiket); e.set(qn("w:val"), deger); rPr.append(e)
     rf = OxmlElement("w:rFonts"); rf.set(qn("w:ascii"), FN); rf.set(qn("w:hAnsi"), FN); rPr.append(rf)
     sz = OxmlElement("w:sz"); sz.set(qn("w:val"), str(int(boyut * 2))); rPr.append(sz)
+    if kalin:
+        rPr.append(OxmlElement("w:b"))
     r.append(rPr)
     t = OxmlElement("w:t"); t.text = metin; t.set(qn("xml:space"), "preserve"); r.append(t)
     h.append(r); p._p.append(h)
@@ -58,7 +60,13 @@ def metni_bas(p, metin, linkler, boyut=10.5):
         if m and m.group(1) in linkler:
             kopru(p, linkler[m.group(1)][0], linkler[m.group(1)][1], boyut)
         elif parca.startswith("**") and parca.endswith("**") and len(parca) > 4:
-            r = p.add_run(parca[2:-2]); r.bold = True; r.font.name = FN; r.font.size = Pt(boyut); renk(r, INK)
+            # kalın parçanın içinde link olabilir: **[LINK1]:** -> kalın köprü + kalın ":"
+            for alt in re.split(r"(\[LINK\d+\])", parca[2:-2]):
+                ma = re.fullmatch(r"\[(LINK\d+)\]", alt)
+                if ma and ma.group(1) in linkler:
+                    kopru(p, linkler[ma.group(1)][0], linkler[ma.group(1)][1], boyut, kalin=True)
+                elif alt:
+                    r = p.add_run(alt); r.bold = True; r.font.name = FN; r.font.size = Pt(boyut); renk(r, INK)
         elif parca:
             r = p.add_run(parca); r.font.name = FN; r.font.size = Pt(boyut); renk(r, INK)
 

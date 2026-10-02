@@ -107,9 +107,12 @@ def main():
 
     # --- ana kelime yoğunluğu
     ana = duzle(d["main_kw"])
-    gecis = len(re.findall(r"\b" + re.escape(ana) + r"\w*", duzle(govde_metin)))
+    # yoğunluk madde etiketleri ve anchor'lar dışında sayılır (etiketler kural gereği ana kelimeyi taşır)
+    ciplak = " ".join(re.sub(r"\*\*", "", re.sub(r"\[LINK\d+\]", " ", re.sub(r"^\*\*[^*]+\*\*", " ", i)))
+                      for t, i in g if t in ("p", "li", "mad"))
+    gecis = len(re.findall(r"\b" + re.escape(ana) + r"\w*", duzle(ciplak)))
     yogunluk = gecis * len(ana.split()) / max(1, kelime) * 100
-    if yogunluk > 3:
+    if yogunluk > (4 if (hedef.get("b") or len(d["main_kw"].split()) == 1) else 3):
         uyari.append(f"ana kelime {gecis} kez geçiyor (%{yogunluk:.1f}); eş anlamlı ve ürün adlarıyla çeşitlendirilebilir")
     if gecis < 3:
         uyari.append(f"ana kelime gövdede {gecis} kez geçiyor")
@@ -172,7 +175,7 @@ def main():
             for k in re.findall(r"\[(LINK\d+)\]", str(v)):
                 link_bolum.setdefault(bolum, []).append(k)
     for b, ks in link_bolum.items():
-        if len(ks) > 4:
+        if len(ks) > (6 if hedef.get("b") else 4):
             uyari.append(f"'{b}' bölümünde {len(ks)} link var; linkler bölümlere yayılır")
     for t, v in g:
         if t == "p" and len(re.findall(r"\[LINK\d+\]", v)) > 2:
@@ -217,7 +220,7 @@ def main():
                     uyari.append(f"SSS sorusu başka sayfanın kelimesini taşıyor: '{q}' -> '{x['kelime']}' ({x['sahip']})")
                     break
         # başka sayfanın kelimesi gövdede linksiz ve tekrar tekrar geçiyorsa sayfa o kelimeye de oynuyor demektir
-        gd = duzle(govde_metin)
+        gd = duzle(ciplak + " " + " ".join(a_ for a_, _ in linkler.values()))     # etiketler hariç, anchor'lar dahil
         for x, k in baska[:60]:
             ifade = duzle(x["kelime"])
             n_ = len(re.findall(r"\b" + re.escape(ifade), gd))
@@ -307,7 +310,7 @@ def main():
     if kip["-ir/-ar"] / top > 0.7:
         uyari.append(f"gövde geniş zamana kilitlenmiş (%{kip['-ir/-ar'] / top * 100:.0f}); ürün gamı ve anlatı cümleleri "
                      "şimdiki zamanla, öneriler '-ebilirsiniz' ile çeşitlendirilebilir")
-    eksiz = len(re.findall(r"(?:^|[.!?:]\s+)(?:[A-ZÇĞİÖŞÜ]\w+ )?" + re.escape(d["main_kw"]) + r"[, ]", govde_metin, re.I))
+    eksiz = len(re.findall(r"(?:^|[.!?]\s+)(?:[A-ZÇĞİÖŞÜ]\w+ )?" + re.escape(d["main_kw"]) + r"[, ]", ciplak, re.I))
     # yalnız çok kelimeli ve iyelik eki almamış kategori adlarında anlamlı ("kadın mont" -> "kadın montu");
     # "nevresim takımı", "güneş gözlüğü", tek kelimelik adlar ve marka adları zaten doğal biçimdedir
     son = duzle(d["main_kw"]).split()[-1]
