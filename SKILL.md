@@ -1,6 +1,6 @@
 ---
 name: boyner-kategori-brief-icerik
-description: boyner.com.tr kategori ve marka (listeleme) sayfaları için içerik briefi ve SEO + GEO uyumlu kategori içeriği üretir. Hedef kategoride ilk 5 SERP'i ve rakip içeriklerini inceler, kelime kümesini ve soru kalıplarını çıkarır, 34 bin sayfalık Boyner envanterine karşı kelime sahipliği (cannibalization) tablosu kurar, 5-8 çapraz iç link seçer; ardından "siz" diliyle, başlık iskeleti o kategorinin araştırmasından (rakip başlıkları, PAA, uzun kuyruk kümeleri, arama eğilimi) kurulan gövde metni ve answer-first SSS yanıtları yazar. Çıktılar - kategori tipine göre sekmeli ortak brief Excel'inde ilgili satır ve içerik Word dosyası; içerik teslimden önce bağımsız içerik değerlendirmesinden geçer. Şu durumlarda mutlaka kullan - kullanıcı bir Boyner kategori URL'si ya da kategori adı verip "kategori içeriği yaz", "kategori briefi", "bu kategoriye içerik", "SEO metni", "kategori açıklaması", "SSS yaz", "içeriği revize et" dediğinde · Boyner için uzun kuyruk kelime, alt başlık planı, iç link planı ya da cannibalization kontrolü istendiğinde · "hangi sayfa bu kelimenin sahibi", "bu kelimeye hangi Boyner sayfası oynuyor" diye sorulduğunda · içeriği zayıf ya da boş Boyner kategorileri aranırken · kullanıcı yalnız bir boyner.com.tr listeleme adresi yapıştırıp içerik beklediğinde. Boyner teknik SEO audit dosyaları ve müşteriye giden rapor/sunumlar bu skill'in işi değildir.
+description: boyner.com.tr kategori ve marka (listeleme) sayfaları için içerik briefi ve SEO + GEO uyumlu kategori içeriği üretir. Hedef kategoride ilk 5 SERP'i ve rakip içeriklerini inceler, kelime kümesini ve soru kalıplarını çıkarır, 34 bin sayfalık Boyner envanterine karşı kelime sahipliği (cannibalization) tablosu kurar, 5-8 çapraz iç link seçer; ardından "siz" diliyle, başlık iskeleti o kategorinin araştırmasından (rakip başlıkları, PAA, uzun kuyruk kümeleri, arama eğilimi) kurulan gövde metni ve answer-first SSS yanıtları yazar. Çıktılar - kategori tipine göre sekmeli ortak brief Excel'inde ilgili satır ve içerik Word dosyası. Şu durumlarda mutlaka kullan - kullanıcı bir Boyner kategori URL'si ya da kategori adı verip "kategori içeriği yaz", "kategori briefi", "bu kategoriye içerik", "SEO metni", "kategori açıklaması", "SSS yaz", "içeriği revize et" dediğinde · Boyner için uzun kuyruk kelime, alt başlık planı, iç link planı ya da cannibalization kontrolü istendiğinde · "hangi sayfa bu kelimenin sahibi", "bu kelimeye hangi Boyner sayfası oynuyor" diye sorulduğunda · içeriği zayıf ya da boş Boyner kategorileri aranırken · kullanıcı yalnız bir boyner.com.tr listeleme adresi yapıştırıp içerik beklediğinde. Boyner teknik SEO audit dosyaları ve müşteriye giden rapor/sunumlar bu skill'in işi değildir.
 ---
 
 # Boyner Kategori Sayfası: Brief ve İçerik
@@ -187,18 +187,13 @@ python3 scripts/icerik_docx.py --json $T/icerik.json --klasor "Kategori İçerik
 ```
 
 Denetim bulgu verirse çıktı üretilmez; önce metin düzeltilir. `NOT:` satırları okunarak karar verilir.
-Ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontroller geçilir.
+Ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontroller geçilir; yazılan içerik bir kez baştan
+sonra okunarak özne-yüklem uyumu, anlam, iç çelişki ve tutarlılık kuralları (`icerik-kurallari.md`) elle taranır.
 
-**Ardından içerik bağımsız bir değerlendirmeden geçirilir.** Betik biçime bakar; özne-yüklem uyumu, anlam,
-bilgi doğruluğu ve iç çelişki ancak okuyarak yakalanır. `seo-content` ajanına (yoksa `seo-content` skill'i
-ile satır içi) içerik JSON'u verilir ve şunlar istenir: dil ve anlam (özne-yüklem, kayan özne, mantık), kip
-kullanımı, başlıkların arama diline uygunluğu, bilgi doğruluğu, iç çelişki, SEO/GEO ve 100 üzerinden puan.
-Ajana bilinçli kısıtlar (rakam yok, sahipli kelimelere başlık yok, link sayısı, tablo ve liste biçimi yok,
-yumuşatma ve etiket tekrarı bilinçli) söylenir ve `kayit.json` yolu verilir ki teyitli filtre ve markaları
-yeniden sormasın, kısıtları eksik saymasın. Değerlendirici "şart düzeltme" listesi verdiyse düzeltmelerden sonra **ikinci bir puanlama turu**
-yapılır; **en çok üç tur** (son turda çıkanlar uygulanıp raporlanır). Teslim notunda hangi sürümün puanlandığı
-açıkça yazılır. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
-kelimeye başlık) alınmaz. Düzeltmelerden sonra denetim betiği yeniden çalıştırılır ve Word dosyası üretilir.
+**Bağımsız puanlama turu yoktur** (kullanıcı kararı, 02.10.2026): değerlendirme yalnız içerik kalitesini ölçmek
+içindi ve süreçten çıkarıldı; token ve kota maliyeti yüksekti. Kalite denetim betiği ve kontrol listesindeki
+okuma maddeleriyle sağlanır. Kullanıcı açıkça isterse ("puanla", "değerlendir") tek tur `seo-content` ajanı
+çalıştırılır.
 
 Çıktılar çalışma klasörüne kaydedilir ve kullanıcıya gönderilir. Teslim notunda üç şey söylenir: hangi bilgi
 hangi kaynaktan alındı · ne yazılmadı ve neden (sahibi başka sayfa olan kelimeler, teyit edilemeyen
@@ -235,6 +230,17 @@ bilgiler) · hangi konuda karar bekleniyor.
   yine de kullanılmaz.
 
 ## Toplu çalışma ve aday seçimi
+
+**Aynı anda en çok iki ajan çalıştırılır** (kullanıcı kararı, 02.10.2026). Yedi ajanı birlikte çalıştırmak 5 saatlik
+kullanım limitini ve boyner.com.tr'nin Cloudflare eşiğini aştı. Çok sayıda içerik üç dört kişilik gruplara
+bölünür, gruplar arasında beklenir. Ajan kesilirse kaldığı yerden sürdürülür; yeni ajan açılıp işe baştan
+başlanmaz.
+
+**DataForSEO maliyeti:** `arastirma.py` sonuçları 30 gün önbelleğe alır (aynı SERP ve kelime sorguları tekrar
+ücretlendirilmez; `--yeni` ile atlanır) ve kelime çekimini sınırlı tutar (yaklaşık 0,05-0,2 dolar/içerik).
+Kardeş kategorilerde (kadın gömlek / erkek gömlek) ortak kelime sorguları önbellekten gelir. Ahrefs MCP'si
+API birimiyle çalışır (satır başına ve sütun başına 10 birim, ör. volume); çalışma alanı aylık 2 milyon birimle
+sınırlıdır, bu yüzden yedek kaynaktır.
 
 Birden fazla kategori istenirse her kategori için fazlar ayrı yürütülür; kardeş kategoriler (kadın mont,
 kadın kaban, kadın şişme mont) aynı partide yazılıyorsa önce hepsinin sahiplik tablosu çıkarılır, sonra

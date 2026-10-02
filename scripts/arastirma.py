@@ -34,7 +34,27 @@ def kimlik():
     return base64.b64encode(f"{env['DATAFORSEO_USERNAME']}:{env['DATAFORSEO_PASSWORD']}".encode()).decode()
 
 
+ONBELLEK_GUN = 30
+YENI = False        # --yeni: önbelleği atla
+
+
 def post(yol, govde, auth, saniye=180):
+    """DataForSEO isteği; aynı istek 30 gün boyunca önbellekten gelir (aynı SERP/kelime tekrar ücretlendirilmez)."""
+    import hashlib
+    anahtar = hashlib.md5((yol + json.dumps(govde, sort_keys=True, ensure_ascii=False)).encode()).hexdigest()
+    dosya = os.path.expanduser(f"~/.cache/boyner-kategori-brief/dfs/{anahtar}.json")
+    if not YENI and os.path.exists(dosya) and time.time() - os.path.getmtime(dosya) < ONBELLEK_GUN * 86400:
+        d = json.load(open(dosya))
+        d["cost"] = 0          # önbellekten geldi
+        return d
+    d = _post(yol, govde, auth, saniye)
+    if (d.get("tasks") or [{}])[0].get("status_code") == 20000:
+        os.makedirs(os.path.dirname(dosya), exist_ok=True)
+        json.dump(d, open(dosya, "w"), ensure_ascii=False)
+    return d
+
+
+def _post(yol, govde, auth, saniye=180):
     import tempfile
     fd, f = tempfile.mkstemp(prefix="dfs_boyner_", suffix=".json")   # paralel çalışmada çakışmasın
     with os.fdopen(fd, "w") as fh:
@@ -84,7 +104,7 @@ def serp(kw, auth, cihaz="mobile"):
     }
 
 
-def kelimeler(tohumlar, auth, limit=400):
+def kelimeler(tohumlar, auth, limit=250):
     """Öneriler (tohumu içeren) + ilişkili kelimeler; hacme göre sıralı, soru ve uzun kuyruk işaretli."""
     havuz, maliyet = {}, 0
 
@@ -110,7 +130,7 @@ def kelimeler(tohumlar, auth, limit=400):
             ekle(it["keyword"], it.get("keyword_info"))
         time.sleep(1)
         r = post("/v3/dataforseo_labs/google/related_keywords/live",
-                 [{"keyword": t, "location_code": 2792, "language_code": "tr", "depth": 2, "limit": 200}], auth)
+                 [{"keyword": t, "location_code": 2792, "language_code": "tr", "depth": 1, "limit": 100}], auth)
         maliyet += r.get("cost") or 0
         for it in sonuc(r).get("items") or []:
             kd = it.get("keyword_data") or {}
@@ -212,8 +232,11 @@ def main():
     ap.add_argument("--url", help="hedef Boyner URL'si (SERP'te hangi sayfanın sıralandığıyla karşılaştırılır)")
     ap.add_argument("--ek", nargs="*", default=[], help="ek tohum kelimeler (eş anlamlı, üst kavram)")
     ap.add_argument("--rakip", type=int, default=5, help="içeriği okunacak rakip sayısı")
+    ap.add_argument("--yeni", action="store_true", help="30 günlük DataForSEO önbelleğini atla")
     a = ap.parse_args()
 
+    global YENI
+    YENI = a.yeni
     auth = kimlik()
     veri = {"kelime": a.kelime, "hedef_url": a.url, "tarih": time.strftime("%Y-%m-%d")}
     print("1/4 SERP, PAA ve AI Overview...", flush=True)

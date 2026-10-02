@@ -48,7 +48,7 @@
 - [ ] Kesin yargılar yumuşatıldı mı (genellikle, -abilir, önerilir)? Uzun cümleler noktalı virgülle mi uzatılmış?
 - [ ] Gövde 1.500-2.500 kelime bandında mı; uzunluk tekrarla değil yeni bilgiyle mi kuruldu?
 - [ ] Ticari kelimeler (fiyatları, uygun, ekonomik, kaliteli, şık) karşılandı mı? Net fiyat ya da aralık var mı? (olmamalı)
-- [ ] Bağımsız içerik değerlendirmesi (`seo-content`) yapıldı mı, bulgular işlendi mi?
+- [ ] İçerik baştan sona bir kez okundu mu (özne-yüklem, anlam, iç çelişki, tek tanım, gövde-SSS uyumu)?
 - [ ] Word belgesinin adı `{slug}: {tam URL}` mi?
 
 ## Otomatik denetim

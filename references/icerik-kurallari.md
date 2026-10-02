@@ -472,11 +472,10 @@ kampanya adı ve tarihi yazılmaz. Bir iki cümlelik çağrıyla biter.
 - "Kategoride", "kategorisinde", "bu kategori" yazılmaz (bkz. Boyner anlatım kalıpları).
 - Üçlü sıfat dizisi ("şık, rahat ve fonksiyonel") yazılmaz; bir özellik seçilip açıklanır.
 
-### Tutarlılık kuralları (değerlendirmelerde tekrar eden kusurlardan)
+### Tutarlılık kuralları
 
-Kadın Mont içeriği üç tur bağımsız değerlendirmeden geçti (74 → 86 → 89/100; aynı sürüme ikinci bir
-değerlendirici 84 verdi). Turlar boyunca tekrar eden
-kusurlar bilgi eksikliği değil tutarsızlıktı; aşağıdakiler her içerikte kontrol edilir:
+Sekiz örnek içeriğin değerlendirmelerinde tekrar eden kusurlar bilgi eksikliği değil tutarsızlıktı;
+aşağıdakiler her içerikte yazarken ve teslimden önce okuyarak kontrol edilir:
 
 - **Tek tanım.** Ürünün boyu, malzemesi ve komşu kategoriden farkı bir kez tanımlanır; giriş, gövde, tablo
   ve SSS aynı ölçülerle konuşur. Teslimden önce her ölçü ifadesi ("diz üstü", "bel ile kalça arası") metin
