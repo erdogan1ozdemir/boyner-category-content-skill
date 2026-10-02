@@ -30,7 +30,7 @@
 - [ ] BAŞKA SAYFA kelimeleri metinde en fazla bir kez ve anchor olarak mı geçiyor?
 - [ ] **Anchor'ı sil, cümle hâlâ anlamlı mı?** "...göz atabilirsiniz" biçiminde link cümlesi var mı?
 - [ ] Bu sayfanın ana kelimesi başka sayfaya anchor olmuş mu? (olmamalı)
-- [ ] Liste ve tablo var mı? Madde tanımları etiketi tekrar mı ediyor, bilgi mi ekliyor?
+- [ ] "•" satırları var mı? İlk cümleleri özneyi kuruyor ve bilgi ekliyor mu?
 - [ ] Sayısal değerlerin kaynağı var mı? Ürün sayısı, fiyat, indirim, yıl, "bu sezon" geçiyor mu? (geçmemeli)
 - [ ] Dayanaksız üstünlük iddiası ("en iyi", "en kaliteli") var mı?
 - [ ] Bilgi taşımayan paragraf var mı? Her paragraf "okuyucu ne öğrendi" sorusundan geçti mi?
@@ -42,7 +42,11 @@
 - [ ] Yüklem dağılımı tek kipe mi kilitlenmiş? Özne ile yüklem uyuşuyor mu, ana kelime cümlede çekimli mi?
 - [ ] Tanımlar ve sayımlar metin boyunca tutarlı mı? Gövde ile SSS aynı soruya aynı yanıtı mı veriyor? Genel adımlar tür maddeleriyle çelişiyor mu?
 - [ ] Kalın etiketli maddelerin ilk cümlesi etiket silinince de anlamlı mı?
-- [ ] İki tablo (ihtiyaca göre tür + iki seçenek karşılaştırması), numaralı karar adımları ve doğrulanmış bir mağaza bilgisi var mı?
+- [ ] Tablo ya da liste biçimi kalmış mı? (olmamalı; "•  " satırları ve "1. " önekli adımlar kullanılır)
+- [ ] İhtiyaca göre tür eşleştirmesi, iki seçenek karşılaştırması ve numaralı karar adımları var mı?
+- [ ] "Kategoride / kategorisinde" geçiyor mu? (geçmemeli) Madde etiketleri ürün adını ve cinsiyeti taşıyor mu?
+- [ ] Kesin yargılar yumuşatıldı mı (genellikle, -abilir, önerilir)? Uzun cümleler noktalı virgülle mi uzatılmış?
+- [ ] Gövde 1.500-2.500 kelime bandında mı; uzunluk tekrarla değil yeni bilgiyle mi kuruldu?
 - [ ] Ticari kelimeler (fiyatları, uygun, ekonomik, kaliteli, şık) karşılandı mı? Net fiyat ya da aralık var mı? (olmamalı)
 - [ ] Bağımsız içerik değerlendirmesi (`seo-content`) yapıldı mı, bulgular işlendi mi?
 - [ ] Word belgesinin adı `{slug}: {tam URL}` mi?

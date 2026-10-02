@@ -50,8 +50,8 @@ H2 · Başlık: ...
 
 SSS: Ayrı modül; gövde kelime sayısına dahil değil.
 
-BİÇİM: Liste ve tablo kullanımı, kalın vurgu, link sayısı.
-UZUNLUK: Rakip medyanı ... kelime; hedef kapsam ... (sınır yok, dolgu yok).
+BİÇİM: "•" satırları ve numaralı adımlar (tablo ve liste biçimi yok), kalın vurgu, link sayısı.
+UZUNLUK: Hedef 1.500-2.500 kelime gövde; rakip medyanı ... kelime (tekrar yok, yeni bilgi).
 DİKKAT: Yazılmayacaklar, sahiplik uyarıları, mevsimsellik, teyit edilecekler.
 ```
 

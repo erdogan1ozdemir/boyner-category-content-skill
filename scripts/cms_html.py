@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""İçerik JSON'undan CMS'e girilecek sade HTML'i üretir.
+"""İçerik JSON'undan CMS'e girilecek sade HTML'i üretir. VARSAYILAN AKIŞTA KULLANILMAZ (kullanıcı kararı,
+02.10.2026: yalnız docx ve brief üretilir; içerik alanına tablo ve liste eklenemiyor). Yalnız açıkça istenirse.
 
 Boyner'de kategori içeriği sayfa kaydının `Content` alanında HTML olarak durur (bkz. kategori.py).
 Mevcut içerikler Google Docs'tan yapıştırıldığı için `docs-internal-guid` kimlikleri, `dir="ltr"`,

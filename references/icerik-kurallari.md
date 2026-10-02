@@ -10,7 +10,7 @@
 6. SEO, GEO ve AI Overview için yazım
 7. Kelime sahipliği metne nasıl yansır
 8. İç link metnin içinden çıkar
-9. Madde listesi, tablo ve kalın vurgu
+9. Madde satırları, karşılaştırmalar ve kalın vurgu
 10. Bölüm bölüm ne yazılır
 11. SSS yanıtları
 12. Cümle kurgusu
@@ -22,8 +22,9 @@ Bu metin tüketiciye dönük kategori içeriğidir, rapor değil; İçerik Dili 
 
 **Hitap baştan sona "siz"dir.** Boyner'in kategori metinleri çoğunlukla ikinci çoğul konuşur
 ("tamamlayabilirsiniz", "tercih edebilirsiniz"); mevcut içeriklerden alınan tek şey budur. Sitede "sen" diliyle
-yazılmış sayfalar da vardır (bazı marka içerikleri, `/content/boyner-now`); onlar örnek alınmaz. "Sen" dili,
-birinci çoğul ("öneriyoruz", "tavsiye ederiz") ve "biz" kullanılmaz; marka kendinden "Boyner" diye söz eder.
+yazılmış sayfalar da vardır (bazı marka içerikleri, `/content/boyner-now`); onlar örnek alınmaz. "Sen" dili kullanılmaz. Marka
+kendinden "Boyner" diye söz eder; birinci çoğul yalnız liste ve bölüm girişlerinde Boyner'in sesi olarak
+geçebilir ("sizin için grupladık").
 
 Mevcut kategori içeriklerinin **yapısı ve üslubu örnek alınmaz** (kullanıcı kararı, 02.10.2026). O metinler
 başlık hiyerarşisi tutmuyor (H3 ile başlıyor), liste ve tablo kullanmıyor, SSS taşımıyor ve "eşsiz bir
@@ -44,6 +45,62 @@ bekliyor. Bu yüzden:
   kategori aramalarının ticari niyetini karşılar. Net fiyat ve fiyat aralığı verilmez. Niteleyici bir özelliğe
   bağlanır: "kaliteli" tek başına değil, "kaliteli dolgusu ve sağlam fermuarı olan".
 
+### Boyner anlatım kalıpları (kullanıcı revizeleri, 02.10.2026)
+
+Aşağıdaki tercihler kullanıcının sekiz örnek içerik üzerindeki düzeltmelerinden çıkarıldı; her içerikte uygulanır.
+
+**"Kategoride / kategorisinde" yazılmaz.** Okuyucu "kategori" diye düşünmez; site dili metne sızmış olur. Yerine
+ürün grubunun ya da Boyner'in adı geçer:
+
+| Yazma | Yaz |
+|---|---|
+| "Kategoride kapüşonlu modeller yer alıyor." | "Boyner kadın mont modelleri arasında kapüşonlu seçenekler yer almaktadır." |
+| "Boyner'de fondöten kategorisinde likit formüllerin yanında cushion, stick... formları bulunuyor." | "Boyner'de fondöten ürün grubunda likit fondöten formüllerinin yanında cushion, stick, serum, krem ve pudra fondöten formları ile skin tint fondöten modelleri de bulunuyor." |
+| "...erkek giyim kategorisinin geniş gruplarından birini oluşturuyor." | "...erkek giyimde en geniş seçenekli ürün gruplarından birini oluşturuyor." |
+| "...gömlekleriyle kategoride yer alıyor." | "...gömlekleriyle Boyner gömlek modelleri arasında yerini alıyor." |
+| "kategorideki ürünlerin büyük bölümü bu formdadır" | "Boyner fondötenlerindeki ürünlerin büyük bölümü bu formdadır" |
+
+Kullanılabilecek karşılıklar: "{ürün} ürün grubu", "Boyner {ürün}lerinde", "Boyner {ürün} modelleri arasında",
+"{ürün} modellerinde", "{üst grup}de" ("erkek giyimde").
+
+**Ürün adı tekrarlanır, zamirle ya da eksiltmeyle düşürülmez.** "Likit formüller, pudra formları, skin tint
+modelleri" yerine "likit fondöten formülleri, pudra fondöten formları, skin tint fondöten modelleri". Ürün adının
+niteleyiciyle birlikte geçmesi hem anlamı netleştirir hem uzun kuyruk kelimeyi ("pudra fondöten") karşılar.
+Sınır yoğunluktur: aynı cümlede ürün adı üç dört kezden fazla geçmez.
+
+**Kesinlik yumuşatılır.** Kural, tavsiye ve genelleme bildiren cümleler "genellikle", "çoğunlukla", "-abilir",
+"önerilir", "tercih edilebilir", "öncelik verilen özelliklerdendir" gibi kalıplarla yazılır; özellikle iddialı
+duracak kesin yargılarda. Tanım cümleleri ("Şişme mont, ... bir mont türüdür") düz bildirir.
+
+| Yazma | Yaz |
+|---|---|
+| "Kışlık kadın montlarında kalın dolgu, yüksek yaka... aranır." | "Kışlık kadın montlarında kalın dolgu, yüksek yaka, kapüşon ve manşetli kol ağzı öncelik verilen özelliklerdendir." |
+| "Peluş montlar düşük devirde yıkanır ve asılarak kurutulur." | "Peluş montlar genellikle düşük devirde yıkanır ve tüylerin yatmaması için asılarak kurutulması önerilir." |
+| "...ile günlük bir kombin oluşturur." | "...ile günlük bir kombin oluşturabilir." |
+| "talimat dolgu türüne ve kumaşa göre değişir." | "talimat dolgu türüne ve kumaşa göre değişiklik göstermektedir." |
+
+**Uzun cümle noktalı virgülle uzatılmaz, bölünür.** "Ürün çeşidi filtresi ... modelleri ayırır; renk filtresinde
+... seçenekler bulunuyor." yerine iki cümle: "Ürün çeşidi filtresi ... modelleri ayırır. Renk filtresinde ...
+seçenekler bulunmaktadır." Noktalı virgül yalnız kısa ve sıkı bağlı iki yargıda kalır.
+
+**Liste girişleri okuyucuya döner.** "Markaları kullanım amacına göre gruplamak seçimi hızlandırır:" yerine
+"Kadın mont modellerinde öne çıkan markaları sizin için kullanım amacına göre grupladık, bu sayede hızlı bir
+seçim yapabilirsiniz:". Bu tür giriş cümlelerinde Boyner'in sesi olarak birinci çoğul ("grupladık",
+"derledik") kullanılabilir; gövdenin geri kalanında hitap "siz"dir.
+
+**Madde etiketi aranan kelimeyi taşır.** Etiket yalnız özelliği değil ürün adını da içerir; cinsiyetli sayfada
+cinsiyeti de. Aynı ürünün cinsiyetsiz sayfası da olduğu için etiket bu sayfanın hedefini (cinsiyetli kelimeyi)
+taşımalıdır:
+
+| Yazma | Yaz |
+|---|---|
+| "Spor gömlek:" | "Erkek spor gömlek:" |
+| "Asetat (kemik) çerçeve:" | "Kemik (asetat) çerçeve güneş gözlüğü:" |
+| "Kalın taban:" | "Kalın tabanlı kadın sneaker:" |
+
+Etiket başka bir sayfanın kelimesiyle birebir aynıysa (o türün kendi sayfası varsa) etiketin hemen ardından
+gelen cümlede o sayfaya link verilir; etiket yine de yazılır.
+
 ## 2. Zaman kipi
 
 Tek kipe kilitlenen metin makine çıktısı gibi okunur; **uygun yerlerde farklı kipler kullanılır** (kullanıcı
@@ -54,6 +111,7 @@ kararı, 02.10.2026). Kip cümlenin işine göre değişir:
 | Tanım, her zaman geçerli bilgi | Geniş zaman | "Şişme mont, dolgulu kanallarıyla ısıyı gövdede tutar." |
 | Boyner'deki ürün gamı, katalog | Şimdiki zaman | "Kategoride kapüşonlu, uzun ve kısa modeller yer alıyor." |
 | Tasarım amacı | `-mıştır` | "Kayak montu pist için tasarlanmıştır." |
+| Boyner'deki durum, tespit | `-mektedir / -maktadır` | "Outdoor, spor ve şehir giyimi markaları bir arada yer almaktadır.", "Renk filtresinde mavi ve pembe seçenekler bulunmaktadır." |
 | Okuyucuya öneri | İkinci çoğul, olasılık | "Bel hizasında biten bir model tercih edebilirsiniz." |
 | Ölçüt | İsim cümlesi | "Belirleyici olan dolgu miktarıdır." |
 | Sıralı adım | İkinci çoğul emir | "Fermuarları kapatın." |
@@ -61,13 +119,14 @@ kararı, 02.10.2026). Kip cümlenin işine göre değişir:
 Ölçü dağılımdır: gövdede yüklemlerin %70'inden fazlası geniş zamandaysa metin ansiklopedi maddesine döner;
 `icerik_denetim.py` yüklem dağılımını raporlar. **Çeşitlilik bu eşleşmenin dışına çıkılarak sağlanmaz:**
 genel geçer bir bilgi ya da sınıflama şimdiki zamanla ("montlar ikiye ayrılıyor") yazılmaz, katalog bilgisi
-geniş zamanla donuklaşmaz. Resmi `-mektedir / -maktadır` tüketici metninde ayrışır, kullanılmaz. Geniş zaman
-ağır basıyorsa çözüm kipi zorlamak değil, metne katalog cümlesi (Boyner'de ne var), öneri cümlesi ve isim
-cümlesi eklemektir.
+geniş zamanla donuklaşmaz. `-mektedir / -maktadır` Boyner'deki durumu ve tespiti bildiren cümlelerde
+kullanılır (kullanıcı tercihi, 02.10.2026: "yer almaktadır", "bulunmaktadır", "değişiklik göstermektedir");
+bir paragrafta bir iki kez, art arda üç cümlede değil. Geniş zaman ağır basıyorsa metne katalog cümlesi
+(Boyner'de ne var), öneri cümlesi ve isim cümlesi eklenir.
 
 **Bir paragrafta edilgen ile "siz" arasında gidip gelinmez.** "Üç ölçüte bakılır... belirlediğinizde" yerine
 "üç ölçüte bakabilirsiniz... belirlediğinizde". Gereklilik kipi ("-malıdır") kategori metninde sert durur;
-yalnız gerçek gereklilikte (bakım, güvenlik) kullanılır.
+yerine "önerilir", "-abilir" kullanılır.
 
 **Kipler arası sert geçiş yumuşatılır:** edilgen bir giriş cümlesinden emir kipli adımlara geçilecekse giriş
 "şu adımları izleyebilirsiniz" diye okuyucuya döner.
@@ -169,20 +228,24 @@ içerikler"). Çocuk ve bebek ürünlerinde güvenlik bilgisi kaynağa dayanmada
 
 ## 5. Uzunluk
 
-Sınır yoktur; uzunluğu iki şey belirler:
+Hedef **ortalama 1.500-2.500 kelime gövde** (kullanıcı kararı, 02.10.2026); gerektiğinde üzerine çıkılabilir.
+SSS buna dahil değildir. Uzunluk tekrarla değil **kategori hakkında daha fazla bilgiyle** kurulur. 1.500'ün
+altında kalan taslakta şu soruların karşılığı aranır:
 
-1. **Rakip tabanı:** içerik taşıyan ilk 5 rakibin medyan kelime sayısı (`arastirma.py` çıktısı). Bunun altında
-   kalmak için bir gerekçe olmalı.
-2. **Kapsam:** HEDEF ve SERBEST kovasındaki kelime kümelerinin tamamı bir başlık, madde ya da SSS ile
-   karşılanana kadar yazılır.
+- Ürünün türleri arasında anlatılmamış bir fark var mı (yapı, malzeme, kullanım)?
+- Okuyucunun satın almadan önce sorduğu ama metinde yanıtı olmayan soru var mı (PAA, otomatik tamamlama,
+  SERBEST kümeler)?
+- Malzeme, bakım, ölçü/beden, kullanım ömrü, saklama, kombin ya da uygulama için somut bilgi eklenebilir mi?
+- Terimler açıklanmış mı (ekartman, kar eteği, alt ton, tel sayısı)?
+- Sık yapılan seçim hataları ve bunlardan nasıl kaçınılacağı anlatılabilir mi?
+- Hediye, mevsim, kullanım yeri gibi bir senaryo ekseni araştırmada çıkıyor mu?
 
-Pratikte uç kategori (ör. kadın peluş mont) 700-1.100, ana kategori (kadın mont) 1.200-2.000, üst kategori
-(kadın dış giyim) 1.800 ve üzeri kelimeye çıkar; SSS buna dahil değildir. Uzunluk hedef değil sonuçtur:
-**bilgi taşımayan paragraf uzunluk için eklenmez.** Her paragraf şu sorudan geçer: okuyucu bunu okuyunca
-bir şey öğrendi mi ya da bir karar verdi mi?
+Eklenen her bölüm yeni bilgi taşır; aynı bilgi ikinci kez farklı cümleyle yazılmaz (bkz. Tutarlılık kuralları,
+"tek yerde anlatım"). Gam çok darsa (ör. 30 ürünlü uç kategori) içerik 800-1.200 kelimede kalabilir; bu durum
+teslim notunda söylenir.
 
 Paragraf 3-4 cümleyi, 110 kelimeyi geçmez. Bir H2'nin altında 250 kelimeden fazla düz metin varsa H3'e ya da
-listeye bölünür.
+"•" maddelerine bölünür.
 
 ## 6. SEO, GEO ve AI Overview için yazım
 
@@ -198,8 +261,8 @@ derinleştirir, bilgi sorgularında alıntılanabilir yanıt üretir.
   ifadeler yerine özne açık yazılır; AI motorları bölümü bağlamından koparıp alır.
 - **Varlıklar adıyla geçer:** malzeme (kaz tüyü, polyester elyaf, softshell), kalıp (oversize, regular fit),
   marka, ürün tipi. "Çeşitli malzemeler" yazılmaz, malzemeler sayılır.
-- **Karşılaştırma tabloyla, sayılabilir şeyler listeyle** verilir (bkz. bölüm 9). Liste ve tablo hem
-  featured snippet hem AI Overview için en çok alınan biçimdir.
+- **Karşılaştırmalar ve sayılabilir şeyler "•" satırlarıyla** verilir (bkz. bölüm 9); tablo ve liste biçimi
+  kullanılmaz. Paralel kurulmuş kısa satırlar AI Overview ve featured snippet için alıntılanabilir birimdir.
 - **Tarihsel yıl ve yaygın standart serbesttir, kaynağıyla.** Marka kuruluş yılı, standart adı (IP68, EN ISO
   12312-1), yaygın ölçü (160x220 nevresim) kaynağı varsa yazılır; markaya göre değişen değer "çoğunlukla" ile
   verilir ya da yazılmaz. Yasak olan, güncel yıl ("2026 modası") ve kaynağı gösterilemeyen eşiktir.
@@ -245,34 +308,51 @@ Ayrıntı `ic-link-kurallari.md`'de. Yazarken akılda tutulacak üç şey:
 - Anchor, hedef sayfanın ana kelimesidir; bu sayfanın ana kelimesi asla başka sayfaya anchor olmaz.
 - Linkler bölümlere yayılır: tek paragrafta en fazla iki, tek H2'de en fazla dört.
 
-## 9. Madde listesi, tablo ve kalın vurgu
+## 9. Madde satırları, karşılaştırmalar ve kalın vurgu
 
-**Madde listesi:** türler, ölçütler, adımlar gibi sayılabilir ve paralel şeyler paragrafa gömülmez. Biçim
-`**Etiket:** tek ya da iki cümlelik tanım.` İlk cümle özneyi yeniden kurar ve bilgi ekler ("**Parka:** Parkalar
-kalçayı örten boyu ve kapüşonuyla rüzgârlı havalarda gövdeyi korur."); etiket silindiğinde cümle anlamlı kalır. Liste öncesinde onu tanıtan bir cümle bulunur.
-İki maddelik liste yapılmaz; sekizi geçen liste bölünür. Numaralı liste yalnız sıralı adımlar içindir
-(uygulama adımları, yıkama sırası).
+**Tablo kullanılmaz; liste biçimi kullanılmaz** (kullanıcı kararı, 02.10.2026). Boyner'in içerik alanına tablo
+ve madde listesi eklenemiyor. Bunun yerine:
 
-**Tablo:** iki ya da daha fazla şey birden çok ölçütte karşılaştırılıyorsa. En fazla dört sütun (mobilde
-okunmalı), 3-7 satır. Tipik tablolar: "kullanıma göre hangi tip", "malzeme karşılaştırması", "beden/ölçü".
-Tablo hücresinde link en fazla bir sütunda bulunur. Beden tablosu ancak marka-bağımsız ve doğrulanabilir
-ise verilir; markaya göre değişen ölçü tablosu uydurulmaz, "ürün sayfasındaki beden tablosu" işaret edilir.
+**"•  " ile başlayan satırlar.** Sayılabilir ve paralel şeyler (türler, ölçütler, markalar) her biri ayrı
+paragraf olarak, başında "•  " (madde imi + iki boşluk) ile yazılır. JSON'da tip yine `mad`; `icerik_docx.py`
+bunu liste biçimi olmadan, düz paragraf olarak "•  " önekiyle basar. Biçim:
 
-**Asgari yapı öğeleri.** Her kategori içeriğinde şunlar bulunur (değerlendirmede 90 üstünü ayıran öğeler):
+```
+•  **Erkek spor gömlek:** Erkek spor gömlekler daha dokulu kumaşlardan dikilir. Eteği kısa ve düz kesildiği
+için pantolonun dışında da giyilebilir.
+```
 
-- İhtiyaca göre tür tablosu **ve** okuyucunun en sık ikilemde kaldığı iki seçeneği karşılaştıran nitel bir
-  tablo (kaz tüyü / elyaf dolgu; mat / parlak bitiş; pamuk saten / ranforce). Hücreler sayı değil nitelik
-  taşır ("daha hafif", "ıslandığında azalır").
-- Seçim ölçütleri cümle içinde sayılmaz; **numaralı karar adımları** olarak verilir (her adım tek cümle).
-- Ürün sayfasında hangi bilginin nerede olduğu (materyal, beden tablosu, içerik listesi) bir cümleyle
-  söylenir; okuyucu etiketi ve ürün sayfasını okumayı öğrenir.
-- Filtre adları dışında **doğrulanmış bir mağaza bilgisi**, teyit edilebiliyorsa (bkz. bölüm 10, kapanış).
-  Zorunlu değildir: teyit edilemeyen hizmet cümlesi yazılmaz.
-- Karşılaştırma tablosunun konusu gamda olmalıdır (pamuk saten / ranforce tablosu, ranforce satılmıyorsa
-  yazılmaz). Tablo sütun adında sahipli bir kelimenin geçmesi ("Kablosuz") serbesttir; başlık ve SSS olamaz.
+- Etiket aranan kelimeyi taşır (ürün adı, cinsiyetli sayfada cinsiyet): bkz. "Boyner anlatım kalıpları".
+- İlk cümle özneyi yeniden kurar ve bilgi ekler; etiket silindiğinde cümle anlamlı kalır.
+- Madde 2-4 cümle olabilir; bilgi taşıyorsa uzun olması sorun değildir.
+- Satır dizisinden önce onu tanıtan, okuyucuya dönen bir cümle bulunur.
 
-**Kalın vurgu:** bölüm başına iki üç yerde, okuyucunun aradığı net bilgi için (malzeme adı, ölçüt, karar
-cümlesi). Tam cümle, bölümün ilk kelimeleri ve başlıkta geçen ifade kalın yazılmaz.
+**Sıralı adımlar** "1. ", "2. " önekiyle düz paragraf olarak yazılır (JSON tipi `li`; betik numarayı metin
+olarak basar).
+
+**Karşılaştırmalar tablosuz verilir.** İki yoldan biri seçilir:
+
+- *Seçenek başına bir "•" satırı:* her satır aynı ölçütleri aynı sırayla söyler.
+  "•  **Kaz tüyü dolgulu kadın mont:** Daha hafiftir, ıslandığında yalıtımı azalır, yıkaması özen ister ve
+  genellikle üst fiyat grubunda yer alır." / "•  **Elyaf dolgulu kadın mont:** Biraz daha ağırdır, ıslandığında
+  da ısıyı büyük ölçüde korur, kolay yıkanır ve genellikle daha ekonomiktir."
+- *İhtiyaç başına bir "•" satırı:* "•  **Soğuk ve kuru kış günleri için:** Şişme ya da kaz tüyü montlar tercih
+  edilebilir; dolgu miktarına, yüksek yakaya ve kapüşona bakılabilir."
+
+Paralel kurulan bu satırlar tablonun işini görür: taranır ve AI yanıtlarında bütün olarak alıntılanır.
+
+**Asgari yapı öğeleri.** Her içerikte şunlar bulunur:
+
+- İhtiyaca göre tür eşleştirmesi **ve** okuyucunun en sık ikilemde kaldığı iki seçeneğin karşılaştırması
+  (ikisi de "•" satırlarıyla).
+- Seçim ölçütleri numaralı karar adımları olarak ("1. ", "2. ").
+- Ürün sayfasında hangi bilginin nerede olduğu (materyal, beden bilgisi, içerik listesi) bir cümleyle.
+- Teyit edilebiliyorsa doğrulanmış bir mağaza bilgisi (bkz. bölüm 10, kapanış); zorunlu değildir.
+- Karşılaştırmanın konusu gamda olmalıdır; sahipli bir kelime etikette geçebilir ama başlık ve SSS olamaz.
+
+**Kalın vurgu:** madde etiketleri kalındır. Bunun dışında bölüm başına iki üç yerde, okuyucunun aradığı net
+bilgi için (malzeme adı, ölçüt, karar cümlesi). Tam cümle, bölümün ilk kelimeleri ve başlıkta geçen ifade kalın
+yazılmaz.
 
 ## 10. Bölüm bölüm ne yazılır
 
@@ -357,6 +437,7 @@ kampanya adı ve tarihi yazılmaz. Bir iki cümlelik çağrıyla biter.
 - Olumsuzla koşul kurulmaz: "çok dar olmayan" yerine "omuzdan bir parmak boşluk bırakan".
 - Mecaz yerine düz anlatım: "soğuğa meydan okuyan" değil "astarlı ve rüzgâr geçirmeyen".
 - "Hem ... hem de", "sadece ... değil aynı zamanda" kalıpları sayfada en fazla bir kez.
+- "Kategoride", "kategorisinde", "bu kategori" yazılmaz (bkz. Boyner anlatım kalıpları).
 - Üçlü sıfat dizisi ("şık, rahat ve fonksiyonel") yazılmaz; bir özellik seçilip açıklanır.
 
 ### Tutarlılık kuralları (değerlendirmelerde tekrar eden kusurlardan)
@@ -378,7 +459,7 @@ kusurlar bilgi eksikliği değil tutarsızlıktı; aşağıdakiler her içerikte
   sunulmaz ("başlıca ... tür").
 - **Dayanaksız üstünlük ve kesinlik yok.** "En sık", "en çok", "her zaman", "yıllarca" veriyle
   desteklenmiyorsa "çoğunlukla", "öne çıkan", "... biri", "birkaç sezon" biçimine çevrilir.
-- **Tablo ve gövde aynı sözlüğü kullanır.** Tabloda geçen her tür ve özellik gövdede tanımlıdır; aynı parça
+- **Karşılaştırma satırları ve gövde aynı sözlüğü kullanır.** Satırlarda geçen her tür ve özellik gövdede tanımlıdır; aynı parça
   için iki ad kullanılmaz ("kar eteği" / "etek bandı").
 - **Kendi başına okunur madde.** Kalın etiketli maddede ilk cümle özneyi yeniden kurar (yalnız ilk cümle;
   sonraki cümlelerde ve anchor'da aynı kelime üçüncü kez tekrarlanmaz, zamir ya da "bu modeller" yeter): "**Suni deri mont:**

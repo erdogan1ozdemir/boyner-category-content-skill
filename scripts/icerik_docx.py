@@ -17,8 +17,10 @@ icerik.json biçimi:
   "meta": "İç künye; belgeye BASILMAZ",
   "linkler": {"LINK1": ["anchor metni", "https://www.boyner.com.tr/..."]},
   "govde": [["p","Başlıksız giriş paragrafı, içinde [LINK1] geçebilir"],
-            ["H2","Başlık"], ["H3","Alt başlık"], ["mad","Madde imli madde"], ["li","Numaralı adım"],
-            ["p","Vurgu için **kalın metin**"], ["tablo", [["Sütun","Sütun"],["hücre","hücre"]]]],
+            ["H2","Başlık"], ["H3","Alt başlık"],
+            ["mad","**Etiket:** madde satırı (belgeye '•  ' önekli düz paragraf olarak basılır)"],
+            ["li","Sıralı adım (belgeye '1. ' önekli düz paragraf olarak basılır)"],
+            ["p","Vurgu için **kalın metin**"]],
   "sss": [["Soru?","Yanıt"]]
 }
 Sayfada H1 kategori adı olarak bulunduğu için belgeye H1 yazılmaz; gövde başlıksız girişle açılır.
@@ -107,28 +109,24 @@ def main():
         p.paragraph_format.space_before = Pt(14 if seviye == 2 else 11); p.paragraph_format.space_after = Pt(5)
         r = p.add_run(metin); r.bold = True; r.font.name = FN; r.font.size = Pt(13 if seviye == 2 else 11.5); renk(r, INK)
 
+    sayac = 0
     for tip, icerik in d["govde"]:
+        if tip != "li":
+            sayac = 0
         if tip in ("H2", "H3"):
             baslik(icerik, int(tip[1]))
         elif tip == "tablo":
-            t = doc.add_table(rows=0, cols=len(icerik[0])); t.style = "Table Grid"
-            for i, satir in enumerate(icerik):
-                hucreler = t.add_row().cells
-                for j, deger in enumerate(satir):
-                    hucreler[j].text = ""
-                    par = hucreler[j].paragraphs[0]
-                    par.alignment = WD_ALIGN_PARAGRAPH.LEFT
-                    if i == 0:
-                        rr = par.add_run(str(deger)); rr.font.name = FN; rr.font.size = Pt(9.5); rr.bold = True
-                        renk(rr, "FFFFFF")
-                        sh = OxmlElement("w:shd"); sh.set(qn("w:fill"), "434343"); sh.set(qn("w:val"), "clear")
-                        hucreler[j]._tc.get_or_add_tcPr().append(sh)
-                    else:
-                        metni_bas(par, str(deger), linkler, 9.5)
-            doc.add_paragraph()
+            raise SystemExit("İçerikte tablo var; Boyner içerik alanına tablo eklenemiyor. Bilgiyi '•' satırlarına çevirin.")
         elif tip in ("li", "mad"):
-            p = doc.add_paragraph(style="List Number" if tip == "li" else "List Bullet")
-            p.paragraph_format.space_after = Pt(3); metni_bas(p, icerik, linkler)
+            # Liste biçimi kullanılmaz (içerik alanına eklenemiyor): madde "•  " önekli, adım "1. " önekli düz paragraf.
+            if tip == "li":
+                sayac += 1
+                onek = f"{sayac}. "
+            else:
+                onek = "\u2022  "
+            p = doc.add_paragraph()
+            p.paragraph_format.space_after = Pt(5)
+            metni_bas(p, onek + icerik, linkler)
         else:
             p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(7); metni_bas(p, icerik, linkler)
 

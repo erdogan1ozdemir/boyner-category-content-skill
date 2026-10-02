@@ -24,7 +24,8 @@ from ortak import kumeler, url_coz, duz as duzle
 BICIM = [("—", "uzun tire"), ("–", "en tire"), (r"(?<=\S)  +(?=\S)", "çift boşluk"), ("®|™", "marka sembolü"),
          (r"[\U0001F300-\U0001FAFF☀-➿]", "emoji"), (r"\.\.(?!\.)", "çift nokta"), (r" ,| \.(?!\w)", "boşluk-noktalama"),
          (r"(?i)\b\d[\d.,]*\s*(TL|lira)\b|₺", "fiyat"), (r"(?i)%\s?\d+\s*(?:'?[ea]? varan )?indirim|\d+\s?%\s*indirim", "indirim oranı"),
-         (r"\b20[2-3]\d\b", "yıl (zamana bağlı ifade)"), 
+         (r"\b20[2-3]\d\b", "yıl (zamana bağlı ifade)"),
+         (r"(?i)\bkategori(?:de|sinde|deki|sindeki|nin|si)\b|\bbu kategori", "'kategori' kelimesi (ürün grubu / Boyner ... modelleri arasında)"), 
          (r"(?i)\b\w+(?:abilirsin|ebilirsin|malısın|melisin)\b|\bsenin\b|\bsana\b", "'sen' hitabı (Boyner dili 'siz')"),
          (r"(?i)\btrendyol|hepsiburada|\bn11\b|amazon|morhipo|\bzara\b|\blcw\b|lc waikiki|\bkoton\b|\bbeymen\b|\bflo\b(?! [a-z])",
           "rakip perakendeci adı")]
@@ -34,7 +35,8 @@ UYARI_DESEN = [
      r"yolculuğa|kapılarını aral|bir tık öte|sizi bekliyor", "kalıp pazarlama ifadesi (somut bilgiyle değiştirilebilir mi?)"),
     (r"(?i)sadece [^.]{3,60} değil,? aynı zamanda|hem de öyle|tabii ki|elbette ki|unutmayın ki|şüphesiz", "yapay geçiş kalıbı"),
     (r"(?i)tedavi ed|iyileştir|kesin çözüm|garanti(?! süre)|yüzde yüz|%\s?100 (?:etkili|sonuç)", "sağlık / kesinlik iddiası"),
-    (r"(?i)\b\w+(?:ıyoruz|iyoruz|uyoruz|üyoruz|acağız|eceğiz)\b|\btavsiye ederiz\b", "birinci çoğul (marka kendinden 'Boyner' diye söz eder)"),
+    (r"(?i)\b\w+(?:ıyoruz|iyoruz|uyoruz|üyoruz|acağız|eceğiz)\b|\btavsiye ederiz\b", "birinci çoğul (yalnız liste girişlerinde 'sizin için grupladık' gibi kalıplarda serbest)"),
+    (r"[^.!?]{140,};", "noktalı virgülle uzatılmış uzun cümle (iki cümleye bölünebilir)"),
     (r"(?i)tıklayın|buraya tıkla|göz atabilirsiniz|inceleyebilirsiniz", "link taşımak için kurulmuş cümle olabilir"),
 ]
 JENERIK_ANCHOR = {"buraya", "tiklayin", "burada", "bu sayfa", "link", "sayfa", "detaylar", "incele", "urunler", "tumu"}
@@ -67,6 +69,8 @@ def main():
         sorun.append("gövde başlıksız girişle açılmıyor (sayfada H1 var; ilk öğe paragraf olmalı)")
     if any(t == "H1" for t, _ in g):
         sorun.append("gövdede H1 var; sayfanın H1'i kategori adıdır")
+    if kelime < 1500:
+        uyari.append(f"gövde {kelime} kelime; hedef 1.500-2.500 (gam darsa gerekçesiyle kısa kalabilir, tekrarla uzatılmaz)")
     if len(h2) < 4:
         uyari.append(f"{len(h2)} H2 var; konu kapsamı için genellikle en az 4-5 bölüm gerekir")
     ilk_h = next((t for t, _ in g if t in ("H2", "H3")), None)
@@ -82,8 +86,13 @@ def main():
     giris = " ".join(duz(i) for t, i in g[:next((k for k, (t, _) in enumerate(g) if t in ("H2", "H3")), len(g))])
     if hk and not hk <= kumeler(giris):
         sorun.append(f"ana kelime ('{d['main_kw']}') başlıksız girişte geçmiyor")
-    if not any(t in ("mad", "li", "tablo") for t, _ in g):
-        uyari.append("gövdede liste ya da tablo yok; taranabilirlik ve AI alıntılanabilirliği için en az biri beklenir")
+    if any(t == "tablo" for t, _ in g):
+        sorun.append("içerikte tablo var; içerik alanına tablo eklenemiyor, bilgi '•' satırlarına çevrilir")
+    if not any(t in ("mad", "li") for t, _ in g):
+        uyari.append("gövdede '•' satırı ya da numaralı adım yok; taranabilirlik ve AI alıntılanabilirliği için beklenir")
+    for t, i in g:
+        if t in ("p", "mad", "li") and re.match(r"\s*(?:[•\-*]|\d+[.)])\s", i):
+            sorun.append(f"madde imi ya da numara metne elle yazılmış (betik ekler): {i[:50]}")
     for t, i in g:
         if t == "p" and len(duz(i).split()) > 110:
             uyari.append(f"paragraf {len(duz(i).split())} kelime (bölünebilir): {duz(i)[:70]}…")
@@ -260,8 +269,6 @@ def main():
         r"%\s?\d[\d.,]*|\bIP[X\d]\d?\b|(?<![\w%])\d[\d.,x]*\s?(?:derece|°C?|cm|mm|gr|kg|ml|saat|gün|yıl|kat|tel)?", govde_metin + " " + " ".join(duz(c) for _, c in sss))})
     if sayilar:
         uyari.append("metindeki rakamlar (her birinin kaynağı var mı?): " + ", ".join(sayilar[:25]))
-    if sum(1 for t, _ in g if t == "tablo") < 2:
-        uyari.append("gövdede ikiden az tablo var; ihtiyaca göre tür tablosu ile iki seçeneği karşılaştıran nitel tablo beklenir")
 
     # --- SSS
     if not sss:
@@ -285,12 +292,13 @@ def main():
     # kip dağılımı: cümlelerin yüklemine (son kelimesine) bakılır
     yuklem = [re.sub(r"\W+$", "", c).split()[-1].lower() for t, i in g if t in ("p", "mad", "li")
               for c in re.split(r"(?<=[.!?;:])\s+", duz(i)) if re.sub(r"\W+$", "", c).split()]
-    kip = {"-iyor": 0, "-ir/-ar": 0, "-ebilirsiniz": 0, "-malı": 0, "-mıştır": 0, "isim/-dır": 0, "emir": 0}
+    kip = {"-iyor": 0, "-ir/-ar": 0, "-ebilirsiniz": 0, "-malı": 0, "-mıştır": 0, "-mektedir": 0, "isim/-dır": 0, "emir": 0}
     for y in yuklem:
         if re.search(r"(?:ıyor|iyor|uyor|üyor)$", y): kip["-iyor"] += 1
         elif re.search(r"(?:abilirsiniz|ebilirsiniz)$", y): kip["-ebilirsiniz"] += 1
         elif re.search(r"(?:malıdır|melidir|malı|meli|gerekir)$", y): kip["-malı"] += 1
         elif re.search(r"(?:mıştır|miştir|muştur|müştür)$", y): kip["-mıştır"] += 1
+        elif re.search(r"(?:maktadır|mektedir)$", y): kip["-mektedir"] += 1
         elif re.search(r"(?:[ıiuü]n|[ae]y[ıi]n)$", y) and re.search(r"(?:yın|yin|ın|in|un|ün)$", y): kip["emir"] += 1
         elif re.search(r"(?:[dt][ıiuü]r)$", y): kip["isim/-dır"] += 1
         elif re.search(r"(?:[ıiuü]r|[ae]r|maz|mez|l[ıi]r|n[ıi]r)$", y): kip["-ir/-ar"] += 1

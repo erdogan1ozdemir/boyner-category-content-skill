@@ -151,16 +151,19 @@ sayfası `curl` ile okunarak doğrulanır. Özet:
   paragraf Boyner'deki gam. Ardından brief'teki iskeletle H2'ler; H3 yalnız H2 altında.
 - **Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlar**; bölüm kendi başına okunur. AI Overview ve
   diğer yapay zeka yanıtlarında alıntılanan birim budur.
-- **Uzunlukta sınır yok;** tabanı içerikli rakiplerin medyanı, tavanı kapsam belirler. Bilgi taşımayan
-  paragraf eklenmez.
+- **Uzunluk ortalama 1.500-2.500 kelime gövde** (üzeri de olabilir); tekrarla değil kategori hakkında daha
+  fazla bilgiyle kurulur.
 - **Başlıklar arama diliyle yazılır** ve ana kelimeyi ya da ürün adını taşır ("Kadın Montlarda Boy, Kalıp ve
   Beden Seçimi", "Mevsimlik Kadın Mont Modelleri"); biçim hacme göre seçilir.
-- **Kipler uygun yerlerde değişir** (tanım geniş zaman, katalog şimdiki zaman, tasarım `-mıştır`, öneri
-  `-ebilirsiniz`; `-mektedir` kullanılmaz); özne ile yüklem uyuşur, ana kelime cümle içinde çekimlenir ("kadın montu").
+- **Kipler uygun yerlerde değişir** (tanım geniş zaman, katalog şimdiki zaman ya da `-mektedir`, tasarım
+  `-mıştır`, öneri `-ebilirsiniz`); özne ile yüklem uyuşur, ana kelime cümle içinde çekimlenir ("kadın montu").
 - **Ticari kelimeler karşılanır:** "fiyatları" başlığı ve "uygun", "ekonomik", "kaliteli", "şık" gibi
   niteleyiciler kullanılır; net fiyat ve fiyat aralığı verilmez.
-- **Sayılabilir şeyler listeyle, karşılaştırmalar tabloyla** verilir; içerikte en az bir tablo ya da liste
-  bulunur.
+- **Tablo ve liste biçimi kullanılmaz** (içerik alanına eklenemiyor). Sayılabilir şeyler ve karşılaştırmalar
+  "•  " ile başlayan satırlarla, adımlar "1. " önekiyle düz paragraf olarak yazılır.
+- **"Kategoride" yazılmaz;** "{ürün} ürün grubu", "Boyner {ürün} modelleri arasında" denir. Ürün adı
+  niteleyiciyle birlikte tekrarlanır ("pudra fondöten"), madde etiketleri aranan kelimeyi ve cinsiyeti taşır
+  ("Erkek spor gömlek:"). Kesin yargılar "genellikle", "-abilir", "önerilir" ile yumuşatılır.
 - **BAŞKA SAYFA kelimesi başlık ya da SSS olmaz;** bir kez, tanım cümlesi içinde ve sahibine link veren
   anchor olarak geçer. SERBEST kelimeler H3, madde ya da SSS ile karşılanır.
 - **İç link metnin içinden çıkar:** anchor silindiğinde cümle anlamlı kalır; anchor hedef sayfanın ana
@@ -168,13 +171,13 @@ sayfası `curl` ile okunarak doğrulanır. Özet:
 - **İçerik mevcut ürün gamını anlatır:** yazılan her tür, marka, seri, kalıp ve malzeme canlı kayıtta vardır;
   gamda ağırlığı olan öne alınır. Taslak bitince kayıt bir kez daha okunur.
 - **Tutarlılık:** tek tanım, gövde-SSS uyumu, genel adım / özel istisna ayrımı, kendi başına okunur maddeler
-  (`icerik-kurallari.md`, Tutarlılık kuralları). En az iki tablo (ihtiyaca göre tür + iki seçenek
-  karşılaştırması) ve numaralı karar adımları bulunur.
+  (`icerik-kurallari.md`, Tutarlılık kuralları). İhtiyaca göre tür eşleştirmesi, iki seçenek karşılaştırması
+  ("•" satırlarıyla) ve numaralı karar adımları bulunur.
 - **SSS yanıtları 30-70 kelime,** ilk cümle doğrudan yanıt, gövdeyi tekrar etmez.
 
 İçerik şu JSON biçiminde yazılır (alanlar `scripts/icerik_docx.py` başında): `kategori`, `url`, `main_kw`,
-`linkler` (`{"LINK1": [anchor, url]}`), `govde` (`["p" | "H2" | "H3" | "mad" | "li" | "tablo", içerik]`
-listesi; köprüler `[LINK1]`, vurgu `**kalın**`), `sss` (`[soru, yanıt]`).
+`linkler` (`{"LINK1": [anchor, url]}`), `govde` (`["p" | "H2" | "H3" | "mad" | "li", içerik]`
+listesi; `mad` "•  " önekli, `li` "1. " önekli düz paragraf olarak basılır, `tablo` kullanılmaz; köprüler `[LINK1]`, vurgu `**kalın**`), `sss` (`[soru, yanıt]`).
 
 ### Faz 6 - Denetle, üret, teslim et
 
