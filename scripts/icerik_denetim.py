@@ -33,7 +33,7 @@ UYARI_DESEN = [
     (r"(?i)vazgeçilmez|olmazsa olmaz|\badeta\b|göz kamaştır|büyüleyici|eşsiz|kusursuz|benzersiz|mükemmel|harika|"
      r"yolculuğa|kapılarını aral|bir tık öte|sizi bekliyor", "kalıp pazarlama ifadesi (somut bilgiyle değiştirilebilir mi?)"),
     (r"(?i)sadece [^.]{3,60} değil,? aynı zamanda|hem de öyle|tabii ki|elbette ki|unutmayın ki|şüphesiz", "yapay geçiş kalıbı"),
-    (r"(?i)tedavi ed|iyileştir|kesin çözüm|garanti|yüzde yüz|%\s?100 (?:etkili|sonuç)", "sağlık / kesinlik iddiası"),
+    (r"(?i)tedavi ed|iyileştir|kesin çözüm|garanti(?! süre)|yüzde yüz|%\s?100 (?:etkili|sonuç)", "sağlık / kesinlik iddiası"),
     (r"(?i)\b\w+(?:ıyoruz|iyoruz|uyoruz|üyoruz|acağız|eceğiz)\b|\btavsiye ederiz\b", "birinci çoğul (marka kendinden 'Boyner' diye söz eder)"),
     (r"(?i)tıklayın|buraya tıkla|göz atabilirsiniz|inceleyebilirsiniz", "link taşımak için kurulmuş cümle olabilir"),
 ]
@@ -46,6 +46,7 @@ def main():
     ap.add_argument("--sahiplik")
     ap.add_argument("--arastirma")
     ap.add_argument("--canli", action="store_true")
+    ap.add_argument("--kayit", help="kategori.py çıktısı; sayfada satılan markalar rakip adı taramasından muaf tutulur")
     a = ap.parse_args()
 
     d = json.load(open(a.json, encoding="utf-8"))
@@ -59,7 +60,8 @@ def main():
     sorun, uyari = [], []
 
     # --- yapı
-    kelime = len(govde_metin.split())
+    tablo_metin = " ".join(str(h) for t, i in g if t == "tablo" for s_ in i for h in s_)
+    kelime = len(govde_metin.split())           # tablolar hariç; icerik_docx.py ile aynı sayım
     h2 = [v for t, v in g if t == "H2"]; h3 = [v for t, v in g if t == "H3"]
     if not g or g[0][0] != "p":
         sorun.append("gövde başlıksız girişle açılmıyor (sayfada H1 var; ilk öğe paragraf olmalı)")
@@ -176,6 +178,8 @@ def main():
                 sorun.append(f"{k}: hedef {c.get('durum')} / yönlendirme {c.get('yonlendirme')}")
             if not c.get("canonical_kendisi"):
                 sorun.append(f"{k}: hedefin canonical'ı başka sayfa ({c.get('canonical')}); link canonical adrese verilir")
+            if c.get("index") is False:
+                sorun.append(f"{k}: hedef noindex ({url}); noindex sayfaya link verilmez")
             if not (c.get("urun_sayisi") or 0):
                 sorun.append(f"{k}: hedefte ürün yok ({url})")
             elif c["urun_sayisi"] < 8:
@@ -185,13 +189,17 @@ def main():
     if a.sahiplik:
         s = json.load(open(a.sahiplik, encoding="utf-8"))
         baska = [(x, kumeler(x["kelime"])) for x in s["satirlar"] if x["kova"] == "BAŞKA SAYFA"]
-        baska = [(x, k) for x, k in baska if k - hk]
+        baska = [(x, k) for x, k in baska if k - hk and all(len(t) > 2 for t in k - hk)]
+        cins = kumeler("kadin erkek cocuk bebek kiz")
         link_url = {url_coz(u)["url"] for _, u in linkler.values() if url_coz(u)}
         for b in h2 + h3:
             bk = kumeler(b)
             for x, k in baska:
                 if k <= bk:
-                    sorun.append(f"başlık başka sayfanın kelimesini hedefliyor: '{b}' -> '{x['kelime']}' ({x['sahip']})")
+                    msg = f"başlık başka sayfanın kelimesini hedefliyor: '{b}' -> '{x['kelime']}' ({x['sahip']})"
+                    zayif = any(z in (x["sahip"] or "") for z in ("/mag/", "/content/", "/search?q=")) or \
+                        (hk & cins and not k & cins)      # cinsiyetli hedefte cinsiyetsiz sahip: çatı sayfa
+                    (uyari if zayif else sorun).append(msg + (" [zayıf sahip: okuyarak karar ver]" if zayif else ""))
                     break
         for q, _ in sss:
             qk = kumeler(q)
@@ -204,8 +212,8 @@ def main():
         for x, k in baska[:60]:
             ifade = duzle(x["kelime"])
             n_ = len(re.findall(r"\b" + re.escape(ifade), gd))
-            if n_ >= 3:
-                uyari.append(f"'{x['kelime']}' gövdede {n_} kez geçiyor; sahibi {x['sahip']}")
+            if n_ >= 2:
+                uyari.append(f"'{x['kelime']}' gövdede {n_} kez geçiyor (sahipli kelime en fazla bir kez, anchor olarak); sahibi {x['sahip']}")
         serbest = [x for x in s["satirlar"] if x["kova"] == "SERBEST"][:25]
         td = duzle(tum)
         eksik = [x for x in serbest if not (kumeler(x["kelime"]) - hk) <= kumeler(td)]
@@ -216,15 +224,21 @@ def main():
     # --- uzunluk: rakip medyanı
     if a.arastirma:
         r = json.load(open(a.arastirma, encoding="utf-8"))
-        rk = [x.get("kelime") for x in r.get("rakip_icerik") or [] if (x.get("kelime") or 0) >= 150]
+        rk = [x.get("kelime") for x in r.get("rakip_icerik") or [] if (x.get("kelime") or 0) >= 300]
         if rk:
             med = statistics.median(rk)
-            if kelime < med:
+            if kelime + len(duz(tablo_metin).split()) < med:
                 uyari.append(f"gövde {kelime} kelime; içerikli rakiplerin medyanı {med:.0f} ({', '.join(map(str, rk))})")
 
     # --- biçim ve dil
+    canli_marka = ""
+    if a.kayit:
+        kk = json.load(open(a.kayit, encoding="utf-8"))
+        canli_marka = duzle(" ".join(ad for ad, _ in kk.get("markalar") or []))
     for pat, ad in BICIM:
         for m in re.finditer(pat, tum):
+            if ad == "rakip perakendeci adı" and duzle(m.group(0)).strip() in canli_marka:
+                continue            # sayfada satılan marka (ör. Beymen Business), rakip değil
             sorun.append(f"{ad}: …{tum[max(0, m.start() - 40):m.end() + 40]}…")
     for pat, ad in UYARI_DESEN:
         bul = [tum[max(0, m.start() - 30):m.end() + 25] for m in re.finditer(pat, tum)]
@@ -243,7 +257,7 @@ def main():
             if et and not (et & bas):
                 uyari.append(f"madde ilk cümlesi özneyi kurmuyor (etiket silinince anlamsız kalabilir): {duz(i)[:90]}")
     sayilar = sorted({m.group(0).strip() for m in re.finditer(
-        r"(?<![\w%])\d[\d.,]*\s?(?:derece|°C?|cm|mm|gr|kg|ml|saat|gün|yıl|kat)?", govde_metin + " " + " ".join(duz(c) for _, c in sss))})
+        r"%\s?\d[\d.,]*|\bIP[X\d]\d?\b|(?<![\w%])\d[\d.,x]*\s?(?:derece|°C?|cm|mm|gr|kg|ml|saat|gün|yıl|kat|tel)?", govde_metin + " " + " ".join(duz(c) for _, c in sss))})
     if sayilar:
         uyari.append("metindeki rakamlar (her birinin kaynağı var mı?): " + ", ".join(sayilar[:25]))
     if sum(1 for t, _ in g if t == "tablo") < 2:
@@ -286,7 +300,10 @@ def main():
         uyari.append(f"gövde geniş zamana kilitlenmiş (%{kip['-ir/-ar'] / top * 100:.0f}); ürün gamı ve anlatı cümleleri "
                      "şimdiki zamanla, öneriler '-ebilirsiniz' ile çeşitlendirilebilir")
     eksiz = len(re.findall(r"(?:^|[.!?:]\s+)(?:[A-ZÇĞİÖŞÜ]\w+ )?" + re.escape(d["main_kw"]) + r"[, ]", govde_metin, re.I))
-    if eksiz >= 4:
+    # yalnız çok kelimeli ve iyelik eki almamış kategori adlarında anlamlı ("kadın mont" -> "kadın montu");
+    # "nevresim takımı", "güneş gözlüğü", tek kelimelik adlar ve marka adları zaten doğal biçimdedir
+    son = duzle(d["main_kw"]).split()[-1]
+    if eksiz >= 4 and len(d["main_kw"].split()) >= 2 and son[-1] not in "iu" and not hedef.get("b"):
         uyari.append(f"ana kelime {eksiz} cümlede yalın (eksiz) biçimde özne konumunda; cümle içinde çekimli biçim "
                      "doğal olur ('kadın montu', 'kadın montları')")
     print(f"{d['kategori']}: gövde {kelime} kelime · {len(h2)} H2 · {len(h3)} H3 · {len(linkler)} link · {len(sss)} SSS "

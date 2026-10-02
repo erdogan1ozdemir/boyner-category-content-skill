@@ -13,6 +13,19 @@ hedef bir marka sayfasıysa okunur.
 - SERP'te markanın kendi sitesi, pazar yerleri ve Wikipedia bulunur; rakip içerik olarak **diğer
   perakendecilerin marka sayfaları** okunur, markanın kendi sitesi başlık kaynağı değil bilgi kaynağıdır.
 
+## Hedef teyidi
+
+Marka sayfasında envanter hep tek aday verir; çakışmayı yalnız GSC gösterir. Her marka için bakılır:
+
+- **`/content/{marka}` sayfası var mı** ve marka sorgusunda hangisi gösterim alıyor? (Calvin Klein'da marka
+  sorgusunun gösterimini `/content/calvin-klein` alıyordu.) Varsa içerik yazılır ama çakışma teslim notunun ilk
+  maddesidir; hangi sayfanın asıl marka sayfası olacağı kullanıcı kararıdır.
+- **Alt marka sayfaları** (Calvin Klein Jeans, Tommy Jeans): o çizginin kelimeleri alt marka sayfasınındır;
+  ana marka içeriğinde bir kez, link olarak geçer.
+- Rakip olarak **diğer perakendecilerin marka sayfaları** okunur. `arastirma.py` ilk 5'e markanın kendi sitesini,
+  Wikipedia'yı ve sosyal medyayı da alır; bunlar başlık kaynağı sayılmaz, gerekirse perakendeci sayfaları elle
+  açılır.
+
 ## Kelime sahipliği
 
 Marka sayfasının çevresi kalabalıktır: marka + cinsiyet (`/skechers-kadin-x-b545-g3731`), marka + kategori
@@ -51,6 +64,15 @@ sayfası olmayan ürün ailesi (SERBEST) gövdede bir paragraf alabilir.
   sitesinden ya da kurumsal sayfasından doğrulanır; doğrulanamayan tarih ve iddia ("dünyanın en çok satan")
   yazılmaz. Teknoloji adları markanın yazımıyla geçer (Memory Foam, Arch Fit).
 - **Karşılaştırma yapılmaz:** başka markalarla kıyas, üstünlük iddiası ve rakip marka adı yazılmaz.
+- **Ürün gamı:** `kategori.py {marka URL} --gam` alt kategorilerin ürün sayısını ve örnek ürünlerini verir;
+  içerikte ürün aileleri bu ağırlığa göre sıralanır.
+- **"{Marka} modelleri / ürünleri / türkiye"** hacmi görünmese de HEDEF sayılır.
+- **Marka adı cümlede yalın kalır** ("Calvin Klein, ... markasıdır"); kuruluş yılı gibi tarihsel yıllar
+  kaynağıyla yazılır.
+- **Karşılaştırma tablosu** marka sayfasında ürün ailelerini (kullanım, öne çıkan özellik) ya da markanın
+  serilerini karşılaştırır; alt marka ile ana markayı karşılaştıran tablo sahipli kelimeye bölüm açmak olur,
+  kullanılmaz.
+- **Link istisnası:** "Modelleri / Ürünleri" bölümünde 5-6 link bulunabilir (genel kural tek H2'de 4).
 - **Linkler (5-8):** marka + cinsiyet sayfaları (2-3), marka + kategori ya da marka + cinsiyet + kategori
   sayfaları (2-4; Google'da sıralananlar öncelikli), 0-1 genel kategori sayfası (markanın ana ürün ailesi).
   Anchor her zaman marka adını taşır ("Skechers kadın ayakkabı"); çıplak "kadın ayakkabı" anchor'ı genel

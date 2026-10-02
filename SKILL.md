@@ -57,8 +57,11 @@ Kullanıcı URL verdiyse onu, kategori adı verdiyse adayları bul:
 
 ```bash
 python3 scripts/envanter.py sahip "kadın mont"
-python3 scripts/kategori.py {URL} --cikti $T/kayit.json
+python3 scripts/kategori.py {URL} --gam --cikti $T/kayit.json     # --gam: kırılımların ürün sayısı ve örnek ürünleri
 ```
+
+Aday bulunamazsa ya da adaylar eski görünüyorsa önce Google'da ve GSC'de ana kelimede sıralanan Boyner
+adresine bakılır: sitemap ana ağaçtaki bazı sayfaları ve cinsiyetsiz marka + kategori sayfalarını taşımaz.
 
 Boyner'de aynı ada sahip birden çok kategori kimliği bulunur; yanlış kimliğe yazılan içerik boşa gider.
 Hedef dört sinyalle teyit edilir (aday listesi, ürün sayısı ve breadcrumb, Google'da sıralanan URL, GSC);
@@ -138,7 +141,9 @@ sekme başına hazır ve bekleyen sayısını verir. Satır URL'ye göre bulunup
 
 ### Faz 5 - İçeriği yaz
 
-`references/icerik-kurallari.md` yazmadan önce okunur. Özet:
+`references/icerik-kurallari.md` yazmadan önce okunur (araştırma uzun sürdüyse yeniden; kurallar güncellenmiş
+olabilir). Web araması kullanılamıyorsa ürün bilgisi `arastirma.py` içindeki `serp()` ile ya da üretici
+sayfası `curl` ile okunarak doğrulanır. Özet:
 
 - **Hitap baştan sona "siz".** Ses bilgili bir mağaza danışmanınınki: sıfat yerine özellik, süs yerine karar
   verdiren bilgi.
@@ -174,7 +179,7 @@ listesi; köprüler `[LINK1]`, vurgu `**kalın**`), `sss` (`[soru, yanıt]`).
 ### Faz 6 - Denetle, üret, teslim et
 
 ```bash
-python3 scripts/icerik_denetim.py --json $T/icerik.json --sahiplik $T/sahiplik.json --arastirma $T/arastirma.json --canli
+python3 scripts/icerik_denetim.py --json $T/icerik.json --sahiplik $T/sahiplik.json --arastirma $T/arastirma.json --kayit $T/kayit.json --canli
 python3 scripts/icerik_docx.py --json $T/icerik.json --klasor "Kategori İçerik"      # -> "kadin-mont: https://...docx"
 ```
 
@@ -186,7 +191,8 @@ bilgi doğruluğu ve iç çelişki ancak okuyarak yakalanır. `seo-content` ajan
 ile satır içi) içerik JSON'u verilir ve şunlar istenir: dil ve anlam (özne-yüklem, kayan özne, mantık), kip
 kullanımı, başlıkların arama diline uygunluğu, bilgi doğruluğu, iç çelişki, SEO/GEO ve 100 üzerinden puan.
 Ajana bilinçli kısıtlar (rakam yok, sahipli kelimelere başlık yok, link sayısı) söylenir ki bunları eksik
-saymasın. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
+saymasın. Değerlendirici "şart düzeltme" listesi verdiyse düzeltmelerden sonra **ikinci bir puanlama turu**
+yapılır; teslim notunda hangi sürümün puanlandığı açıkça yazılır. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
 kelimeye başlık) alınmaz. Düzeltmelerden sonra denetim betiği yeniden çalıştırılır ve Word dosyası üretilir.
 
 Çıktılar çalışma klasörüne kaydedilir ve kullanıcıya gönderilir. Teslim notunda üç şey söylenir: hangi bilgi
@@ -200,8 +206,8 @@ bilgiler) · hangi konuda karar bekleniyor.
 - **Bir kelime, bir sahip.** Sahibi başka sayfa olan kelime için başlık, SSS ya da ayrı paragraf açılmaz.
 - **Bu sayfanın ana kelimesi başka sayfaya anchor olmaz;** sayfa kendine link vermez; aynı hedefe iki kez
   link verilmez.
-- **Link sayısı 5-8;** her hedef canlı, canonical ve ürünlü olmalıdır. Arama (`/search?q=`), kampanya ve
-  outlet sayfalarına link verilmez.
+- **Link sayısı 5-8;** her hedef canlı, index'e açık, canonical ve ürünlü olmalıdır. Arama (`/search?q=`),
+  blog (`/mag/`), içerik (`/content/`), kampanya ve outlet sayfalarına link verilmez.
 - **Hitap "siz";** "sen", birinci çoğul ve "bayan" kullanılmaz.
 - **Net fiyat, fiyat aralığı, indirim oranı, kampanya adı, yıl ve "bu sezon" yazılmaz** ("uygun", "ekonomik"
   gibi niteleyiciler ve rakamsız "Fiyatları" başlığı serbesttir). Sayfa bir yıl sonra da düzeltme
@@ -241,5 +247,6 @@ arasında olan sayfalar ilk adaylardır.
 | `references/kontrol-listesi.md` | Faz 6'da, teslimden önce. |
 | `examples/` | Örnek brief satırı ve içerik JSON'u; biçim referansı. |
 
-Betikler DataForSEO kimliğini `~/.claude.json` içindeki `dfs-mcp` yapılandırmasından okur. Gereken Python
+boyner.com.tr yaklaşık 45 ardışık istekten sonra Cloudflare doğrulaması döndürebilir; istekler arasında 1-2
+saniye beklenir, doğrulama gelirse birkaç dakika ara verilir. Betikler DataForSEO kimliğini `~/.claude.json` içindeki `dfs-mcp` yapılandırmasından okur. Gereken Python
 paketleri: `openpyxl`, `python-docx`. İstekler `curl` ile atılır.

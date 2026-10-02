@@ -23,7 +23,8 @@ Kullanım:
 """
 import argparse, json, os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from ortak import kumeler, url_coz, duz, CINSIYET
+from ortak import kumeler, url_coz, duz, CINSIYET, KAPSAM_DISI_KALIP, RENKLER
+import re
 import envanter
 
 # Boyner'de satılmayan perakendeci ve özel markalar: kelime bunlardan birini taşıyorsa ve envanterde
@@ -38,12 +39,15 @@ RAKIP = ["zara", "lcw", "lc waikiki", "waikiki", "koton", "mango", "h&m", "hm", 
 MARKA_EK = frozenset({"the", "jeans", "jean", "assn", "by", "of", "club", "sport", "kids", "home"})
 
 
-def siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, canli):
+def siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, canli, marka_dizin):
     k = kumeler(kw["kelime"])
     hk = hedef["kume"]
     if not k:
         return None
-    h_url = harita.get(kw["kelime"])
+    h_url = harita.get(k)                      # harita kök kümesiyle eşlenir: "erkek keten gömlek" = "keten erkek gömlek"
+    if re.search(KAPSAM_DISI_KALIP, duz(kw["kelime"])):
+        return {"kelime": kw["kelime"], "hacim": kw.get("hacim"), "kova": "KAPSAM DIŞI", "sahip": None,
+                "not": "kampanya / gezinme / konu dışı kalıp", "adaylar": []}
     sahipler = [s for s in envanter.sahip(kw["kelime"], sayfalar)]
     if k in canli and k != hk:
         # sayfanın kendi filtresinde listelenen alt kategori ya da marka kırılımı: en güvenilir sahip.
@@ -61,7 +65,7 @@ def siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, 
         and (url_coz(u) or {}).get("g") in (hedef["g"], None) and not (url_coz(u) or {}).get("q")
     baska_cins = (k & cins_kok) - hk
     if k == hk or (h_url and h_url["url"].split("?")[0] == hedef["url"] and not sahipler):
-        kova, sahip, not_ = "HEDEF", hedef["url"], ("sıralanıyor: %s." % h_url["sira"] if h_url else "")
+        kova, sahip, not_ = "HEDEF", hedef["url"], ("Google'da sıralanan: %s. sıra · %s" % (h_url["sira"], h_url["url"].replace("https://www.boyner.com.tr", "")) if h_url else "")
         if k != hk:
             kova, not_ = "SERBEST", f"Boyner'de bu sayfa sıralanıyor ({h_url['sira']}.), kendi sayfası yok"
     elif hedef["url"] in s_url:
@@ -78,6 +82,12 @@ def siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, 
         kova, sahip, not_ = "BAŞKA SAYFA", h_url["url"], f"Google'da bu sayfa sıralanıyor ({h_url['sira']}.)"
     else:
         ek = duz(kw["kelime"])
+        # Kelime, Boyner'de sayfası olan bir markanın adını taşıyorsa sahibi marka tarafıdır (marka + kategori
+        # kırılımı canlı kayıttan teyit edilir). Renk adıyla çakışan marka adları (mavi) bu kuralın dışındadır.
+        marka = next((m for m in marka_dizin if m <= k and not m <= hk and not m <= RENKLER), None)
+        if marka and not hedef.get("b"):
+            return {"kelime": kw["kelime"], "hacim": kw.get("hacim"), "kova": "BAŞKA SAYFA", "sahip": marka_dizin[marka],
+                    "not": "marka kelimesi: marka + kategori kırılımı varsa o, yoksa marka sayfası", "adaylar": []}
         rakip = next((r for r in RAKIP if f" {r} " in f" {ek} "), None)
         if rakip and kumeler(rakip) not in marka_kumeleri:
             kova, sahip, not_ = "KAPSAM DIŞI", None, f"Boyner'de satılmayan marka/perakendeci: {rakip}"
@@ -136,9 +146,10 @@ def main():
     hedef["kume"] = kumeler(hedef["slug"])
     harita = {}
     for x in (d.get("boyner_haritasi") or {}).get("liste") or []:
-        harita.setdefault(x["kelime"], {"url": x["url"].split("?srsltid")[0], "sira": x["sira"]})
+        harita.setdefault(kumeler(x["kelime"]), {"url": x["url"].split("?srsltid")[0], "sira": x["sira"]})
     marka_kumeleri = {s["kume"] for s in sayfalar if s["tip"] == "marka"}
     markali = [s for s in sayfalar if s["b"] and s["c"]]
+    marka_dizin = {s["kume"]: s["url"] for s in sayfalar if s["tip"] == "marka" and s["kume"]}
     cins_kok = frozenset(k for g in CINSIYET.values() for k in kumeler(g)) | kumeler("bebek çocuk kız")
 
     canli = {}
@@ -150,15 +161,18 @@ def main():
             if p and not p["q"]:
                 canli.setdefault(kumeler(p["slug"]), p["url"])
     kelimeler = [k for k in d["kelimeler"]["liste"] if (k.get("hacim") or 0) >= a.min_hacim]
-    gorulen, satirlar = set(), []
+    gorulen, satirlar, varyant = set(), [], {}
     for kw in kelimeler:
         k = kumeler(kw["kelime"])
+        varyant.setdefault(k, []).append(f"{kw['kelime']} ({kw.get('hacim')})")
         if k in gorulen:          # "kadın mont" / "mont kadın" / "kadın mont modelleri" aynı niyet: en hacimlisi kalır
             continue
         gorulen.add(k)
-        r = siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, canli)
+        r = siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, canli, marka_dizin)
         if r:
             satirlar.append(r)
+    for s_ in satirlar:           # aynı kök kümesinin diğer yazımları (brief'in ikincil sütunu için)
+        s_["varyantlar"] = varyant.get(kumeler(s_["kelime"]), [])[1:6]
     if a.teyit:
         satirlar = teyit_et(satirlar, hedef["c"])
 
@@ -167,7 +181,8 @@ def main():
         print(f"\n== {kova} ({len(grup)}) ==")
         for s in grup[:45]:
             sahip = (s["sahip"] or "").replace("https://www.boyner.com.tr", "")
-            print(f"  {s['hacim'] or 0:>6}  {s['kelime']:<38} {sahip[:70]:<70} {s['not']}")
+            print(f"  {s['hacim'] or 0:>6}  {s['kelime']:<38} {sahip[:70]:<70} {s['not']}"
+                  + (("  · varyant: " + ", ".join(s["varyantlar"])) if kova == "HEDEF" and s.get("varyantlar") else ""))
         if len(grup) > 45:
             print(f"  ... +{len(grup) - 45} kelime (tam liste JSON çıktısında)")
     # aynı kelimede iki Boyner sayfası sıralanıyorsa site düzeyinde çakışma vardır; içerikle çözülmez, bildirilir

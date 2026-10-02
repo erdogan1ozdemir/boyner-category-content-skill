@@ -62,6 +62,8 @@ def serp(kw, auth, cihaz="mobile"):
                [{"keyword": kw, "location_code": 2792, "language_code": "tr", "device": cihaz, "depth": 30,
                  "people_also_ask_click_depth": 2, "load_async_ai_overview": True}], auth)
     items = sonuc(res).get("items") or []
+    if not items:
+        print(f"UYARI: '{kw}' için SERP boş döndü", file=sys.stderr)
     organik = [{"sira": i.get("rank_group"), "domain": i.get("domain"),
                 "url": re.sub(r"[?&]srsltid=[^&]*", "", i.get("url") or ""),
                 "baslik": i.get("title"), "aciklama": i.get("description")} for i in items if i["type"] == "organic"]
@@ -221,6 +223,9 @@ def main():
     print("   soru ve uzun kuyruk önerileri (otomatik tamamlama + bilgi niyetli SERP)...", flush=True)
     veri["oneriler"] = otomatik_tamamlama([a.kelime] + a.ek)
     veri["serp_bilgi"] = serp(a.kelime + " nasıl seçilir", auth, "desktop")
+    if not veri["serp_bilgi"]["organik"]:          # DataForSEO ara sıra boş döner; bir kez yeniden denenir
+        time.sleep(5)
+        veri["serp_bilgi"] = serp(a.kelime + " nasıl seçilir", auth, "desktop")
     print("3/4 rakip sayfa içerikleri...", flush=True)
     rakipler = [o["url"] for o in veri["serp"]["organik"] if "boyner.com.tr" not in (o["domain"] or "")][:a.rakip]
     veri["rakip_icerik"] = [sayfa_icerigi(u, auth) for u in rakipler]

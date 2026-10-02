@@ -20,7 +20,8 @@ import argparse, html, json, os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ortak import getir, url_coz, SITE, CINSIYET
 
-ATLA = {"categories", "marka", "satici", "priceFilter", "urunPuani", "trueFalseFilter", "cinsiyet", "beden"}
+ATLA = {"categories", "marka", "satici", "priceFilter", "urunPuani", "trueFalseFilter", "cinsiyet"}
+KIRLI = {"", "-", "belirtilmemis", "belirtilmemiş", "diger", "diğer"}
 
 
 def metne(h):
@@ -79,28 +80,55 @@ def oku(url):
                     k["markalar"] = [(ad, SITE + l) for ad, l in deger if l]
                 elif f["Name"] == "cinsiyet":
                     k["cinsiyetler"] = [ad for ad, _ in deger]
+                elif f["Name"] == "priceFilter":
+                    k["fiyat_filtresi"] = True          # içerikte "fiyat aralığı filtresi" yalnız bu True ise anılır
+                elif f["Name"] == "trueFalseFilter":
+                    k["secenek_filtreleri"] = [ad for ad, _ in deger]      # Kargo Bedava, Yarın Kargoda...
                 elif f["Name"] not in ATLA:
-                    k["filtreler"][f.get("DisplayName")] = [ad for ad, _ in deger][:40]
-            k["one_cikan_markalar"] = [a.get("DisplayName") for a in d.get("FastFilterAttributes") or []]
+                    k["filtreler"][f.get("DisplayName")] = [ad for ad, _ in deger
+                                                             if (ad or "").strip().lower() not in KIRLI][:40]
+            k["hizli_filtreler"] = [a.get("DisplayName") for a in d.get("FastFilterAttributes") or []]
+            k["siralama"] = [o.get("DisplayName") or o.get("Name") for o in d.get("OrderOptions") or [] if isinstance(o, dict)]
     for anahtar, v in (st.get("dsSharedService", {}).get("queries") or {}).items():
         if anahtar.startswith("getCloudLinking") and v.get("data"):
             k["link_bulutu"] = [(c["Title"], SITE + c["Link"]) for grup in v["data"] for c in grup.get("CloudLinking") or []]
     return k
 
 
+def gam(k, n=12):
+    """Ürün gamı özeti: en çok ürünü olan kırılımları (marka sayfasında alt kategoriler, kategori sayfasında
+    markalar) tek tek okuyup ürün sayısını ve örnek ürün adlarını toplar. İçerik mevcut gamı anlatır;
+    gamda ağırlığı olan öne alınır. Cloudflare'e takılmamak için istekler arasında beklenir."""
+    import time
+    liste = (k.get("alt_kategoriler") if k.get("sayfa_tipi") == "Brand" else k.get("markalar")) or []
+    out = []
+    for ad, u in liste[:n]:
+        time.sleep(1.5)
+        c = oku(u)
+        if c.get("hata"):
+            out.append({"ad": ad, "url": u, "hata": c["hata"]}); continue
+        out.append({"ad": ad, "url": u, "urun": c.get("urun_sayisi"), "index": c.get("index"),
+                    "canonical_kendisi": c.get("canonical_kendisi"), "ornek": c.get("ornek_urunler")})
+    return sorted(out, key=lambda x: -(x.get("urun") or 0))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("url")
+    ap.add_argument("--gam", type=int, nargs="?", const=12, default=0,
+                    help="ilk N kırılımın (marka ya da alt kategori) ürün sayısını ve örnek ürünlerini topla (yavaş)")
     ap.add_argument("--cikti")
     ap.add_argument("--icerik", action="store_true")
     a = ap.parse_args()
     k = oku(a.url)
+    if a.gam and not k.get("hata"):
+        k["gam"] = gam(k, a.gam)
     if a.cikti:
         json.dump(k, open(a.cikti, "w"), ensure_ascii=False, indent=2)
     if k.get("hata"):
         sys.exit(k["hata"])
     if a.icerik:
-        print(k["icerik"]["metin"]); return
+        print(k["icerik"]["metin"] or "(sayfada içerik yok)"); return
     i = k["icerik"]
     print(f"URL        : {k['url']}")
     print(f"Tip/durum  : {k['sayfa_tipi']} · {k['durum']} · index={k['index']} · ürün: {k.get('urun_sayisi')}")
@@ -113,6 +141,10 @@ def main():
         print(f"   {t}: {b}")
     for a_, u in i["linkler"]:
         print(f"   link: {a_} -> {u}")
+    print(f"Fiyat filtresi: {'var' if k.get('fiyat_filtresi') else 'yok'} · seçenek filtreleri: {', '.join(k.get('secenek_filtreleri') or []) or '-'}"
+          f" · sıralama: {', '.join(x for x in (k.get('siralama') or []) if x) or '-'}")
+    for x in k.get("gam") or []:
+        print(f"Gam · {x['ad']}: {x.get('urun')} ürün · " + " | ".join((x.get('ornek') or [])[:4]))
     print("Alt kategoriler: " + ", ".join(ad for ad, _ in k.get("alt_kategoriler", [])))
     print("Markalar (ilk 25): " + ", ".join(ad for ad, _ in k.get("markalar", [])[:25]) + f"  (toplam {len(k.get('markalar', []))})")
     for ad, deger in (k.get("filtreler") or {}).items():

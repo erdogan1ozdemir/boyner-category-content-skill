@@ -20,8 +20,9 @@
 
 Bu metin tüketiciye dönük kategori içeriğidir, rapor değil; İçerik Dili Rehberi bu çıktıya uygulanmaz.
 
-**Hitap baştan sona "siz"dir.** Boyner'in sitedeki bütün metinleri ikinci çoğul konuşur
-("tamamlayabilirsiniz", "tercih edebilirsiniz"); mevcut içeriklerden alınan tek şey budur. "Sen" dili,
+**Hitap baştan sona "siz"dir.** Boyner'in kategori metinleri çoğunlukla ikinci çoğul konuşur
+("tamamlayabilirsiniz", "tercih edebilirsiniz"); mevcut içeriklerden alınan tek şey budur. Sitede "sen" diliyle
+yazılmış sayfalar da vardır (bazı marka içerikleri, `/content/boyner-now`); onlar örnek alınmaz. "Sen" dili,
 birinci çoğul ("öneriyoruz", "tavsiye ederiz") ve "biz" kullanılmaz; marka kendinden "Boyner" diye söz eder.
 
 Mevcut kategori içeriklerinin **yapısı ve üslubu örnek alınmaz** (kullanıcı kararı, 02.10.2026). O metinler
@@ -160,6 +161,7 @@ Aileye göre seçim ölçütleri değişir; bunlar da araştırmayla teyit edili
 | Kozmetik, cilt ve saç bakımı, parfüm | cilt/saç tipi, içerik, form, uygulama sırası, kalıcılık, koku ailesi |
 | Ev, tekstil, mutfak | ölçü, malzeme, kullanım alanı, set içeriği, yıkama |
 | Spor, outdoor | branş, zemin/koşul, teknoloji, seviye, bakım |
+| Elektronik | bağlantı ve uyumluluk, kullanım amacı, pil/şarj, koruma derecesi (IP), garanti, temizlik |
 | Çocuk, bebek | yaş/beden, malzeme ve güvenlik, mevsim, pratiklik |
 
 Kozmetikte sağlık iddiası kurulmaz ("lekeleri yok eder" değil; "leke görünümünü azaltmaya yardımcı
@@ -198,12 +200,18 @@ derinleştirir, bilgi sorgularında alıntılanabilir yanıt üretir.
   marka, ürün tipi. "Çeşitli malzemeler" yazılmaz, malzemeler sayılır.
 - **Karşılaştırma tabloyla, sayılabilir şeyler listeyle** verilir (bkz. bölüm 9). Liste ve tablo hem
   featured snippet hem AI Overview için en çok alınan biçimdir.
+- **Tarihsel yıl ve yaygın standart serbesttir, kaynağıyla.** Marka kuruluş yılı, standart adı (IP68, EN ISO
+  12312-1), yaygın ölçü (160x220 nevresim) kaynağı varsa yazılır; markaya göre değişen değer "çoğunlukla" ile
+  verilir ya da yazılmaz. Yasak olan, güncel yıl ("2026 modası") ve kaynağı gösterilemeyen eşiktir.
 - **Sayı doğrulanmadan yazılmaz.** "Kaz tüyü 800 dolgu gücünde", "-20 dereceye kadar korur" gibi değerler
   ancak kaynağı varsa (üretici, standart) yazılır. Ürün sayısı ("11.000 model") yazılmaz; yarın değişir.
 - **Uzun kuyruk doğal cümlede geçer.** "Kışlık kadın mont" H3 olabilir; "kışlık mont bayan" gibi devrik
   arama ifadesi metne olduğu gibi yazılmaz, doğal sırasıyla ("kışlık kadın mont") karşılanır. "Bayan"
   kelimesi kullanılmaz; "kadın" yazılır.
-- Ana kelime giriş, bir iki H2 ve kapanışta geçer; yoğunluk %3'ü geçmez. Çoğul, iyelik ve eş anlamlı
+- Ana kelime giriş, bir iki H2 ve kapanışta geçer; yoğunluk %3'ü geçmez (tek kelimelik ana kelimede ve marka
+  sayfasında %4-5'e çıkabilir; başlık ve anchor'lar bunu doğal olarak yükseltir).
+- Rakip kelime sayısı yanıltabilir: `arastirma.py` ürün kartı metinlerini de sayar. Medyana değil, rakibin
+  gerçekten yazılmış metnine bakılır; ürün adı başlıkları (H3'te ürün listesi) konu başlığı sayılmaz. Çoğul, iyelik ve eş anlamlı
   biçimler ("montlar", "kadın mont modelleri", "dış giyim") tekrarın yerini alır.
 
 ## 7. Kelime sahipliği metne nasıl yansır
@@ -258,7 +266,10 @@ ise verilir; markaya göre değişen ölçü tablosu uydurulmaz, "ürün sayfas�
 - Seçim ölçütleri cümle içinde sayılmaz; **numaralı karar adımları** olarak verilir (her adım tek cümle).
 - Ürün sayfasında hangi bilginin nerede olduğu (materyal, beden tablosu, içerik listesi) bir cümleyle
   söylenir; okuyucu etiketi ve ürün sayfasını okumayı öğrenir.
-- Filtre adları dışında **en az bir doğrulanmış mağaza bilgisi** (bkz. bölüm 10, kapanış).
+- Filtre adları dışında **doğrulanmış bir mağaza bilgisi**, teyit edilebiliyorsa (bkz. bölüm 10, kapanış).
+  Zorunlu değildir: teyit edilemeyen hizmet cümlesi yazılmaz.
+- Karşılaştırma tablosunun konusu gamda olmalıdır (pamuk saten / ranforce tablosu, ranforce satılmıyorsa
+  yazılmaz). Tablo sütun adında sahipli bir kelimenin geçmesi ("Kablosuz") serbesttir; başlık ve SSS olamaz.
 
 **Kalın vurgu:** bölüm başına iki üç yerde, okuyucunun aradığı net bilgi için (malzeme adı, ölçüt, karar
 cümlesi). Tam cümle, bölümün ilk kelimeleri ve başlıkta geçen ifade kalın yazılmaz.
@@ -307,6 +318,11 @@ bir kez geçer. Alt türe özgü bakım, o türün kendi sayfası varsa burada a
 hizmetleri. Hizmet bilgisi (Boyner Now, mağazadan teslim, iade) yalnız `boyner.com.tr/content/...`
 sayfasından teyit edilerek ve süre/koşul rakamı verilmeden yazılır. Teyitli örnek (02.10.2026,
 `/content/boyner-now`): Boyner Now ile ürünler teslimat adresinde denenip beğenilenler satın alınabiliyor.
+Bu hizmet giyim ve ayakkabıda anılır; kozmetik, elektronik ve ev tekstilinde
+geçerliliği teyit edilmeden yazılmaz. Diğer teyit kaynakları: canlı kayıttaki seçenek filtreleri (Kargo
+Bedava, Yarın Kargoda), fiyat filtresi ve sıralama (`kategori.py` "Fiyat filtresi: var" diyorsa), ürün
+sayfasındaki alanlar (elektronikte "Garanti Süresi"). "Ürün sayfasındaki beden tablosu" her üründe teyit
+edilemedi; "markanın beden bilgisi" ya da "ürün sayfasındaki beden bilgisi" yazılır.
 Satıcıya göre değişen koşullar (iade süresi, mağazadan iade) genelleme olarak yazılmaz. Fiyat, indirim oranı,
 kampanya adı ve tarihi yazılmaz. Bir iki cümlelik çağrıyla biter.
 
@@ -364,7 +380,8 @@ kusurlar bilgi eksikliği değil tutarsızlıktı; aşağıdakiler her içerikte
   desteklenmiyorsa "çoğunlukla", "öne çıkan", "... biri", "birkaç sezon" biçimine çevrilir.
 - **Tablo ve gövde aynı sözlüğü kullanır.** Tabloda geçen her tür ve özellik gövdede tanımlıdır; aynı parça
   için iki ad kullanılmaz ("kar eteği" / "etek bandı").
-- **Kendi başına okunur madde.** Kalın etiketli maddede ilk cümle özneyi yeniden kurar: "**Suni deri mont:**
+- **Kendi başına okunur madde.** Kalın etiketli maddede ilk cümle özneyi yeniden kurar (yalnız ilk cümle;
+  sonraki cümlelerde ve anchor'da aynı kelime üçüncü kez tekrarlanmaz, zamir ya da "bu modeller" yeter): "**Suni deri mont:**
   Suni deri montlar rüzgârı keser..." Etiket silindiğinde cümle anlamını korumalıdır; AI motorları cümleyi
   etiketsiz alıntılar.
 - **Başlık sorusuna ilk cümlede yanıt, sorulan birimle.** "Hangi aylarda" sorusunun yanıtı ay adı, "hangisi"

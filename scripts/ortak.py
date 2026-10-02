@@ -19,6 +19,11 @@ CINSIYET = {"3731": "Kadın", "3730": "Erkek", "3733": "Kız Çocuk", "3734": "E
 # Kelimenin niyetini değiştirmeyen ekler: "kadın mont modelleri" ile "kadın mont" aynı sayfanın kelimesidir.
 DOLGU = {"model", "modelleri", "modeli", "modeller", "cesitleri", "cesit", "cesidi", "fiyatlari", "fiyat",
          "fiyati", "urunleri", "urun", "urunler", "ve", "ile", "icin", "x", "boyner", "online", "satin", "al"}
+# Sahiplik dışı bırakılacak kalıplar: kampanya, gezinme ve konu dışı sorgular
+KAPSAM_DISI_KALIP = (r"\b(1 alana|2 al|bedava|defolu|toptan|indirim|outlet|kampanya|ikinci el|2 el|sahibinden|"
+                     r"ruyada|eksi|kadinlar kulubu|sikayet|guvenilir mi|com tr|nerede satilir|magazalari?)\b")
+RENKLER = {"siyah", "beyaz", "kirmiz", "mavi", "lacivert", "yesil", "sar", "pembe", "mor", "gri", "bej", "kahvereng",
+           "bordo", "turuncu", "haki", "ekru", "krem", "fume", "antrasit", "vizon", "lila", "gumus", "altin"}
 
 
 def onbellek(*parca):
@@ -56,14 +61,20 @@ def duz(s):
 
 
 def kok(w):
-    """Çok hafif gövdeleme: çoğul ve iyelik eklerini atar (montlar, montu, montlari -> mont)."""
+    """Çok hafif gövdeleme: çoğul ve iyelik eklerini atar, ünsüz yumuşamasını geri alır
+    (montlar, montu, montlari -> mont · ayakkabisi, ayakkabi -> ayakkab · kulakligi -> kulaklik)."""
     for ek in ("lari", "leri", "lar", "ler"):
         if w.endswith(ek) and len(w) - len(ek) >= 3:
             w = w[:-len(ek)]
             break
-    for ek in ("si", "su", "sı", "sü"):
-        if w.endswith(ek) and len(w) - 2 >= 4:
-            return w[:-2]
+    if len(w) >= 6 and w[-2:] in ("si", "su") and w[-3] in "aeiou":
+        w = w[:-2]                                   # ayakkabi-si, corab-i gibi 3. tekil iyelik
+    if len(w) >= 6 and w[-2:] in ("gi", "gu"):
+        return w[:-2] + "k"                          # kulaklig-i -> kulaklik, gozlug-u -> gozluk
+    if len(w) >= 5 and w[-2:] in ("bi", "bu"):
+        return w[:-2] + "p"                          # corab-i -> corap; ayakkabi -> ayakkap (tutarlı kalır)
+    if len(w) >= 5 and w[-1] == "b":
+        return w[:-1] + "p"
     if len(w) >= 5 and w[-1] in "iu" and w[-2] not in "aeiou":
         w = w[:-1]
     return w

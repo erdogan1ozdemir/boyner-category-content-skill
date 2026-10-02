@@ -139,7 +139,7 @@ def main():
             p = doc.add_paragraph(); p.paragraph_format.space_after = Pt(4); metni_bas(p, yanit, linkler)
 
     doc.save(a.out)
-    duz = lambda i: re.sub(r"\*\*", "", re.sub(r"\[LINK\d+\]", "x", i))
+    duz = lambda i: re.sub(r"\*\*", "", re.sub(r"\[(LINK\d+)\]", lambda m: linkler.get(m.group(1), ("x",))[0], i))
     kelime = sum(len(duz(i).split()) for t, i in d["govde"] if t in ("p", "li", "mad"))
     sss_k = sum(len(duz(c).split()) for _, c in d.get("sss", []))
     print(f"yazıldı: {a.out} · gövde {kelime} kelime + SSS {sss_k} kelime · "

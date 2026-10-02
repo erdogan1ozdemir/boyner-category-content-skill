@@ -24,6 +24,11 @@ Boyner'de aynı ada sahip birden fazla kategori kimliği bulunur. "Kadın mont" 
 `/kadin-mont-x-g3731-c23896554` (Google'da sıralanan, ana ağaçtaki sayfa) vardır. Yanlış kimliğe yazılan
 içerik boşa gider.
 
+**Önce Google ve GSC'ye bakılır, sonra envantere.** Sitemap ana ağaçtaki sayfaların bir kısmını taşımaz (erkek
+gömlek `c23896609`, kadın şişme mont `c23896555` sitemap'te yoktur) ve cinsiyetsiz marka + kategori sayfalarını
+hiç içermez. Envanterde aday çıkması doğru sayfanın orada olduğunu göstermez; sıralanan adres envanterde yoksa
+üst kategorinin canlı kaydındaki (`kategori.py`) alt kategori adresi kullanılır.
+
 Hedef şu dört sinyalle teyit edilir; dördü aynı sayfayı göstermeli:
 
 1. `envanter.py sahip "{ana kelime}"` - adaylar
@@ -34,6 +39,14 @@ Hedef şu dört sinyalle teyit edilir; dördü aynı sayfayı göstermeli:
 
 Sinyaller ayrışıyorsa (Google bir kimliği, menü başka kimliği gösteriyor) içerik yazılmaz; durum kullanıcıya
 iki URL ve verileriyle bildirilir. Bu site düzeyinde bir çakışmadır, içerikle çözülmez.
+
+Ayrışmanın üç sık biçimi ve yapılacak olan:
+
+| Ayrışma | Yapılacak |
+|---|---|
+| Ana kelimede **blog yazısı** (`/mag/...`) ya da **marka içerik sayfası** (`/content/{marka}`) sıralanıyor | İçerik yazılır; çakışma teslim notunda GSC verisiyle bildirilir. Blog ve içerik sayfaları **zayıf sahiptir** (aşağıda). Marka sayfasında `/content/{marka}` var mı diye her zaman bakılır |
+| Cinsiyetli sayfa ile **cinsiyetsiz çatı sayfa** aynı sorguda dönüşümlü sıralanıyor (`/erkek-gomlek` ve `/gomlek`) | Kullanıcı hedefi açıkça verdiyse yazılır ve iki sayfanın GSC verisi bildirilir; vermediyse sorulur |
+| **Eş sesli kategori**: aynı ad iki farklı ürünü karşılıyor (kulaklık: elektronik ve kışlık aksesuar) | Breadcrumb ve ürünlere bakılır; kullanıcının kastettiği ağaçtaki sayfa seçilir, öteki not edilir |
 
 **Cinsiyet + kategori sayfasının canonical'ı kategori sayfasını gösterebilir** (`/kadin-elbise-x-g3731-c23896624`
 -> `/elbise-x-c23896624`). Bu durumda içerik canonical adrese yazılır ve kullanıcıya not düşülür.
@@ -63,7 +76,7 @@ ana ağaçtaki sayfa (`c23896555`) sitemap'te bulunmaz, yalnız canlı kayıtta 
 
 Betik kelime biçimine bakar, niyete bakamaz. Tablonun üzerinden bir kez geçilir:
 
-- **SERBEST'teki marka kelimeleri:** betik bilinmeyen markayı tanıyamaz ("moncler kadın mont", "lacoste kadın
+- **SERBEST'teki marka kelimeleri:** betik envanterde marka sayfası olan markaları tanır; olmayanları tanıyamaz ("moncler kadın mont", "lacoste kadın
   mont"). Marka Boyner'de satılıyorsa (`envanter.py ara "{marka}"`) sahibi marka sayfasıdır -> BAŞKA SAYFA.
   Satılmıyorsa KAPSAM DIŞI.
 - **SERBEST'teki renk kelimeleri:** "siyah kadın mont" için arama sayfası (`/search?q=...`) ya da renk
@@ -103,6 +116,29 @@ GSC'ye erişilemiyorsa bu adım atlanır ve atlandığı kullanıcıya söylenir
 | Brief sütunu | Main KW / İkincil | İkincil ve Uzun Kuyruk | Kapsam Dışı Kelimeler | yazılmaz |
 
 `icerik_denetim.py --sahiplik` başlıkları, SSS sorularını ve anchor'ları bu tabloyla karşılaştırır.
+
+## Zayıf sahipler ve sınır durumlar
+
+- **Blog (`/mag/`) ve içerik (`/content/`) sayfaları zayıf sahiptir.** Bilgi niyetli kelimeyi ("fondöten nedir",
+  "en iyi fondöten") alabilirler, ama kategori niyetli kelimeyi ("fondöten markaları", "fondöten çeşitleri")
+  kategori sayfasından alamazlar: kategori sayfası bu başlıkları açabilir. "En iyi ..." listesi blogundur,
+  kategori içeriğinde açılmaz. Bu sayfalara link verilmez (kullanıcı isterse istisna).
+- **Arama sayfası (`/search?q=`) sahibi olan alt tür** (keten gömlek, oduncu gömlek): başlık açılmaz, link
+  verilmez; tür, çeşitler listesinde tek maddeyle tanımlanır. (Bu kuralın gevşetilmesi kullanıcı kararını
+  bekliyor, 02.10.2026.)
+- **Sahibi 8 üründen az olan kelime** (oyuncu kulaklığı: 7 ürün): başlık açılmaz, link de verilmez; düz metinle
+  bir kez geçer.
+- **Cinsiyetsiz bilgi sorusu** ("sneaker ne demek", "sneaker nasıl temizlenir"): doğal sahibi cinsiyetsiz çatı
+  sayfadır. Çatı sayfada içerik yoksa ve yazılması planlanmıyorsa cinsiyetli sayfada karşılanabilir; brief'in
+  DİKKAT satırına "çatı sayfaya içerik yazılırsa taşınır" notu düşülür.
+- **Kardeş kategori:** "tek kişilik nevresim takımı" kelimesinin sahibi `/tek-kisilik-nevresim` sayfasıdır;
+  betik "takım" kelimesi yüzünden eşleştiremez. Hedefin breadcrumb'ındaki üst kategorinin alt kategorileri
+  elle sahip adayı olarak gözden geçirilir.
+- **Alt marka:** bir markanın alt çizgisi ayrı marka sayfasına sahipse (Calvin Klein Jeans `b559`), o çizginin
+  kelimeleri ("calvin klein jeans", "calvin klein jean") alt marka sayfasınındır.
+- **Marka kelimesi:** kelime Boyner'de sayfası olan bir markanın adını taşıyorsa betik sahibi marka tarafına
+  verir. Canlı kırılımdaki adres ile Google'da sıralanan adres farklıysa **Google'da sıralanan adres** sahip ve
+  link hedefi sayılır; ikisi de teslim notunda yazılır. (Kesin tercih kullanıcı kararını bekliyor, 02.10.2026.)
 
 ## İçerikle çözülmeyenler
 

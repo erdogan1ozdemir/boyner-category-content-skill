@@ -27,6 +27,11 @@ mı?** Değilse cümle linki taşımak için kurulmuştur, yeniden yazılır.
 | Tamamlayıcı kategori (çapraz) | 1-2 | birlikte kullanılan ürün (kadın bot, atkı) | Kombin / Kullanım |
 | Öteki cinsiyet | 0-1 | erkek mont | kapanış ya da SSS, yalnız doğal bağlam varsa |
 
+**Alt kategorisi olmayan sayfada** (kadın sneaker, kadın güneş gözlüğü) alt kategori rolü boş kalır; boşluk
+marka + kategori (3-4'e kadar), kardeş ve tamamlayıcı kategori linkleriyle doldurulur.
+
+**Tablo içindeki linkler** bölüm link sayımına dahildir; hücrede anchor büyük harfle başlayabilir.
+
 Alt kategori linkleri önceliklidir: üst sayfa ile alt sayfalar arasındaki bağ hem kullanıcının yolunu hem de
 hangi sayfanın hangi kelimeye ait olduğunu arama motoruna anlatır.
 
@@ -41,6 +46,10 @@ hangi sayfanın hangi kelimeye ait olduğunu arama motoruna anlatır.
   kullanılır.
 - **Benzer niyetli iki sayfadan birine link verilir.** `/kadin-sisme-mont` ile `/kadin-mont-sisme-mont`
   ikisi birden linklenmez.
+- **Noindex sayfaya link verilmez** (`icerik_denetim.py --canli` kontrol eder). Sahibi noindex olan kelime düz
+  metinle geçer ve durum teslim notunda bildirilir.
+- **Blog (`/mag/`) ve içerik (`/content/`) sayfalarına link verilmez;** kategori içeriğinin linkleri listeleme
+  sayfaları arasındadır.
 - **Hedef canlı ve dolu olmalı:** 200 döner, canonical'ı kendisidir, en az 8 ürünü vardır (daha azı olan alt
   tür linklenmez, metinde düz geçer). Sitemap eski kategori kimliklerini de taşıdığı için bir adresin envanterde
   olması canlı ve dolu olduğunu göstermez; sayfanın canlı kaydındaki alt kategori adresleri esastır.
@@ -48,7 +57,8 @@ hangi sayfanın hangi kelimeye ait olduğunu arama motoruna anlatır.
   değil, canonical adresin kendisine link verilir.
 - **Marka linki yalnız marka + kategori sayfasına verilir** (`/columbia-kadin-mont-x-b596-g3731-c23896554`),
   markanın ana sayfasına (`/columbia-x-b596`) değil: bağlam kategoriyse hedef de kategori kırılımıdır.
-  Seçim ölçütü: `arastirma.py` Boyner haritasında o kelimede sıralanan sayfa.
+  Seçim ölçütü: `arastirma.py` Boyner haritasında ve GSC'de o kelimede sıralanan sayfa. Canlı kırılımdaki adres
+  (`...-kadin-gunes-gozlugu-...`) ile sıralanan adres (`...-gunes-gozlugu-...`) farklıysa sıralanan adres seçilir.
 - **Arama sayfasına (`/search?q=...`) link verilmez.** Bu sayfalar Cloudflare doğrulaması arkasında ve
   içerik taşımıyor; durumları betikle teyit edilemiyor. Kullanıcı açıkça isterse istisna yapılır.
 - **Filtre sayfasına (`?renk=`, `?materyal=`) link** yalnız o adres sitemap envanterinde varsa verilir.
