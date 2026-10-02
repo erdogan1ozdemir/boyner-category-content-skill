@@ -51,7 +51,7 @@ python3 scripts/baslik_adaylari.py --arastirma arastirma.json --sahiplik sahipli
 python3 scripts/brief_satiri.py --xlsx "Boyner kategori içerik briefleri.xlsx" --kur      # ilk kurulum: sekmeler
 python3 scripts/brief_satiri.py --xlsx "Boyner kategori içerik briefleri.xlsx" --json satir.json
 python3 scripts/icerik_denetim.py --json icerik.json --sahiplik sahiplik.json --arastirma arastirma.json --canli
-python3 scripts/icerik_docx.py --json icerik.json --klasor "Kategori İçerik"   # -> kadin-mont.docx
+python3 scripts/icerik_docx.py --json icerik.json --klasor "Kategori İçerik"   # -> "kadin-mont: https://...docx"
 ```
 
 `arastirma.py`, DataForSEO kimliğini `~/.claude.json` içindeki `dfs-mcp` yapılandırmasından okur; depoda

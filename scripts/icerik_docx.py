@@ -3,10 +3,11 @@
 """Kategori içeriğini Word dosyasına basar (okuma ve onay kopyası).
 
 Kullanım:
-    python3 icerik_docx.py --json icerik.json --klasor "Kategori İçerik"     # -> kadin-mont.docx
+    python3 icerik_docx.py --json icerik.json --klasor "Kategori İçerik"     
 
 Belge adı "{slug}: {tam URL}" biçimindedir (ör. "kadin-mont: https://www.boyner.com.tr/kadin-mont-x-g3731-c23896554");
-başlık satırına ve belge özelliklerine yazılır. Dosya adı {slug}.docx olur (dosya adında ":" ve "/" kullanılamaz).
+başlık satırına, belge özelliklerine ve dosya adına yazılır (dosya adında ":" ve "/" yerine görünüşü aynı olan
+∶ ve ∕ karakterleri kullanılır).
 
 icerik.json biçimi:
 {
@@ -65,6 +66,14 @@ def belge_adi(url):
     return m.group(1) if m else re.sub(r"\W+", "-", url).strip("-")
 
 
+def dosya_adi(url):
+    """Dosya adı da belge adıyla aynı görünür: "kadin-mont: https://www.boyner.com.tr/...".
+    Dosya sistemleri adında ":" ve "/" kabul etmediği için görünüşü aynı olan Unicode karakterleri
+    kullanılır: ∶ (U+2236) ve ∕ (U+2215). Belgenin içindeki başlık satırı ve belge özellikleri gerçek
+    karakterleri taşır."""
+    return f"{belge_adi(url)}: {url}".replace(":", "\u2236").replace("/", "\u2215") + ".docx"
+
+
 def main():
     from docx import Document
     from docx.shared import Pt, Cm
@@ -78,7 +87,7 @@ def main():
     a = ap.parse_args()
     d = json.load(open(a.json, encoding="utf-8"))
     import os
-    a.out = a.out or os.path.join(a.klasor, belge_adi(d["url"]) + ".docx")
+    a.out = a.out or os.path.join(a.klasor, dosya_adi(d["url"]))
     linkler = {k: tuple(v) for k, v in (d.get("linkler") or {}).items()}
 
     doc = Document()

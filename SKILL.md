@@ -1,6 +1,6 @@
 ---
 name: boyner-kategori-brief-icerik
-description: boyner.com.tr kategori (listeleme) sayfaları için içerik briefi ve SEO + GEO uyumlu kategori içeriği üretir. Hedef kategoride ilk 5 SERP'i ve rakip içeriklerini inceler, kelime kümesini ve soru kalıplarını çıkarır, 34 bin sayfalık Boyner envanterine karşı kelime sahipliği (cannibalization) tablosu kurar, 5-8 çapraz iç link seçer; ardından "siz" diliyle, başlık iskeleti o kategorinin araştırmasından (rakip başlıkları, PAA, uzun kuyruk kümeleri, arama eğilimi) kurulan gövde metni ve answer-first SSS yanıtları yazar. Çıktılar - kategori tipine göre sekmeli ortak brief Excel'inde ilgili satır ve içerik Word dosyası; içerik teslimden önce bağımsız içerik değerlendirmesinden geçer. Şu durumlarda mutlaka kullan - kullanıcı bir Boyner kategori URL'si ya da kategori adı verip "kategori içeriği yaz", "kategori briefi", "bu kategoriye içerik", "SEO metni", "kategori açıklaması", "SSS yaz", "içeriği revize et" dediğinde · Boyner için uzun kuyruk kelime, alt başlık planı, iç link planı ya da cannibalization kontrolü istendiğinde · "hangi sayfa bu kelimenin sahibi", "bu kelimeye hangi Boyner sayfası oynuyor" diye sorulduğunda · içeriği zayıf ya da boş Boyner kategorileri aranırken · kullanıcı yalnız bir boyner.com.tr listeleme adresi yapıştırıp içerik beklediğinde. Boyner teknik SEO audit dosyaları ve müşteriye giden rapor/sunumlar bu skill'in işi değildir.
+description: boyner.com.tr kategori ve marka (listeleme) sayfaları için içerik briefi ve SEO + GEO uyumlu kategori içeriği üretir. Hedef kategoride ilk 5 SERP'i ve rakip içeriklerini inceler, kelime kümesini ve soru kalıplarını çıkarır, 34 bin sayfalık Boyner envanterine karşı kelime sahipliği (cannibalization) tablosu kurar, 5-8 çapraz iç link seçer; ardından "siz" diliyle, başlık iskeleti o kategorinin araştırmasından (rakip başlıkları, PAA, uzun kuyruk kümeleri, arama eğilimi) kurulan gövde metni ve answer-first SSS yanıtları yazar. Çıktılar - kategori tipine göre sekmeli ortak brief Excel'inde ilgili satır ve içerik Word dosyası; içerik teslimden önce bağımsız içerik değerlendirmesinden geçer. Şu durumlarda mutlaka kullan - kullanıcı bir Boyner kategori URL'si ya da kategori adı verip "kategori içeriği yaz", "kategori briefi", "bu kategoriye içerik", "SEO metni", "kategori açıklaması", "SSS yaz", "içeriği revize et" dediğinde · Boyner için uzun kuyruk kelime, alt başlık planı, iç link planı ya da cannibalization kontrolü istendiğinde · "hangi sayfa bu kelimenin sahibi", "bu kelimeye hangi Boyner sayfası oynuyor" diye sorulduğunda · içeriği zayıf ya da boş Boyner kategorileri aranırken · kullanıcı yalnız bir boyner.com.tr listeleme adresi yapıştırıp içerik beklediğinde. Boyner teknik SEO audit dosyaları ve müşteriye giden rapor/sunumlar bu skill'in işi değildir.
 ---
 
 # Boyner Kategori Sayfası: Brief ve İçerik
@@ -8,7 +8,7 @@ description: boyner.com.tr kategori (listeleme) sayfaları için içerik briefi 
 Bu skill bir Boyner kategori sayfası için **iki çıktı** üretir:
 
 1. **Brief satırı** - ortak Excel'de o sayfanın satırı. Excel, içerik yazılacak tüm kategori sayfalarını
-   kategori tipine göre sekmelerde taşır (Kategori, Kadın, Erkek, Çocuk, Bebek); brief hazırlandıkça ilgili
+   kategori tipine göre sekmelerde taşır (Kategori, Kadın, Erkek, Çocuk, Bebek, Marka); brief hazırlandıkça ilgili
    satır doldurulur.
 2. **Kategori içeriği** - Word dosyası: başlıksız giriş, H2/H3 bölümleri ve SSS. Belge adı
    `{slug}: {tam URL}` biçimindedir (ör. `kadin-mont: https://www.boyner.com.tr/kadin-mont-x-g3731-c23896554`).
@@ -151,7 +151,7 @@ sekme başına hazır ve bekleyen sayısını verir. Satır URL'ye göre bulunup
 - **Başlıklar arama diliyle yazılır** ve ana kelimeyi ya da ürün adını taşır ("Kadın Montlarda Boy, Kalıp ve
   Beden Seçimi", "Mevsimlik Kadın Mont Modelleri"); biçim hacme göre seçilir.
 - **Kipler uygun yerlerde değişir** (tanım geniş zaman, katalog şimdiki zaman, tasarım `-mıştır`, öneri
-  `-ebilirsiniz`); özne ile yüklem uyuşur, ana kelime cümle içinde çekimlenir ("kadın montu").
+  `-ebilirsiniz`; `-mektedir` kullanılmaz); özne ile yüklem uyuşur, ana kelime cümle içinde çekimlenir ("kadın montu").
 - **Ticari kelimeler karşılanır:** "fiyatları" başlığı ve "uygun", "ekonomik", "kaliteli", "şık" gibi
   niteleyiciler kullanılır; net fiyat ve fiyat aralığı verilmez.
 - **Sayılabilir şeyler listeyle, karşılaştırmalar tabloyla** verilir; içerikte en az bir tablo ya da liste
@@ -160,7 +160,11 @@ sekme başına hazır ve bekleyen sayısını verir. Satır URL'ye göre bulunup
   anchor olarak geçer. SERBEST kelimeler H3, madde ya da SSS ile karşılanır.
 - **İç link metnin içinden çıkar:** anchor silindiğinde cümle anlamlı kalır; anchor hedef sayfanın ana
   kelimesidir; bu sayfanın ana kelimesi başka sayfaya anchor olmaz.
-- Yazılan her tür, marka, kalıp ve malzeme canlı kayıtta vardır. Taslak bitince kayıt bir kez daha okunur.
+- **İçerik mevcut ürün gamını anlatır:** yazılan her tür, marka, seri, kalıp ve malzeme canlı kayıtta vardır;
+  gamda ağırlığı olan öne alınır. Taslak bitince kayıt bir kez daha okunur.
+- **Tutarlılık:** tek tanım, gövde-SSS uyumu, genel adım / özel istisna ayrımı, kendi başına okunur maddeler
+  (`icerik-kurallari.md`, Tutarlılık kuralları). En az iki tablo (ihtiyaca göre tür + iki seçenek
+  karşılaştırması) ve numaralı karar adımları bulunur.
 - **SSS yanıtları 30-70 kelime,** ilk cümle doğrudan yanıt, gövdeyi tekrar etmez.
 
 İçerik şu JSON biçiminde yazılır (alanlar `scripts/icerik_docx.py` başında): `kategori`, `url`, `main_kw`,
@@ -171,7 +175,7 @@ listesi; köprüler `[LINK1]`, vurgu `**kalın**`), `sss` (`[soru, yanıt]`).
 
 ```bash
 python3 scripts/icerik_denetim.py --json $T/icerik.json --sahiplik $T/sahiplik.json --arastirma $T/arastirma.json --canli
-python3 scripts/icerik_docx.py --json $T/icerik.json --klasor "Kategori İçerik"      # -> kadin-mont.docx
+python3 scripts/icerik_docx.py --json $T/icerik.json --klasor "Kategori İçerik"      # -> "kadin-mont: https://...docx"
 ```
 
 Denetim bulgu verirse çıktı üretilmez; önce metin düzeltilir. `NOT:` satırları okunarak karar verilir.
@@ -233,6 +237,7 @@ arasında olan sayfalar ilk adaylardır.
 | `references/brief-kurallari.md` | Faz 4'te, brief satırını kurarken. |
 | `references/icerik-kurallari.md` | Faz 4'te iskeleti kurarken (bölüm 3-4) ve Faz 5'te yazmadan önce. Yapı taşı havuzu, GEO yazımı, SSS. |
 | `references/ic-link-kurallari.md` | Link seçerken ve yerleştirirken. |
+| `references/marka-sayfasi.md` | Hedef bir marka sayfasıysa (`-x-b...`): kelime sahipliği, yapı taşları, link kuralları. |
 | `references/kontrol-listesi.md` | Faz 6'da, teslimden önce. |
 | `examples/` | Örnek brief satırı ve içerik JSON'u; biçim referansı. |
 

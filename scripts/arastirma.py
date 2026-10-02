@@ -35,11 +35,14 @@ def kimlik():
 
 
 def post(yol, govde, auth, saniye=180):
-    f = os.path.join(os.environ.get("TMPDIR", "/tmp"), "_dfs_boyner_istek.json")
-    json.dump(govde, open(f, "w"), ensure_ascii=False)
+    import tempfile
+    fd, f = tempfile.mkstemp(prefix="dfs_boyner_", suffix=".json")   # paralel çalışmada çakışmasın
+    with os.fdopen(fd, "w") as fh:
+        json.dump(govde, fh, ensure_ascii=False)
     r = subprocess.run(["curl", "-sS", "-m", str(saniye), "-X", "POST", DFS + yol,
                         "-H", f"Authorization: Basic {auth}", "-H", "Content-Type: application/json",
                         "--data-binary", f"@{f}"], capture_output=True, text=True)
+    os.unlink(f)
     if r.returncode != 0:
         raise SystemExit(f"curl hatası: {r.stderr[:300]}")
     d = json.loads(r.stdout)

@@ -40,7 +40,9 @@
 
 - [ ] Başlıklar aranabilir ifadeler mi, ana kelimeyi ya da ürün adını taşıyor mu? ("Boy, Kalıp ve Beden" değil "Kadın Montlarda Boy, Kalıp ve Beden Seçimi")
 - [ ] Yüklem dağılımı tek kipe mi kilitlenmiş? Özne ile yüklem uyuşuyor mu, ana kelime cümlede çekimli mi?
-- [ ] Tanımlar ve sayımlar metin boyunca tutarlı mı?
+- [ ] Tanımlar ve sayımlar metin boyunca tutarlı mı? Gövde ile SSS aynı soruya aynı yanıtı mı veriyor? Genel adımlar tür maddeleriyle çelişiyor mu?
+- [ ] Kalın etiketli maddelerin ilk cümlesi etiket silinince de anlamlı mı?
+- [ ] İki tablo (ihtiyaca göre tür + iki seçenek karşılaştırması), numaralı karar adımları ve doğrulanmış bir mağaza bilgisi var mı?
 - [ ] Ticari kelimeler (fiyatları, uygun, ekonomik, kaliteli, şık) karşılandı mı? Net fiyat ya da aralık var mı? (olmamalı)
 - [ ] Bağımsız içerik değerlendirmesi (`seo-content`) yapıldı mı, bulgular işlendi mi?
 - [ ] Word belgesinin adı `{slug}: {tam URL}` mi?

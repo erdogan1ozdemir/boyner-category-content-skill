@@ -66,7 +66,8 @@ def siniflandir(kw, hedef, sayfalar, harita, marka_kumeleri, cins_kok, markali, 
             kova, not_ = "SERBEST", f"Boyner'de bu sayfa sıralanıyor ({h_url['sira']}.), kendi sayfası yok"
     elif hedef["url"] in s_url:
         kova, sahip, not_ = "HEDEF", hedef["url"], ""
-    elif baska_cins and not (hk & cins_kok and hk & cins_kok <= k and len(k & cins_kok) == len(hk & cins_kok)):
+    elif baska_cins and (hk & cins_kok) and not (hk & cins_kok <= k and len(k & cins_kok) == len(hk & cins_kok)):
+        # hedef cinsiyetliyken başka cinsiyetin kelimesi; cinsiyetsiz hedefte (kategori, marka) bu kural işlemez
         kova, sahip, not_ = "KAPSAM DIŞI", (s_url or [h_url and h_url["url"]])[0], "başka cinsiyet"
     elif sahipler:
         kova, sahip = "BAŞKA SAYFA", s_url[0]

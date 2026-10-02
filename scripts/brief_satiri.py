@@ -3,7 +3,7 @@
 """Brief Excel'ini kurar ve kategori satırlarını doldurur.
 
 Excel, içerik yazılacak tüm kategori sayfalarını kategori tipine göre sekmelere ayrılmış olarak taşır
-(Kategori, Kadın, Erkek, Çocuk, Bebek). Her sayfa bir satırdır; "Brief" sütunu başlangıçta "Bekliyor"dur.
+(Kategori, Kadın, Erkek, Çocuk, Bebek, Marka). Her sayfa bir satırdır; "Brief" sütunu başlangıçta "Bekliyor"dur.
 Bir kategorinin briefi hazırlandığında ilgili satır doldurulur ve "Hazır" olur.
 
 Kullanım:
@@ -36,7 +36,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from ortak import url_coz
 
 INK, HEAD, FN = "FF10332F", "434343", "Calibri"
-SEKMELER = ["Kategori", "Kadın", "Erkek", "Çocuk", "Bebek"]
+SEKMELER = ["Kategori", "Kadın", "Erkek", "Çocuk", "Bebek", "Marka"]
 CINS_SEKME = {"3731": "Kadın", "25462663": "Kadın", "3730": "Erkek", "3733": "Çocuk", "3734": "Çocuk",
               "214747": "Bebek", "214763": "Bebek"}
 BASLIK = ["Kategori", "URL", "Brief", "Main KW", "Main KW Hacim", "İkincil ve Uzun Kuyruk Kelimeler", "Alt Başlıklar",
@@ -51,6 +51,8 @@ ORTALI = {"hacim", "brief"}
 
 def sekme_adi(url):
     p = url_coz(url) or {}
+    if p.get("b"):
+        return "Marka"          # marka sayfaları envanterden toplu eklenmez; brief hazırlandıkça satır açılır
     return CINS_SEKME.get(p.get("g"), "Kategori")
 
 

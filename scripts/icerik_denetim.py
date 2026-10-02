@@ -230,16 +230,24 @@ def main():
         bul = [tum[max(0, m.start() - 30):m.end() + 25] for m in re.finditer(pat, tum)]
         if bul:
             uyari.append(f"{ad} ({len(bul)}): " + " | ".join(f"…{b}…" for b in bul[:4]))
-    kalin = len(re.findall(r"\*\*[^*]+\*\*", " ".join(i for t, i in g if t in ("p", "mad", "li"))))
+    kalin = sum(len(re.findall(r"\*\*[^*]+\*\*", re.sub(r"^\*\*[^*]+\*\*", "", i))) for t, i in g if t in ("p", "mad", "li"))
     if kalin > max(8, len(h2) * 3):
         uyari.append(f"{kalin} kalın vurgu var; bölüm başına iki üç vurgu yeterli")
+    # Kalın etiketli maddede ilk cümle özneyi yeniden kurmalı: etiket silinince cümle anlamını korur.
     for t, i in g:
         m = re.match(r"\*\*(.+?):\*\*\s*(.+)", i) if t == "mad" else None
         if m:
-            et = [w[:5] for w in duzle(m.group(1)).split() if len(w) >= 5]
-            gv = [w[:5] for w in duzle(duz(m.group(2))).split() if len(w) >= 5]
-            if et and gv and len(set(et) & set(gv)) >= 2:
-                uyari.append(f"madde tanımı etiketini tekrar ediyor olabilir: {duz(i)[:100]}")
+            et = {w[:4] for w in duzle(m.group(1)).split() if len(w) >= 4}
+            ilk = re.split(r"(?<=[.!?;])\s+", duz(m.group(2)))[0]
+            bas = {w[:4] for w in duzle(ilk).split()[:4]}
+            if et and not (et & bas):
+                uyari.append(f"madde ilk cümlesi özneyi kurmuyor (etiket silinince anlamsız kalabilir): {duz(i)[:90]}")
+    sayilar = sorted({m.group(0).strip() for m in re.finditer(
+        r"(?<![\w%])\d[\d.,]*\s?(?:derece|°C?|cm|mm|gr|kg|ml|saat|gün|yıl|kat)?", govde_metin + " " + " ".join(duz(c) for _, c in sss))})
+    if sayilar:
+        uyari.append("metindeki rakamlar (her birinin kaynağı var mı?): " + ", ".join(sayilar[:25]))
+    if sum(1 for t, _ in g if t == "tablo") < 2:
+        uyari.append("gövdede ikiden az tablo var; ihtiyaca göre tür tablosu ile iki seçeneği karşılaştıran nitel tablo beklenir")
 
     # --- SSS
     if not sss:
