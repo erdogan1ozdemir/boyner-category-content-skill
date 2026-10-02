@@ -213,14 +213,32 @@ def sayfa_icerigi_jina(url):
             "basliklar": bas[:60], "sorular": [b for _, b in bas if b.endswith("?")][:30], "ozet": " ".join(par)[:1200]}
 
 
+def sayfa_icerigi_playwright(url):
+    """Yedek 2 (ücretsiz, yerel): bot korumalı sayfalar için Playwright. Pazar yeri kategori sayfalarında H2'ler
+    ürün adıdır; 'sorular' ve 'basliklar' bu yüzden ürün adı gibi uzun başlıklar elenerek verilir."""
+    r = subprocess.run([sys.executable, os.path.join(os.path.dirname(os.path.abspath(__file__)), "pw_oku.py"), url],
+                       capture_output=True, text=True, timeout=180)
+    try:
+        d = json.loads(r.stdout.strip().splitlines()[-1])
+    except Exception:
+        return None
+    if d.get("hata") or not d.get("basliklar"):
+        return None
+    par = d["paragraflar"]
+    bas = [(h, b) for h, b in d["basliklar"] if len(b.split()) <= 9]
+    return {"url": url, "kaynak": "playwright", "kelime": sum(len(p.split()) for p in par), "paragraf": len(par),
+            "basliklar": bas[:60], "sorular": [b for _, b in bas if b.endswith("?")][:30], "ozet": " ".join(par)[:1200]}
+
+
 def sayfa_icerigi(url, auth=None, _ikinci=False):
     """Rakip sayfanın içerik iskeleti. Önce doğrudan indirir; engellenirse ya da metin tarayıcıda
     oluşuyorsa DataForSEO içerik çözümlemesine düşer."""
     h = getir(url, saniye=30, deneme=1)
     kaynak = "dogrudan"
     if len(h) < 5000 or "Just a moment" in h[:800] or "captcha" in h[:3000].lower():
-        # yedek sırası: 1) r.jina.ai (ücretsiz)  2) DataForSEO sayfa ayrıştırma (ücretli)  3) okunamadı
-        return sayfa_icerigi_jina(url) or (auth and sayfa_icerigi_js(url, auth)) or {"url": url, "kaynak": "okunamadi"}
+        # yedek sırası: 1) r.jina.ai (ücretsiz)  2) yerel Playwright (ücretsiz)  3) DataForSEO ayrıştırma (ücretli)
+        return (sayfa_icerigi_jina(url) or sayfa_icerigi_playwright(url) or (auth and sayfa_icerigi_js(url, auth))
+                or {"url": url, "kaynak": "okunamadi"})
     ham_h = h
     h2 = re.sub(r"<(script|style|noscript|svg|header|nav|footer)\b.*?</\1>", " ", h, flags=re.S | re.I)
     temiz = lambda x: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()

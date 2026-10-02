@@ -26,13 +26,20 @@
 3. **Biçim:** rakiplerde tablo, liste, SSS var mı? Yoksa bunları eklemek tek başına fark yaratır.
 4. **Uzunluk tabanı:** içerik taşıyan rakiplerin medyanı.
 
-Rakip sayfa okuma sırası: doğrudan indirme (ücretsiz) → `r.jina.ai` okuyucusu (ücretsiz; JavaScript ile oluşan
-sayfalarda çalışır) → DataForSEO sayfa ayrıştırma (ücretli). Hâlâ `kaynak: okunamadi` ise ya da kelime sayısı 0
-çıkarsa **Playwright** ile açılır (`browser_navigate` + `browser_evaluate`; kullanıcı onaylı, 02.10.2026):
-tarayıcı gerçek kullanıcı gibi yüklendiği için Trendyol gibi bot korumalı sitelerde de sayfa açılır. Başlıklar
-`h1,h2,h3` ve uzun paragraflar okunur; pazar yeri kategori sayfalarında H2'ler çoğunlukla ürün adıdır ve
-taşıdığı editoryal metin yoktur (Trendyol kadın mont sayfasında yalnız ürün kartları vardı), bu yüzden
-başlık kaynağı sayılmaz. Playwright yavaştır; yalnız metni içeriğe etki edecek ilk 5 rakip için kullanılır; SEO metni çoğu zaman "devamını oku" katlamasının arkasındadır. Rakip metninden cümle alınmaz.
+Rakip sayfa okuma sırası (betikte otomatik; hepsi bağlama token yazmaz):
+
+| Sıra | Yöntem | Maliyet | Not |
+|---|---|---|---|
+| 1 | doğrudan indirme (`curl`) | ücretsiz, ~1 sn | JavaScript'siz sayfalar |
+| 2 | `r.jina.ai` okuyucusu | ücretsiz, ~5 sn | JavaScript'le oluşan sayfalar; kimlik anahtarsız dakikada sınırlı istek kabul eder, 5 rakipte sorun olmaz |
+| 3 | yerel Playwright (`scripts/pw_oku.py`) | ücretsiz, ~6-13 sn | bot korumalı sayfalar (Trendyol); headless olmazsa headed denenir |
+| 4 | DataForSEO sayfa ayrıştırma | ücretli | son çare |
+
+MCP Playwright'ı (`browser_navigate`) elle kullanmak her sayfada 3-5 bin token bağlama yazar; betiğin
+okuyamadığı nadir sayfa için kalır. Pazar yeri kategori sayfalarında H2'ler çoğunlukla ürün adıdır ve
+editoryal metin yoktur (Trendyol kadın mont sayfasında yalnız ürün kartları vardı); bu sayfalar başlık kaynağı
+sayılmaz. LCW kadın mont sayfası gibi bazı markaların sayfasında zaten ~100 kelimelik kısa metin vardır;
+kelime sayısı düşükse bu bir okuma hatası değil sayfanın kendi durumudur.
 
 SERP'te pazar yerleri (Trendyol, Hepsiburada) ile marka siteleri karışıktır. Pazar yerlerinin kategori
 metinleri genellikle kısa ve şablondur; marka sitelerininki (Lufian, Oxxo, Mavi) daha uzundur. Taban olarak
