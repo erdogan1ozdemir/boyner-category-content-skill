@@ -3,7 +3,10 @@
 """Kategori içeriğini Word dosyasına basar (okuma ve onay kopyası).
 
 Kullanım:
-    python3 icerik_docx.py --json icerik.json --out kadin-mont-icerik.docx
+    python3 icerik_docx.py --json icerik.json --klasor "Kategori İçerik"     # -> kadin-mont.docx
+
+Belge adı "{slug}: {tam URL}" biçimindedir (ör. "kadin-mont: https://www.boyner.com.tr/kadin-mont-x-g3731-c23896554");
+başlık satırına ve belge özelliklerine yazılır. Dosya adı {slug}.docx olur (dosya adında ":" ve "/" kullanılamaz).
 
 icerik.json biçimi:
 {
@@ -57,6 +60,11 @@ def metni_bas(p, metin, linkler, boyut=10.5):
             r = p.add_run(parca); r.font.name = FN; r.font.size = Pt(boyut); renk(r, INK)
 
 
+def belge_adi(url):
+    m = re.search(r"boyner\.com\.tr/(?:.*/)?(.+?)-x-[bgc0-9-]+", url)
+    return m.group(1) if m else re.sub(r"\W+", "-", url).strip("-")
+
+
 def main():
     from docx import Document
     from docx.shared import Pt, Cm
@@ -65,9 +73,12 @@ def main():
 
     ap = argparse.ArgumentParser()
     ap.add_argument("--json", required=True)
-    ap.add_argument("--out", required=True)
+    ap.add_argument("--out", help="çıktı yolu; verilmezse çalışma klasörüne {slug}.docx")
+    ap.add_argument("--klasor", default=".", help="--out verilmediğinde dosyanın yazılacağı klasör")
     a = ap.parse_args()
     d = json.load(open(a.json, encoding="utf-8"))
+    import os
+    a.out = a.out or os.path.join(a.klasor, belge_adi(d["url"]) + ".docx")
     linkler = {k: tuple(v) for k, v in (d.get("linkler") or {}).items()}
 
     doc = Document()
@@ -75,9 +86,12 @@ def main():
     for s in doc.sections:
         s.top_margin = s.bottom_margin = Cm(2); s.left_margin = s.right_margin = Cm(2)
 
-    p = doc.add_paragraph(); r = p.add_run(f"{d['kategori']} | Kategori İçeriği")
-    r.bold = True; r.font.size = Pt(15); r.font.name = FN; renk(r, INK)
-    p = doc.add_paragraph(); kopru(p, d["url"], d["url"], 9.5)
+    # Belge adı: "{slug}: {tam URL}" (kullanıcı kararı 02.10.2026). Dosya adında ":" ve "/" kullanılamadığı için
+    # dosya "{slug}.docx" olarak kaydedilir; belge adı başlık satırında ve belge özelliklerinde tam haliyle durur.
+    ad = belge_adi(d["url"])
+    doc.core_properties.title = f"{ad}: {d['url']}"
+    p = doc.add_paragraph(); r = p.add_run(f"{ad}: "); r.bold = True; r.font.size = Pt(13); r.font.name = FN; renk(r, INK)
+    kopru(p, d["url"], d["url"], 13)
 
     def baslik(metin, seviye):
         p = doc.add_paragraph(style="Heading 1" if seviye == 2 else "Heading 2")

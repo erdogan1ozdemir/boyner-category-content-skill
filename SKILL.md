@@ -1,15 +1,20 @@
 ---
 name: boyner-kategori-brief-icerik
-description: boyner.com.tr kategori (listeleme) sayfaları için içerik briefi ve SEO + GEO uyumlu kategori içeriği üretir. Hedef kategoride ilk 5 SERP'i ve rakip içeriklerini inceler, kelime kümesini ve soru kalıplarını çıkarır, 34 bin sayfalık Boyner envanterine karşı kelime sahipliği (cannibalization) tablosu kurar, 5-8 çapraz iç link seçer; ardından "siz" diliyle, başlık iskeleti o kategorinin araştırmasından (rakip başlıkları, PAA, uzun kuyruk kümeleri, arama eğilimi) kurulan gövde metni ve answer-first SSS yanıtları yazar. Çıktılar - ortak brief Excel'ine tek satır, içerik Word dosyası ve CMS'e girilecek temiz HTML. Şu durumlarda mutlaka kullan - kullanıcı bir Boyner kategori URL'si ya da kategori adı verip "kategori içeriği yaz", "kategori briefi", "bu kategoriye içerik", "SEO metni", "kategori açıklaması", "SSS yaz", "içeriği revize et" dediğinde · Boyner için uzun kuyruk kelime, alt başlık planı, iç link planı ya da cannibalization kontrolü istendiğinde · "hangi sayfa bu kelimenin sahibi", "bu kelimeye hangi Boyner sayfası oynuyor" diye sorulduğunda · içeriği zayıf ya da boş Boyner kategorileri aranırken · kullanıcı yalnız bir boyner.com.tr listeleme adresi yapıştırıp içerik beklediğinde. Boyner teknik SEO audit dosyaları ve müşteriye giden rapor/sunumlar bu skill'in işi değildir.
+description: boyner.com.tr kategori (listeleme) sayfaları için içerik briefi ve SEO + GEO uyumlu kategori içeriği üretir. Hedef kategoride ilk 5 SERP'i ve rakip içeriklerini inceler, kelime kümesini ve soru kalıplarını çıkarır, 34 bin sayfalık Boyner envanterine karşı kelime sahipliği (cannibalization) tablosu kurar, 5-8 çapraz iç link seçer; ardından "siz" diliyle, başlık iskeleti o kategorinin araştırmasından (rakip başlıkları, PAA, uzun kuyruk kümeleri, arama eğilimi) kurulan gövde metni ve answer-first SSS yanıtları yazar. Çıktılar - kategori tipine göre sekmeli ortak brief Excel'inde ilgili satır ve içerik Word dosyası; içerik teslimden önce bağımsız içerik değerlendirmesinden geçer. Şu durumlarda mutlaka kullan - kullanıcı bir Boyner kategori URL'si ya da kategori adı verip "kategori içeriği yaz", "kategori briefi", "bu kategoriye içerik", "SEO metni", "kategori açıklaması", "SSS yaz", "içeriği revize et" dediğinde · Boyner için uzun kuyruk kelime, alt başlık planı, iç link planı ya da cannibalization kontrolü istendiğinde · "hangi sayfa bu kelimenin sahibi", "bu kelimeye hangi Boyner sayfası oynuyor" diye sorulduğunda · içeriği zayıf ya da boş Boyner kategorileri aranırken · kullanıcı yalnız bir boyner.com.tr listeleme adresi yapıştırıp içerik beklediğinde. Boyner teknik SEO audit dosyaları ve müşteriye giden rapor/sunumlar bu skill'in işi değildir.
 ---
 
 # Boyner Kategori Sayfası: Brief ve İçerik
 
-Bu skill bir Boyner kategori sayfası için **üç çıktı** üretir:
+Bu skill bir Boyner kategori sayfası için **iki çıktı** üretir:
 
-1. **Brief satırı** - ortak Excel'e eklenen tek satır (on iki sütun).
-2. **Kategori içeriği** - Word dosyası: başlıksız giriş, H2/H3 bölümleri ve SSS.
-3. **CMS HTML'i** - sayfanın `Content` alanına girilecek temiz HTML.
+1. **Brief satırı** - ortak Excel'de o sayfanın satırı. Excel, içerik yazılacak tüm kategori sayfalarını
+   kategori tipine göre sekmelerde taşır (Kategori, Kadın, Erkek, Çocuk, Bebek); brief hazırlandıkça ilgili
+   satır doldurulur.
+2. **Kategori içeriği** - Word dosyası: başlıksız giriş, H2/H3 bölümleri ve SSS. Belge adı
+   `{slug}: {tam URL}` biçimindedir (ör. `kadin-mont: https://www.boyner.com.tr/kadin-mont-x-g3731-c23896554`).
+
+HTML çıktısı varsayılan akışta üretilmez (kullanıcı kararı, 02.10.2026); `scripts/cms_html.py` yalnız
+kullanıcı açıkça isterse çalıştırılır.
 
 Kullanıcı yalnız "brief" derse içerik yazılmaz; yalnız "içerik" derse brief satırı atlanır ama araştırma ve
 sahiplik fazları yine yürütülür, çünkü içerik onlara dayanır.
@@ -112,7 +117,7 @@ başlık olamaz. İskelet bu listeden, kategorinin doğasına göre kurulur; kur
 araçlarıyla da açılıp başlıklarına bakılır.
 
 
-`references/brief-kurallari.md` on iki sütunun biçimini anlatır. Özet:
+`references/brief-kurallari.md` sütunların biçimini anlatır. Özet:
 
 - **Main KW** kategori sorgusunun en hacimli doğal biçimi; hacim 12 aylık ortalama, mevsimsellik DİKKAT'te.
 - **İkincil ve uzun kuyruk** yalnız HEDEF ve SERBEST kovasından.
@@ -128,6 +133,9 @@ araçlarıyla da açılıp başlıklarına bakılır.
 python3 scripts/brief_satiri.py --xlsx "Boyner kategori içerik briefleri.xlsx" --json $T/satir.json
 ```
 
+Excel yoksa önce `--kur` ile kurulur (tüm kategori sayfaları sekmelere `Bekliyor` olarak eklenir); `--ozet`
+sekme başına hazır ve bekleyen sayısını verir. Satır URL'ye göre bulunup doldurulur ve `Hazır` olur.
+
 ### Faz 5 - İçeriği yaz
 
 `references/icerik-kurallari.md` yazmadan önce okunur. Özet:
@@ -140,6 +148,12 @@ python3 scripts/brief_satiri.py --xlsx "Boyner kategori içerik briefleri.xlsx" 
   diğer yapay zeka yanıtlarında alıntılanan birim budur.
 - **Uzunlukta sınır yok;** tabanı içerikli rakiplerin medyanı, tavanı kapsam belirler. Bilgi taşımayan
   paragraf eklenmez.
+- **Başlıklar arama diliyle yazılır** ve ana kelimeyi ya da ürün adını taşır ("Kadın Montlarda Boy, Kalıp ve
+  Beden Seçimi", "Mevsimlik Kadın Mont Modelleri"); biçim hacme göre seçilir.
+- **Kipler uygun yerlerde değişir** (tanım geniş zaman, katalog şimdiki zaman, tasarım `-mıştır`, öneri
+  `-ebilirsiniz`); özne ile yüklem uyuşur, ana kelime cümle içinde çekimlenir ("kadın montu").
+- **Ticari kelimeler karşılanır:** "fiyatları" başlığı ve "uygun", "ekonomik", "kaliteli", "şık" gibi
+  niteleyiciler kullanılır; net fiyat ve fiyat aralığı verilmez.
 - **Sayılabilir şeyler listeyle, karşılaştırmalar tabloyla** verilir; içerikte en az bir tablo ya da liste
   bulunur.
 - **BAŞKA SAYFA kelimesi başlık ya da SSS olmaz;** bir kez, tanım cümlesi içinde ve sahibine link veren
@@ -157,16 +171,19 @@ listesi; köprüler `[LINK1]`, vurgu `**kalın**`), `sss` (`[soru, yanıt]`).
 
 ```bash
 python3 scripts/icerik_denetim.py --json $T/icerik.json --sahiplik $T/sahiplik.json --arastirma $T/arastirma.json --canli
-python3 scripts/icerik_docx.py --json $T/icerik.json --out "kadin-mont-icerik.docx"
-python3 scripts/cms_html.py   --json $T/icerik.json --out "kadin-mont-icerik.html"
+python3 scripts/icerik_docx.py --json $T/icerik.json --klasor "Kategori İçerik"      # -> kadin-mont.docx
 ```
 
 Denetim bulgu verirse çıktı üretilmez; önce metin düzeltilir. `NOT:` satırları okunarak karar verilir.
 Ardından `references/kontrol-listesi.md`'deki okuyarak yapılan kontroller geçilir.
 
-`cms_html.py` seçenekleri: CMS şablonu içerik başlığını H2 basıyorsa `--baslik-kaydir 1`; SSS ayrı modüle
-girecekse `--sss-ayri`; FAQPage JSON-LD istenirse `--schema`. Bu üçü Boyner tarafının tercihidir, ilk
-teslimde sorulur.
+**Ardından içerik bağımsız bir değerlendirmeden geçirilir.** Betik biçime bakar; özne-yüklem uyumu, anlam,
+bilgi doğruluğu ve iç çelişki ancak okuyarak yakalanır. `seo-content` ajanına (yoksa `seo-content` skill'i
+ile satır içi) içerik JSON'u verilir ve şunlar istenir: dil ve anlam (özne-yüklem, kayan özne, mantık), kip
+kullanımı, başlıkların arama diline uygunluğu, bilgi doğruluğu, iç çelişki, SEO/GEO ve 100 üzerinden puan.
+Ajana bilinçli kısıtlar (rakam yok, sahipli kelimelere başlık yok, link sayısı) söylenir ki bunları eksik
+saymasın. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
+kelimeye başlık) alınmaz. Düzeltmelerden sonra denetim betiği yeniden çalıştırılır ve Word dosyası üretilir.
 
 Çıktılar çalışma klasörüne kaydedilir ve kullanıcıya gönderilir. Teslim notunda üç şey söylenir: hangi bilgi
 hangi kaynaktan alındı · ne yazılmadı ve neden (sahibi başka sayfa olan kelimeler, teyit edilemeyen
@@ -182,7 +199,8 @@ bilgiler) · hangi konuda karar bekleniyor.
 - **Link sayısı 5-8;** her hedef canlı, canonical ve ürünlü olmalıdır. Arama (`/search?q=`), kampanya ve
   outlet sayfalarına link verilmez.
 - **Hitap "siz";** "sen", birinci çoğul ve "bayan" kullanılmaz.
-- **Fiyat, indirim oranı, kampanya adı, yıl ve "bu sezon" yazılmaz.** Sayfa bir yıl sonra da düzeltme
+- **Net fiyat, fiyat aralığı, indirim oranı, kampanya adı, yıl ve "bu sezon" yazılmaz** ("uygun", "ekonomik"
+  gibi niteleyiciler ve rakamsız "Fiyatları" başlığı serbesttir). Sayfa bir yıl sonra da düzeltme
   istemeden doğru kalmalıdır. Ürün sayısı da yazılmaz.
 - **Canlı kayıtta olmayan ürün bilgisi yazılmaz.** Boyner'de satılmayan marka, sitede filtrelenmeyen tür
   metne girmez. Rakip perakendeci adı geçmez.
@@ -190,7 +208,8 @@ bilgiler) · hangi konuda karar bekleniyor.
   ifadeler ancak kaynakla. Kozmetikte sağlık iddiası kurulmaz.
 - **Boyner hizmetleri** (teslimat, iade, Boyner Now) yalnız sitenin kendi sayfasından teyit edilerek ve
   süre/tutar rakamı verilmeden anılır.
-- **Sabit başlık şablonu kullanılmaz;** her başlığın araştırmada bir dayanağı vardır. Fiyat başlığı açılmaz.
+- **Sabit başlık şablonu kullanılmaz;** her başlığın araştırmada bir dayanağı vardır ve başlık aranabilir bir
+  ifadedir.
 - **Mevcut içeriklerin yapısı örnek alınmaz;** yalnız "siz" hitabı sürdürülür.
 - İçerik Dili Rehberi bu çıktıya uygulanmaz (tüketiciye dönük metin). Uzun tire, emoji ve marka sembolü
   yine de kullanılmaz.

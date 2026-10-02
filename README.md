@@ -34,10 +34,10 @@ scripts/
   brief_satiri.py                     Brief Excel'ine kategori satırı ekler
   icerik_denetim.py                   Yapı, link, sahiplik, biçim ve SSS denetimi
   icerik_docx.py                      İçerik JSON'undan Word dosyası
-  cms_html.py                         CMS'e girilecek temiz HTML (+ isteğe bağlı FAQPage JSON-LD)
+  cms_html.py                         Yalnız istenirse: CMS HTML'i (varsayılan akışta üretilmez)
   ortak.py                            Ortak yardımcılar
-assets/brief-sablonu.xlsx             Boş brief Excel'i
-examples/                             "Kadın Mont" örneği: brief satırı, içerik JSON'u, Word, HTML
+(brief Excel'i `brief_satiri.py --kur` ile envanterden kurulur)
+examples/                             "Kadın Mont" örneği: brief satırı JSON'u, içerik JSON'u, Word
 ```
 
 ## Hızlı kullanım
@@ -48,10 +48,10 @@ python3 scripts/kategori.py URL --cikti kayit.json                   # canlı ka
 python3 scripts/arastirma.py "kadın mont" --url URL --cikti arastirma.json
 python3 scripts/sahiplik.py --arastirma arastirma.json --url URL --kayit kayit.json --teyit --cikti sahiplik.json
 python3 scripts/baslik_adaylari.py --arastirma arastirma.json --sahiplik sahiplik.json --kayit kayit.json
+python3 scripts/brief_satiri.py --xlsx "Boyner kategori içerik briefleri.xlsx" --kur      # ilk kurulum: sekmeler
 python3 scripts/brief_satiri.py --xlsx "Boyner kategori içerik briefleri.xlsx" --json satir.json
 python3 scripts/icerik_denetim.py --json icerik.json --sahiplik sahiplik.json --arastirma arastirma.json --canli
-python3 scripts/icerik_docx.py --json icerik.json --out kadin-mont-icerik.docx
-python3 scripts/cms_html.py --json icerik.json --out kadin-mont-icerik.html
+python3 scripts/icerik_docx.py --json icerik.json --klasor "Kategori İçerik"   # -> kadin-mont.docx
 ```
 
 `arastirma.py`, DataForSEO kimliğini `~/.claude.json` içindeki `dfs-mcp` yapılandırmasından okur; depoda

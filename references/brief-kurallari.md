@@ -1,8 +1,11 @@
 # Brief Excel'i: sütunlar ve kurallar
 
-Brief, kategori başına **tek satır** olarak ortak Excel'e eklenir. Dosya adı
-`Boyner kategori içerik briefleri.xlsx`, sekme `Kategori Briefleri`. Aynı URL ikinci kez gönderilirse
-satır güncellenir.
+Brief, kategori başına **tek satır**dır. Dosya adı `Boyner kategori içerik briefleri.xlsx`. Excel, içerik
+yazılacak tüm kategori sayfalarını **kategori tipine göre sekmelerde** taşır: `Kategori` (cinsiyetsiz kategori
+sayfaları), `Kadın`, `Erkek`, `Çocuk`, `Bebek` (cinsiyet + kategori sayfaları). `brief_satiri.py --kur`
+sekmeleri sitemap envanterinden kurar; her sayfa `Bekliyor` durumunda bir satırdır. Brief hazırlandığında
+satır URL'ye göre bulunup doldurulur ve `Hazır` olur. Envanterde olmayan bir sayfa (sitemap ana ağaçtaki bazı
+sayfaları taşımıyor) ilgili sekmenin sonuna eklenir.
 
 ## Düzen
 
@@ -15,6 +18,9 @@ kaydırmalı. `scripts/brief_satiri.py` biçimi kendisi kurar.
 **Kategori** - sayfanın adı ("Kadın Mont").
 
 **URL** - teyit edilmiş hedef adres (bkz. `sahiplik-ve-cannibalization.md`, Adım 1).
+
+**Brief** - `Bekliyor` ya da `Hazır`; betik doldurur. Kurulumda Kategori sütunu slug'dan üretilir (Türkçe
+karaktersiz); brief hazırlanınca sayfanın gerçek adıyla değişir.
 
 **Main KW** - sayfanın ana kelimesi, küçük harfle. Kategori sorgusunun en hacimli doğal biçimi
 ("kadın mont"; "mont kadın" ya da "bayan mont" değil).

@@ -38,6 +38,13 @@
 - [ ] SSS yanıtları 30-70 kelime, ilk cümle doğrudan yanıt, gövdeyi tekrar etmiyor mu?
 - [ ] Gövde uzunluğu içerikli rakiplerin medyanının üzerinde mi; altındaysa gerekçesi var mı?
 
+- [ ] Başlıklar aranabilir ifadeler mi, ana kelimeyi ya da ürün adını taşıyor mu? ("Boy, Kalıp ve Beden" değil "Kadın Montlarda Boy, Kalıp ve Beden Seçimi")
+- [ ] Yüklem dağılımı tek kipe mi kilitlenmiş? Özne ile yüklem uyuşuyor mu, ana kelime cümlede çekimli mi?
+- [ ] Tanımlar ve sayımlar metin boyunca tutarlı mı?
+- [ ] Ticari kelimeler (fiyatları, uygun, ekonomik, kaliteli, şık) karşılandı mı? Net fiyat ya da aralık var mı? (olmamalı)
+- [ ] Bağımsız içerik değerlendirmesi (`seo-content`) yapıldı mı, bulgular işlendi mi?
+- [ ] Word belgesinin adı `{slug}: {tam URL}` mi?
+
 ## Otomatik denetim
 
 ```bash
@@ -49,6 +56,6 @@ verilecek adaylardır (kalıp ifade, zamana bağlı söz, karşılanmayan SERBES
 
 ## Teslim
 
-Çıktılar çalışma klasörüne kaydedilir: brief Excel'i, içerik Word dosyası, CMS HTML'i. Kullanıcıya üç şey
+Çıktılar çalışma klasörüne kaydedilir: brief Excel'i ve içerik Word dosyası (HTML yalnız istenirse). Kullanıcıya üç şey
 söylenir: hangi bilgi hangi kaynaktan alındı; ne yazılmadı ve neden (özellikle sahibi başka sayfa olan
 kelimeler); hangi konuda karar ya da teyit bekleniyor (site düzeyinde çakışma, canonical, CMS'te SSS modülü).

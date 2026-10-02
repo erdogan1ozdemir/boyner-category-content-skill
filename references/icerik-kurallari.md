@@ -38,20 +38,35 @@ bekliyor. Bu yüzden:
 - Moda dili serbesttir ama somut kalır: kalıp, boy, yaka, kumaş, renk, kombin. "Zahmetsiz şıklık",
   "stil yolculuğu", "tarzınızı konuşturun" gibi içi boş kalıplar yazılmaz.
 - Ünlem en fazla bir yerde, kapanışta kullanılabilir.
+- **Ticari niteleyiciler kullanılır:** "uygun fiyatlı", "en uygun", "ekonomik", "bütçeye uygun" ile "kaliteli",
+  "şık", "premium" gibi kelimeler metinde doğal yerlerinde geçer (kullanıcı kararı, 02.10.2026); bunlar
+  kategori aramalarının ticari niyetini karşılar. Net fiyat ve fiyat aralığı verilmez. Niteleyici bir özelliğe
+  bağlanır: "kaliteli" tek başına değil, "kaliteli dolgusu ve sağlam fermuarı olan".
 
 ## 2. Zaman kipi
 
-Tek kipe kilitlenen metin makine çıktısı gibi okunur. Kip cümlenin işine göre değişir:
+Tek kipe kilitlenen metin makine çıktısı gibi okunur; **uygun yerlerde farklı kipler kullanılır** (kullanıcı
+kararı, 02.10.2026). Kip cümlenin işine göre değişir:
 
 | Cümle ne yapıyor | Kip | Örnek |
 |---|---|---|
-| Tanım, her zaman geçerli olan | Geniş zaman | "Şişme mont, dolgulu kanallarıyla ısıyı gövdede tutar." |
-| Ürün gamı, Boyner'de olan | Şimdiki zaman / isim cümlesi | "Kategoride kapüşonlu, uzun ve kısa kesim modeller bulunuyor." |
+| Tanım, her zaman geçerli bilgi | Geniş zaman | "Şişme mont, dolgulu kanallarıyla ısıyı gövdede tutar." |
+| Boyner'deki ürün gamı, katalog | Şimdiki zaman | "Kategoride kapüşonlu, uzun ve kısa modeller yer alıyor." |
+| Tasarım ve üretim bilgisi | `-mıştır` / `-maktadır` | "Kayak montu pist için tasarlanmıştır.", "Dış kumaş polyesterden üretilmektedir." |
 | Okuyucuya öneri | İkinci çoğul, olasılık | "Bel hizasında biten bir model tercih edebilirsiniz." |
-| Kural, ölçüt | Gereklilik | "Beden seçerken içine giyilecek kat hesaba katılmalıdır." |
+| Ölçüt | İsim cümlesi | "Belirleyici olan dolgu miktarıdır." |
+| Sıralı adım | İkinci çoğul emir | "Fermuarları kapatın." |
 
-Öneri kipi ("-ebilirsiniz") gövdenin baskın kipi olmamalı; her paragrafta bir kez yeter. Tanım ve ölçüt
-cümleleri düz bildirir.
+Ölçü dağılımdır: gövdede yüklemlerin %70'inden fazlası geniş zamandaysa metin ansiklopedi maddesine döner;
+`icerik_denetim.py` yüklem dağılımını raporlar. Kip rastgele değiştirilmez: genel geçer bir bilgi şimdiki
+zamanla ("montlar hafif oluyor") yazılmaz, katalog bilgisi geniş zamanla donuklaşmaz.
+
+**Bir paragrafta edilgen ile "siz" arasında gidip gelinmez.** "Üç ölçüte bakılır... belirlediğinizde" yerine
+"üç ölçüte bakabilirsiniz... belirlediğinizde". Gereklilik kipi ("-malıdır") kategori metninde sert durur;
+yalnız gerçek gereklilikte (bakım, güvenlik) kullanılır.
+
+**Kipler arası sert geçiş yumuşatılır:** edilgen bir giriş cümlesinden emir kipli adımlara geçilecekse giriş
+"şu adımları izleyebilirsiniz" diye okuyucuya döner.
 
 ## 3. Yapı: iskelet araştırmadan çıkar
 
@@ -90,10 +105,22 @@ ailesi" ve "konsantrasyon", nevresimde "ölçü" ve "kumaş") ve çoğu zaman en
   kullanırım / bakarım", sonda "nereden, hangi markadan". En çok aranan konu yukarıda durur.
 - **Sayı kapsama göre:** uç kategoride 3-5, ana kategoride 5-8 H2. Bir H2'nin altı iki paragrafı
   dolduramıyorsa H3'e iner ya da SSS'ye gider.
-- Başlık kelimesi araştırmadan seçilir ("Çeşitleri" mi "Modelleri" mi: hangisi aranıyorsa). Başlık en fazla
-  iki konu taşır. Kategori adı her başlıkta tekrarlanmaz; dört beş başlıkta geçmesi yeter.
-- **Fiyat başlığı açılmaz** (rakipte olsa da): rakam yazılamadığı için altı boş kalır. Fiyat sorusu SSS'de,
-  fiyatı belirleyen etkenlerle yanıtlanır.
+- **Başlık, kullanıcının arama diliyle yazılır** (kullanıcı kararı, 02.10.2026). Ölçü: bu başlık Google'a
+  yazılabilecek bir ifade mi? "Boy, Kalıp ve Beden" kimsenin aramadığı bir etikettir; "Kadın Montlarda Boy,
+  Kalıp ve Beden Seçimi" aranabilir. "Dolgu ve Astar" yerine "Kaz Tüyü Mont ile Elyaf Dolgulu Mont Arasındaki
+  Fark"; "Mont Bakımı ve Temizliği" yerine "Mont Nasıl Yıkanır?".
+- **Ana kelime ya da ürün çekirdeği başlıkta geçer.** H2 ve H3'lerin çoğu kategori adını ("Kadın Mont") ya da
+  ürün adını ("Mont") taşır; bağlamı başlıktan düşürülmüş genel etiketler ("Markalar", "Seçenekler")
+  kullanılmaz. "Mevsime ve Kullanıma Göre Kadın Mont Modelleri", "Uzun, Kısa ve Kapüşonlu Kadın Mont
+  Modelleri".
+- **Biçim hacme göre seçilir.** Aynı konunun iki yazımı varsa hacmi yüksek olan başlığa çıkar: "modelleri"
+  mi "çeşitleri" mi, "nasıl seçilir" mi "alırken nelere dikkat edilmeli" mi; kelime kümesi ve PAA karar
+  verir. "... Modelleri" eki Türkçe kategori aramalarının en yaygın kalıbıdır ve H3'lerde de kullanılır.
+- Başlık en fazla iki konu taşır (aynı eksenin değerleri tek konu sayılır: "Uzun, Kısa ve Kapüşonlu").
+- **Ticari kelimeler karşılanır, rakam verilmez.** "{Kategori} Fiyatları" başlığı açılabilir ("fiyatları",
+  "modelleri ve fiyatları" kategori aramalarının büyük kısmını oluşturur): altında fiyatı belirleyen etkenler,
+  hangi türlerin ekonomik, hangilerinin üst fiyat grubunda olduğu ve sayfadaki fiyat filtresi anlatılır. Net
+  fiyat, fiyat aralığı, indirim oranı ve kampanya yazılmaz.
 - Kapanış bölümü ("Boyner'de {Kategori} Alışverişi") isteğe bağlıdır; söylenecek somut şey (filtreler,
   teyitli hizmet) varsa açılır, yoksa son bölümün sonuna iki cümlelik çağrı yeter.
 
@@ -113,6 +140,7 @@ kullanılır; araştırmanın gösterdiği ama havuzda olmayan konu da başlık 
 | Nasıl Kombinlenir? | Giyim, ayakkabı, çanta, aksesuar | tür başına eşleşme maddesi; tamamlayıcı kategori linki |
 | Nasıl Kullanılır? / Nasıl Uygulanır? | Kozmetik, bakım, spor ekipmanı, ev aletleri | numaralı adımlar |
 | Hangi Aktivitede / Nerede Kullanılır? | Spor, outdoor, valiz, çanta | aktiviteye göre tip tablosu |
+| Fiyatları | Hemen her kategoride ("fiyatları" kelimesi aranıyorsa) | fiyatı belirleyen etkenler; rakam yok |
 | Markaları | Kategoride birden çok marka varsa ve marka sorusu aranıyorsa | kullanım amacına göre gruplar; marka + kategori linkleri |
 | Bakımı / Temizliği / Saklanması | Bakım sorusu varsa ve ürün bakım istiyorsa | numaralı adımlar |
 | Hediye olarak / Özel gün | Hediye niyeti aranıyorsa (parfüm, saat, takı, cüzdan) | kısa bölüm |
@@ -275,12 +303,22 @@ tarihi yazılmaz. Bir iki cümlelik çağrıyla biter.
 - Yanıt kendi başına okunur, gövdeye gönderme yapmaz, kategori adını bir kez tam haliyle taşır.
 - Soru kullanıcının arama diliyle ama düzgün Türkçeyle yazılır: "kadın mont beden" değil "Kadın mont bedeni
   nasıl seçilir?".
-- Fiyat sorusu ("kadın mont fiyatları ne kadar?") rakamla yanıtlanmaz; fiyatı belirleyen etkenlerle
-  (dolgu, marka, uzunluk) yanıtlanır.
+- Fiyat sorusu rakamla yanıtlanmaz; fiyatı belirleyen etkenlerle (dolgu, marka, uzunluk) yanıtlanır. Gövdede
+  "Fiyatları" başlığı varsa SSS'de tekrarlanmaz.
 
 ## 12. Cümle kurgusu
 
+- **Özne ile yüklem uyuşur; yüklemin işi öznenin yapabileceği bir iştir.** "Kısa montlar araç kullanırken
+  rahat eder" cümlesinde rahat eden mont değil, giyen kişidir: "kısa montlar hareketi kısıtlamaz". Her cümle
+  "kim / ne yapıyor" diye okunur.
 - Yan cümlede özne açık olur; bilgi doğru özneye bağlanır (montu sıcak tutan dolgu ve astardır, renk değil).
+- **Ana kelime cümle içinde çekimlenir.** Arama ifadesi "kadın mont"tur ama Türkçe cümlede özne "kadın
+  montu / kadın montları" olur. Yalın biçim başlıklarda ve "kadın mont modelleri" gibi zincirlerde kalır;
+  cümle öznesi olarak "Kadın mont, ... korur" yazılmaz.
+- **Tanımlar metin boyunca tutarlı kalır.** Bir yerde "bel ile kalça arasında biter" denen ürün başka yerde
+  "diz üstüne iner" diye tanımlanmaz; sayı verilen sayım ("üç ölçüt", "yedi tür") listeyle birebir tutar.
+- İki ayrı iş tek yükleme bağlanmaz: "rüzgârı keser ve ıslandığında silinerek temizlenir" yerine "rüzgârı
+  keser, yüzeyi su emmez; lekeler nemli bezle silinir".
 - Aynı cümlede aynı kök iki kez geçmez; art arda iki cümle aynı kalıpla açılmaz.
 - Olumsuzla koşul kurulmaz: "çok dar olmayan" yerine "omuzdan bir parmak boşluk bırakan".
 - Mecaz yerine düz anlatım: "soğuğa meydan okuyan" değil "astarlı ve rüzgâr geçirmeyen".
@@ -289,7 +327,8 @@ tarihi yazılmaz. Bir iki cümlelik çağrıyla biter.
 
 ## 13. Yazarken kaçınılacaklar
 
-- Fiyat, indirim oranı, kampanya adı ve tarihi; yıl ("2026 modası"), "bu sezon", "yeni sezon trendi" gibi
+- Net fiyat, fiyat aralığı, indirim oranı, kampanya adı ve tarihi ("uygun", "ekonomik" gibi niteleyiciler
+  serbesttir); yıl ("2026 modası"), "bu sezon", "yeni sezon trendi" gibi
   zamanla eskiyen ifadeler. Sayfa bir yıl sonra da düzeltme istemeden doğru kalmalı.
 - Rakip perakendeci adı. Boyner'de satılmayan marka.
 - Sitede karşılığı olmayan tür, renk, malzeme (canlı kayıtla teyit edilmeden yazılan her ürün bilgisi).

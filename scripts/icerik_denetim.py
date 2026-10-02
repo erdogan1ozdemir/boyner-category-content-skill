@@ -24,7 +24,7 @@ from ortak import kumeler, url_coz, duz as duzle
 BICIM = [("—", "uzun tire"), ("–", "en tire"), (r"(?<=\S)  +(?=\S)", "çift boşluk"), ("®|™", "marka sembolü"),
          (r"[\U0001F300-\U0001FAFF☀-➿]", "emoji"), (r"\.\.(?!\.)", "çift nokta"), (r" ,| \.(?!\w)", "boşluk-noktalama"),
          (r"(?i)\b\d[\d.,]*\s*(TL|lira)\b|₺", "fiyat"), (r"(?i)%\s?\d+\s*(?:'?[ea]? varan )?indirim|\d+\s?%\s*indirim", "indirim oranı"),
-         (r"\b20[2-3]\d\b", "yıl (zamana bağlı ifade)"), (r"(?i)\ben ucuz\b|\ben uygun fiyat", "fiyat iddiası"),
+         (r"\b20[2-3]\d\b", "yıl (zamana bağlı ifade)"), 
          (r"(?i)\b\w+(?:abilirsin|ebilirsin|malısın|melisin)\b|\bsenin\b|\bsana\b", "'sen' hitabı (Boyner dili 'siz')"),
          (r"(?i)\btrendyol|hepsiburada|\bn11\b|amazon|morhipo|\bzara\b|\blcw\b|lc waikiki|\bkoton\b|\bbeymen\b|\bflo\b(?! [a-z])",
           "rakip perakendeci adı")]
@@ -260,9 +260,27 @@ def main():
         if re.match(r"(?i)\s*(yukarıda|daha önce|belirtildiği)", duz(c)):
             sorun.append(f"SSS yanıtı gövdeye gönderme yapıyor: {q}")
 
-    kip = {k: len(re.findall(p, govde_metin)) for k, p in
-           [("-iyor", r"\w+(?:ıyor|iyor|uyor|üyor)(?:lar|sunuz)?\b"), ("-ir/-ar", r"\w+(?:[ıiuü]r|[ae]r)\b"),
-            ("-ebilirsiniz", r"\w+(?:abilirsiniz|ebilirsiniz)\b"), ("-malı", r"\w+(?:malıdır|melidir|malı|meli)\b")]}
+    # kip dağılımı: cümlelerin yüklemine (son kelimesine) bakılır
+    yuklem = [re.sub(r"\W+$", "", c).split()[-1].lower() for t, i in g if t in ("p", "mad", "li")
+              for c in re.split(r"(?<=[.!?;:])\s+", duz(i)) if re.sub(r"\W+$", "", c).split()]
+    kip = {"-iyor": 0, "-ir/-ar": 0, "-ebilirsiniz": 0, "-malı": 0, "-mıştır": 0, "isim/-dır": 0, "emir": 0}
+    for y in yuklem:
+        if re.search(r"(?:ıyor|iyor|uyor|üyor)$", y): kip["-iyor"] += 1
+        elif re.search(r"(?:abilirsiniz|ebilirsiniz)$", y): kip["-ebilirsiniz"] += 1
+        elif re.search(r"(?:malıdır|melidir|malı|meli|gerekir)$", y): kip["-malı"] += 1
+        elif re.search(r"(?:mıştır|miştir|muştur|müştür)$", y): kip["-mıştır"] += 1
+        elif re.search(r"(?:[ıiuü]n|[ae]y[ıi]n)$", y) and re.search(r"(?:yın|yin|ın|in|un|ün)$", y): kip["emir"] += 1
+        elif re.search(r"(?:[dt][ıiuü]r)$", y): kip["isim/-dır"] += 1
+        elif re.search(r"(?:[ıiuü]r|[ae]r|maz|mez|l[ıi]r|n[ıi]r)$", y): kip["-ir/-ar"] += 1
+    # tek kipe kilitlenen metin makine çıktısı gibi okunur
+    top = sum(kip.values()) or 1
+    if kip["-ir/-ar"] / top > 0.7:
+        uyari.append(f"gövde geniş zamana kilitlenmiş (%{kip['-ir/-ar'] / top * 100:.0f}); ürün gamı ve anlatı cümleleri "
+                     "şimdiki zamanla, öneriler '-ebilirsiniz' ile çeşitlendirilebilir")
+    eksiz = len(re.findall(r"(?:^|[.!?:]\s+)(?:[A-ZÇĞİÖŞÜ]\w+ )?" + re.escape(d["main_kw"]) + r"[, ]", govde_metin, re.I))
+    if eksiz >= 4:
+        uyari.append(f"ana kelime {eksiz} cümlede yalın (eksiz) biçimde özne konumunda; cümle içinde çekimli biçim "
+                     "doğal olur ('kadın montu', 'kadın montları')")
     print(f"{d['kategori']}: gövde {kelime} kelime · {len(h2)} H2 · {len(h3)} H3 · {len(linkler)} link · {len(sss)} SSS "
           f"(SSS {sum(len(duz(c).split()) for _, c in sss)} kelime) · ana kelime {gecis} kez (%{yogunluk:.1f}) · "
           "kip: " + ", ".join(f"{k} {v}" for k, v in kip.items()))
