@@ -17,9 +17,10 @@ hedef bir marka sayfasıysa okunur.
 
 Marka sayfasında envanter hep tek aday verir; çakışmayı yalnız GSC gösterir. Her marka için bakılır:
 
-- **`/content/{marka}` sayfası var mı** ve marka sorgusunda hangisi gösterim alıyor? (Calvin Klein'da marka
-  sorgusunun gösterimini `/content/calvin-klein` alıyordu.) Varsa içerik yazılır ama çakışma teslim notunun ilk
-  maddesidir; hangi sayfanın asıl marka sayfası olacağı kullanıcı kararıdır.
+- **`/content/{marka}` sayfaları** görselli kampanya / karosel sayfalarıdır, listeleme değildir. Marka sorgusunun
+  esas sayfası her zaman marka listeleme sayfasıdır (`/calvin-klein-x-b568`; kullanıcı kararı, 02.10.2026).
+  `/content/{marka}` marka sorgusunda gösterim alıyorsa bu yalnız teslim notunda bilgi olarak yazılır; içerik
+  marka listeleme sayfasına yazılır, `/content/` sayfasına link verilmez.
 - **Alt marka sayfaları** (Calvin Klein Jeans, Tommy Jeans): o çizginin kelimeleri alt marka sayfasınındır;
   ana marka içeriğinde bir kez, link olarak geçer.
 - Rakip olarak **diğer perakendecilerin marka sayfaları** okunur. `arastirma.py` ilk 5'e markanın kendi sitesini,

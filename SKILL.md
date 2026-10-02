@@ -211,8 +211,13 @@ bilgiler) · hangi konuda karar bekleniyor.
 - **Bir kelime, bir sahip.** Sahibi başka sayfa olan kelime için başlık, SSS ya da ayrı paragraf açılmaz.
 - **Bu sayfanın ana kelimesi başka sayfaya anchor olmaz;** sayfa kendine link vermez; aynı hedefe iki kez
   link verilmez.
-- **Link sayısı 5-8;** her hedef canlı, index'e açık, canonical ve ürünlü olmalıdır. Arama (`/search?q=`),
-  blog (`/mag/`), içerik (`/content/`), kampanya ve outlet sayfalarına link verilmez.
+- **Link sayısı 5-8;** her hedef canlı, index'e açık, canonical ve ürünlü olmalıdır. Blog (`/mag/`), içerik /
+  kampanya (`/content/`) ve outlet sayfalarına link verilmez. Arama sayfasına (`/search?q=`) yalnız o arama için
+  açılmış kısa H3'ten link verilir.
+- **Cinsiyetli sayfa cinsiyetli kelimeyi, cinsiyetsiz çatı sayfa cinsiyetsiz kelimeyi hedefler** ("erkek
+  gömlek" -> `/erkek-gomlek`, "gömlek" -> `/gomlek`). Marka sorgusunun esas sayfası marka listeleme sayfasıdır;
+  `/content/{marka}` kampanya sayfasıdır.
+- **Anchor, hedefin sıralandığı aramaya göre yazılır,** sayfanın adına göre değil.
 - **Hitap "siz";** "sen", birinci çoğul ve "bayan" kullanılmaz.
 - **Net fiyat, fiyat aralığı, indirim oranı, kampanya adı, yıl ve "bu sezon" yazılmaz** ("uygun", "ekonomik"
   gibi niteleyiciler ve rakamsız "Fiyatları" başlığı serbesttir). Sayfa bir yıl sonra da düzeltme

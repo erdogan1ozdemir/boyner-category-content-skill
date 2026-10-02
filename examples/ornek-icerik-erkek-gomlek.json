@@ -16,10 +16,6 @@
    "erkek denim gömlek",
    "https://www.boyner.com.tr/erkek-denim-gomlek-x-g3730-c23896610"
   ],
-  "LINK4": [
-   "erkek gömlek ceket",
-   "https://www.boyner.com.tr/erkek-gomlek-ceket-x-g3730-c23896611"
-  ],
   "LINK5": [
    "erkek outdoor gömlek",
    "https://www.boyner.com.tr/erkek-outdoor-gomlek-x-g3730-c2121"
@@ -28,13 +24,17 @@
    "U.S. Polo Assn. erkek gömlek",
    "https://www.boyner.com.tr/u-s-polo-assn-erkek-gomlek-x-b227-g3730-c23896609"
   ],
-  "LINK7": [
-   "erkek pantolon",
-   "https://www.boyner.com.tr/erkek-pantolon-x-g3730-c23896593"
-  ],
   "LINK8": [
    "erkek takım elbise",
    "https://www.boyner.com.tr/erkek-takim-elbise-x-g3730-c200108"
+  ],
+  "LINK9": [
+   "keten gömlek",
+   "https://www.boyner.com.tr/search?q=keten+gomlek"
+  ],
+  "LINK10": [
+   "oduncu gömleği",
+   "https://www.boyner.com.tr/search?q=oduncu+gomlegi"
   ]
  },
  "govde": [
@@ -52,7 +52,7 @@
   ],
   [
    "p",
-   "Erkek gömlek modellerinde kullanım yerine, kol uzunluğuna ve kumaşa göre başlıca sekiz çeşit öne çıkar. Bu çeşitleri sizin için tek tek tanımladık:"
+   "Erkek gömlek modellerinde kullanım yerine, kol uzunluğuna ve kumaşa göre başlıca altı çeşit öne çıkar. Bu çeşitleri sizin için tek tek tanımladık:"
   ],
   [
    "mad",
@@ -68,19 +68,11 @@
   ],
   [
    "mad",
-   "**Erkek keten gömlek:** Keten gömlekler yaz ayları için uygundur, çünkü keten lifi nemi emip çabuk bırakır, kumaş da hava geçirir. Keten doğal olarak kırışır ve bu görünüm kumaşın özelliğidir."
-  ],
-  [
-   "mad",
-   "**Erkek oduncu gömleği:** Oduncu gömleği, iri kare desenli, kalın kumaşlı bir pamuklu gömlektir. Çoğunlukla yüzeyi hafifçe tüylendirilmiş flanel kumaştan dikildiği için sonbahar ve kış aylarında tercih edilebilir."
-  ],
-  [
-   "mad",
    "**Erkek denim gömlek:** Pantolonluk denimden daha ince bir denim kumaştan dikilen [LINK3] modelleri açık yıkamalı ya da koyu tonlu olabilir. Bu modeller günlük kombinlerde üst katman olarak da kullanılabilir."
   ],
   [
    "mad",
-   "**Erkek gömlek ceket:** Gömlek biçiminde ama daha kalın kumaştan dikilen [LINK4] modelleri tişört ya da ince kazak üstüne giyilir. Mevsim geçişlerinde hafif bir dış katman arayanlar için pratik bir seçenek olabilir."
+   "**Erkek gömlek ceket:** Gömlek biçiminde ama daha kalın kumaştan dikilen gömlek ceket modelleri tişört ya da ince kazak üstüne giyilir. Mevsim geçişlerinde hafif bir dış katman arayanlar için pratik bir seçenek olabilir."
   ],
   [
    "mad",
@@ -101,6 +93,22 @@
   [
    "p",
    "Cepsiz gömlekler genellikle daha resmi durur ve takım elbise altında tercih edilebilir. Tek göğüs cepli gömlekler günlük ve ofis kullanımına uygundur. Kapaklı çift cep ise çoğunlukla spor, denim ve outdoor gömleklerde görülür. Çift cepli erkek gömlek arayanlar bu çeşitlere bakabilir. \"Kol Bilgisi\" ve \"Cep Bilgisi\" filtreleri bu detaylara göre seçim yapmanızı kolaylaştırmaktadır."
+  ],
+  [
+   "H3",
+   "Erkek Keten Gömlek Modelleri"
+  ],
+  [
+   "p",
+   "Erkek keten gömlekler, keten lifinin nemi emip çabuk bırakması ve kumaşın hava geçirmesi sayesinde sıcak havada serin tutabilir. Keten doğal olarak kırışır; bu görünüm kumaşın karakterinin bir parçası sayılır. Daha az kırışan bir gömlek arıyorsanız pamuk ve keten karışımlı modeller tercih edilebilir. Kısa ve uzun kollu [LINK9] modelleri yaz ayları ve tatil için öne çıkan seçeneklerdendir."
+  ],
+  [
+   "H3",
+   "Erkek Oduncu Gömlek Modelleri"
+  ],
+  [
+   "p",
+   "Erkek oduncu gömleği, iri kare desenli ve kalın kumaşlı bir pamuklu gömlektir. Çoğunlukla yüzeyi hafifçe tüylendirilmiş flanel kumaştan dikildiği için sonbahar ve kış aylarında tercih edilebilir. Kalın kumaşı sayesinde tişört üstüne açık giyildiğinde hafif bir dış katman gibi de kullanılabilir. Jean, chino pantolon ve botla tamamlanan [LINK10] kombinleri günlük kullanım için uygun bir seçenek olabilir."
   ],
   [
    "H2",
@@ -340,7 +348,7 @@
   ],
   [
    "mad",
-   "**Yazlık erkek gömlek kombini:** Yazlık keten ve müslin gömlekler açık renkli, bol kalıplı [LINK7] modelleriyle ya da şortla ferah bir yaz kombini oluşturabilir."
+   "**Yazlık erkek gömlek kombini:** Yazlık keten ve müslin gömlekler açık renkli, bol kalıplı pantolonlarla ya da şortla ferah bir yaz kombini oluşturabilir."
   ],
   [
    "mad",

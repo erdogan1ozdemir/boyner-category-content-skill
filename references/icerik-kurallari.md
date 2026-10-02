@@ -98,6 +98,12 @@ taşımalıdır:
 | "Asetat (kemik) çerçeve:" | "Kemik (asetat) çerçeve güneş gözlüğü:" |
 | "Kalın taban:" | "Kalın tabanlı kadın sneaker:" |
 
+**Yardımcı listelerde cinsiyet (yüz şekli, marka grupları, bakım notları, ihtiyaç satırları).** Sayfanın
+cinsiyetsiz bir sürümü varsa (`/gunes-gozlugu` varken `/kadin-gunes-gozlugu`) yardımcı listelerde de cinsiyet
+kullanılır, ama abartılmaz: listenin giriş cümlesinde ve satırların yaklaşık yarısında yeter ("Kalp yüz için
+kadın güneş gözlüğü:", "Oval yüz:"). Cinsiyetsiz sürüm yoksa yardımcı listeler genel yazılabilir. Tür ve özellik
+etiketleri her durumda aranan kelimeyi taşır. (Kullanıcı kararı, 02.10.2026; ayar kategoriye göre yapılır.)
+
 Etiket başka bir sayfanın kelimesiyle birebir aynıysa (o türün kendi sayfası varsa) **etiketin kendisi link
 olur**: `**[LINK2]:**` (belgede kalın köprü olarak basılır). Böylece sahipli kelime metinde bir kez, anchor
 olarak geçer; ardından gelen cümlede aynı öbek tekrarlanmaz.

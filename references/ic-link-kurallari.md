@@ -48,7 +48,7 @@ hangi sayfanın hangi kelimeye ait olduğunu arama motoruna anlatır.
   ikisi birden linklenmez.
 - **Noindex sayfaya link verilmez** (`icerik_denetim.py --canli` kontrol eder). Sahibi noindex olan kelime düz
   metinle geçer ve durum teslim notunda bildirilir.
-- **Blog (`/mag/`) ve içerik (`/content/`) sayfalarına link verilmez;** kategori içeriğinin linkleri listeleme
+- **Blog (`/mag/`) ve içerik / kampanya (`/content/`) sayfalarına link verilmez;** kategori içeriğinin linkleri listeleme
   sayfaları arasındadır.
 - **Hedef canlı ve dolu olmalı:** 200 döner, canonical'ı kendisidir, en az 8 ürünü vardır (daha azı olan alt
   tür linklenmez, metinde düz geçer). Sitemap eski kategori kimliklerini de taşıdığı için bir adresin envanterde
@@ -57,9 +57,16 @@ hangi sayfanın hangi kelimeye ait olduğunu arama motoruna anlatır.
   değil, canonical adresin kendisine link verilir.
 - **Marka linki yalnız marka + kategori sayfasına verilir** (`/columbia-kadin-mont-x-b596-g3731-c23896554`),
   markanın ana sayfasına (`/columbia-x-b596`) değil: bağlam kategoriyse hedef de kategori kırılımıdır.
-  Seçim ölçütü: `arastirma.py` Boyner haritasında ve GSC'de o kelimede sıralanan sayfa. Canlı kırılımdaki adres
+  Seçim ölçütü: `arastirma.py` Boyner haritasında ve GSC'de o kelimede sıralanan sayfa.
+- **Anchor, sayfanın adına değil sıralandığı aramaya göre yazılır** (kullanıcı kararı, 02.10.2026). Sayfanın H1'i
+  "Ray-Ban Kadın Gözlük" olsa da "ray-ban kadın güneş gözlüğü" sorgusunda sıralanıyorsa anchor "Ray-Ban kadın
+  güneş gözlüğü" olur. Canlı kırılımdaki adres
   (`...-kadin-gunes-gozlugu-...`) ile sıralanan adres (`...-gunes-gozlugu-...`) farklıysa sıralanan adres seçilir.
-- **Arama sayfasına (`/search?q=...`) link verilmez.** Bu sayfalar Cloudflare doğrulaması arkasında ve
+- **Arama sayfasına (`/search?q=...`) yalnız o arama için açılmış H3'ten link verilir** (kullanıcı kararı,
+  02.10.2026; bkz. `sahiplik-ve-cannibalization.md`, Zayıf sahipler). Adres Google'da / GSC'de sıralanan arama
+  adresidir; sitemap'teki yazımı (`keten+gomlek` / `keten+gömlek`) tek tek kontrol edilir. Bu linkler
+  `--canli` ile okunamaz (Cloudflare), denetimde NOT olarak kalır. Başka bağlamda arama sayfasına link verilmez.
+- **Eski kural (iptal):** Arama sayfasına link verilmez. Bu sayfalar Cloudflare doğrulaması arkasında ve
   içerik taşımıyor; durumları betikle teyit edilemiyor. Kullanıcı açıkça isterse istisna yapılır.
 - **Filtre sayfasına (`?renk=`, `?materyal=`) link** yalnız o adres sitemap envanterinde varsa verilir.
 - **Kampanya, outlet ve tarihli sayfalara** (`/kampanya/...`, `/outlet-...`) link verilmez; içerik kalıcıdır,

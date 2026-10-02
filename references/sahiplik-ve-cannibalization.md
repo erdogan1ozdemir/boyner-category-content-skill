@@ -44,8 +44,8 @@ Ayrışmanın üç sık biçimi ve yapılacak olan:
 
 | Ayrışma | Yapılacak |
 |---|---|
-| Ana kelimede **blog yazısı** (`/mag/...`) ya da **marka içerik sayfası** (`/content/{marka}`) sıralanıyor | İçerik yazılır; çakışma teslim notunda GSC verisiyle bildirilir. Blog ve içerik sayfaları **zayıf sahiptir** (aşağıda). Marka sayfasında `/content/{marka}` var mı diye her zaman bakılır |
-| Cinsiyetli sayfa ile **cinsiyetsiz çatı sayfa** aynı sorguda dönüşümlü sıralanıyor (`/erkek-gomlek` ve `/gomlek`) | Kullanıcı hedefi açıkça verdiyse yazılır ve iki sayfanın GSC verisi bildirilir; vermediyse sorulur |
+| Ana kelimede **blog yazısı** (`/mag/...`) ya da **marka içerik sayfası** (`/content/{marka}`) sıralanıyor | İçerik yazılır; çakışma teslim notunda GSC verisiyle bildirilir. Blog ve içerik sayfaları **zayıf sahiptir** (aşağıda). `/content/{marka}` görselli kampanya / karosel sayfasıdır, listeleme değildir: marka sorgusunun esas sayfası her zaman marka listeleme sayfasıdır (`/{marka}-x-b...`; kullanıcı kararı, 02.10.2026) |
+| Cinsiyetli sayfa ile **cinsiyetsiz çatı sayfa** aynı sorguda dönüşümlü sıralanıyor (`/erkek-gomlek` ve `/gomlek`) | Cinsiyetli kelimenin içeriği cinsiyetli sayfaya yazılır ("erkek gömlek" -> `/erkek-gomlek`); cinsiyetsiz kelimenin içeriği ayrıca, cinsiyetsiz çatı sayfaya yazılır ("gömlek" -> `/gomlek`). Bkz. aşağıda "Cinsiyetli ve cinsiyetsiz sayfa ailesi" |
 | **Eş sesli kategori**: aynı ad iki farklı ürünü karşılıyor (kulaklık: elektronik ve kışlık aksesuar) | Breadcrumb ve ürünlere bakılır; kullanıcının kastettiği ağaçtaki sayfa seçilir, öteki not edilir |
 
 **Cinsiyet + kategori sayfasının canonical'ı kategori sayfasını gösterebilir** (`/kadin-elbise-x-g3731-c23896624`
@@ -123,11 +123,21 @@ GSC'ye erişilemiyorsa bu adım atlanır ve atlandığı kullanıcıya söylenir
   "en iyi fondöten") alabilirler, ama kategori niyetli kelimeyi ("fondöten markaları", "fondöten çeşitleri")
   kategori sayfasından alamazlar: kategori sayfası bu başlıkları açabilir. "En iyi ..." listesi blogundur,
   kategori içeriğinde açılmaz. Bu sayfalara link verilmez (kullanıcı isterse istisna).
-- **Arama sayfası (`/search?q=`) sahibi olan alt tür** (keten gömlek, oduncu gömlek): başlık açılmaz, link
-  verilmez; tür, çeşitler listesinde tek maddeyle tanımlanır. (Bu kuralın gevşetilmesi kullanıcı kararını
-  bekliyor, 02.10.2026.)
+- **Arama sayfası (`/search?q=`) sahibi olan alt tür** (keten gömlek, oduncu gömlek; kullanıcı kararı,
+  02.10.2026): kendi H3'ünü alabilir, ama arama sayfasıyla yarışmayacak ölçüde: tek paragraf (60-100 kelime),
+  türü tanımlar ve hangi ihtiyaca uyduğunu söyler; renk, kalıp, kombin gibi alt kırılımlara inmez. Paragrafın
+  bir cümlesinde arama sayfasına link verilir (anchor: aramanın kendisi, "keten gömlek"). Aynı türün ayrıca
+  çeşitler listesinde maddesi olmaz. Arama sayfası renk sorgusunun sahibiyse ("siyah kadın mont") başlık
+  açılmaz; renk girişte ve kombin bölümünde tek cümleyle geçer.
 - **Sahibi 8 üründen az olan kelime** (oyuncu kulaklığı: 7 ürün): başlık açılmaz, link de verilmez; düz metinle
   bir kez geçer.
+- **Cinsiyetli ve cinsiyetsiz sayfa ailesi.** Giyim, ayakkabı ve aksesuarda aynı ürünün çoğu zaman cinsiyetsiz
+  (`/gomlek`), kadın (`/kadin-gomlek`), erkek (`/erkek-gomlek`) ve çocuk sürümleri vardır. Her sürüm kendi
+  kelimesini hedefler: cinsiyetli sayfa cinsiyetli kelimeyi (başlıklar ve madde etiketleri cinsiyeti taşır),
+  cinsiyetsiz sayfa cinsiyetsiz kelimeyi ve ürünün genel bilgisini ("gömlek nedir", "gömlek nasıl ütülenir").
+  Cinsiyetli içerikte cinsiyetsiz bilgi anlatılabilir ama başlığa çıkmaz; ileride cinsiyetsiz sayfaya içerik
+  yazılırsa aynı bilgi oraya genel biçimiyle girer. İki sürüm birbirine link verebilir (cinsiyetsiz sayfa
+  cinsiyetli sürümlere, cinsiyetli sayfa üst ağaca).
 - **Cinsiyetsiz bilgi sorusu** ("sneaker ne demek", "sneaker nasıl temizlenir"): doğal sahibi cinsiyetsiz çatı
   sayfadır. Çatı sayfada içerik yoksa ve yazılması planlanmıyorsa cinsiyetli sayfada karşılanabilir; brief'in
   DİKKAT satırına "çatı sayfaya içerik yazılırsa taşınır" notu düşülür.
