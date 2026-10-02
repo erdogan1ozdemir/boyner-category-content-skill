@@ -28,7 +28,11 @@
 
 Rakip sayfa okuma sırası: doğrudan indirme (ücretsiz) → `r.jina.ai` okuyucusu (ücretsiz; JavaScript ile oluşan
 sayfalarda çalışır) → DataForSEO sayfa ayrıştırma (ücretli). Hâlâ `kaynak: okunamadi` ise ya da kelime sayısı 0
-çıkarsa sayfa tarayıcı araçlarıyla (Playwright / yerleşik tarayıcı) açılıp bakılır; SEO metni çoğu zaman "devamını oku" katlamasının arkasındadır. Rakip metninden cümle alınmaz.
+çıkarsa **Playwright** ile açılır (`browser_navigate` + `browser_evaluate`; kullanıcı onaylı, 02.10.2026):
+tarayıcı gerçek kullanıcı gibi yüklendiği için Trendyol gibi bot korumalı sitelerde de sayfa açılır. Başlıklar
+`h1,h2,h3` ve uzun paragraflar okunur; pazar yeri kategori sayfalarında H2'ler çoğunlukla ürün adıdır ve
+taşıdığı editoryal metin yoktur (Trendyol kadın mont sayfasında yalnız ürün kartları vardı), bu yüzden
+başlık kaynağı sayılmaz. Playwright yavaştır; yalnız metni içeriğe etki edecek ilk 5 rakip için kullanılır; SEO metni çoğu zaman "devamını oku" katlamasının arkasındadır. Rakip metninden cümle alınmaz.
 
 SERP'te pazar yerleri (Trendyol, Hepsiburada) ile marka siteleri karışıktır. Pazar yerlerinin kategori
 metinleri genellikle kısa ve şablondur; marka sitelerininki (Lufian, Oxxo, Mavi) daha uzundur. Taban olarak

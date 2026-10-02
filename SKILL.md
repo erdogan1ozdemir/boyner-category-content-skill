@@ -88,6 +88,22 @@ Ardından GSC'den iki sorgu (`gsc` MCP, site `sc-domain:boyner.com.tr`, 90 gün)
 (`get_advanced_search_analytics`, `dimensions: "query,page"`). GSC'ye erişilemezse bu adım atlanır ve
 atlandığı söylenir.
 
+**Boyner sıralama haritası, kaynak sırası (kullanıcı kararı, 02.10.2026; ücretliden önce ücretsiz):**
+
+1. **GSC** (yukarıdaki iki sorgu) ve **SEOmonitor** (kampanya 84056, Boyner, 4.600 takipli kelime):
+   `seomonitor_get_ranking_pages` / kelime araçlarıyla ana kelime ve kelime kümesinin sıralanan sayfaları
+   sorgulanır. İkisi de ücretsizdir. SEOmonitor yalnız takipli kelimeleri bilir; kelime orada yoksa sonraki adım.
+2. **Ahrefs** (`site-explorer-organic-keywords`, hedef `boyner.com.tr`, ülke `tr`, `where` ile kelimeyi içeren
+   sorgular; yalnız `keyword,best_position,best_position_url` sütunları istenir, hacim/KD/trafik sütunları satır
+   başına 10 birim yer). **Önce birim kontrolü yapılır** (`subscription-info-limits-and-usage`, ücretsiz):
+   kalan birim ≥ 0,75 × (limit × aya kalan gün / 30) ve ≥ 100 bin ise kullanılır. Değilse (örn. ay ortasında
+   500 bin birim kalmışsa, ya da limit bitmişse) **Ahrefs atlanır, kullanıcıya "Ahrefs birimi yetersiz,
+   DataForSEO ile devam edeyim mi?" diye sorulur** ve onay gelince DataForSEO ile ilerlenir.
+3. **DataForSEO** (`arastirma.py` varsayılan harita çekimi; yaklaşık 0,02-0,05 dolar): son çare.
+
+Önceki adımlardan derlenen liste `[{"kelime","hacim","sira","url"}]` JSON'u olarak `arastirma.py --harita dosya.json`
+ile verilirse DataForSEO haritası çekilmez.
+
 Rakip sayfalar nasıl okunur, hangi bilgi hangi kaynaktan doğrulanır: `references/arastirma-ve-dogrulama.md`.
 Ürün bilgisi (malzeme, dolgu, bakım) yazılacaksa bu fazda kaynağından doğrulanır; gerekiyorsa web araması
 yapılır.

@@ -248,6 +248,8 @@ def main():
     ap.add_argument("--url", help="hedef Boyner URL'si (SERP'te hangi sayfanın sıralandığıyla karşılaştırılır)")
     ap.add_argument("--ek", nargs="*", default=[], help="ek tohum kelimeler (eş anlamlı, üst kavram)")
     ap.add_argument("--rakip", type=int, default=5, help="içeriği okunacak rakip sayısı")
+    ap.add_argument("--harita", help="Boyner sıralama haritası JSON'u ([{kelime, hacim, sira, url}]); verilirse DataForSEO "
+                                     "haritası çekilmez (SEOmonitor / GSC / Ahrefs'ten derlenmiş liste)")
     ap.add_argument("--yeni", action="store_true", help="30 günlük DataForSEO önbelleğini atla")
     a = ap.parse_args()
 
@@ -269,7 +271,10 @@ def main():
     rakipler = [o["url"] for o in veri["serp"]["organik"] if "boyner.com.tr" not in (o["domain"] or "")][:a.rakip]
     veri["rakip_icerik"] = [sayfa_icerigi(u, auth) for u in rakipler]
     print("4/4 Boyner kelime haritası...", flush=True)
-    veri["boyner_haritasi"] = boyner_haritasi(a.kelime, auth)
+    if a.harita:
+        veri["boyner_haritasi"] = {"liste": json.load(open(a.harita, encoding="utf-8")), "maliyet": 0, "kaynak": "dış (SEOmonitor/GSC/Ahrefs)"}
+    else:
+        veri["boyner_haritasi"] = boyner_haritasi(a.kelime, auth)
     json.dump(veri, open(a.cikti, "w"), ensure_ascii=False, indent=2)
 
     s, k = veri["serp"], veri["kelimeler"]
