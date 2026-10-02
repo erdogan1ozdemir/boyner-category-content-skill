@@ -1,0 +1,62 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Kadın mont bedeni nasıl seçilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kadın mont bedeni, içine giyilecek kalın kazak hesaba katılarak seçilir. Omuz dikişinin omuz kemiğine oturması ve kol boyunun bilek kemiğini kapatması doğru bedeni gösterir. Göğüs ve kalça çevrenizi ölçüp ürün sayfasındaki beden tablosuyla karşılaştırmanız, markalar arasındaki kalıp farkından etkilenmemenizi sağlar."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Soğuktan en iyi koruyan kadın mont hangisidir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Soğuktan en iyi koruyan kadın mont türleri kaz tüyü ve kalın elyaf dolgulu şişme montlardır. Korumayı dolgunun yanında montun boyu, yüksek yakası, kapüşonu ve rüzgâr almayan kol ağzı belirler. Yağışlı soğuklarda dış kumaşın su geçirmez olması da gerekir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kaz tüyü mont mu elyaf dolgulu mont mu tercih edilmeli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kuru ve çok soğuk havalar için kaz tüyü, yağışlı ve nemli havalar için elyaf dolgulu kadın mont daha uygundur. Kaz tüyü daha hafiftir ve az yer kaplar; elyaf dolgu ıslandığında da ısı tutar, daha kolay yıkanır ve çabuk kurur."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Su geçirmez mont ile su itici mont arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Su itici mont hafif yağmurda damlaları yüzeyde tutar, uzun süren yağışta ise su kumaşa işler. Su geçirmez kadın mont modellerinde membranlı kumaş ve bantlı dikişler kullanılır; bu montlar yoğun yağmurda da iç katmanı kuru bırakır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Mevsimlik kadın mont hangi aylarda giyilir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Mevsimlik kadın mont, sonbaharda ve ilkbaharda, sabah ve akşam serinliğinin hissedildiği dönemlerde giyilir. İnce dolgulu kapitone montlar ve suni deri montlar bu dönemin parçalarıdır; kış aylarında kaban altında ara katman olarak da kullanılabilir."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kadın mont ile kaban arasındaki fark nedir?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Kadın mont çoğunlukla bel ile kalça arasında biter, dolguludur ve su itici sentetik kumaştan üretilir. Kaban ise diz hizasına iner, yün ya da yün karışımlı kumaştan dikilir ve dolgusuzdur. Mont spor ve günlük, kaban klasik kombinlere daha yakındır."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Büyük beden kadın mont seçerken nelere dikkat edilmeli?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Büyük beden kadın mont seçiminde omuz genişliği, göğüs çevresi ve kol üstü ölçüsü belirleyicidir. Beli hafif oturan ya da kemerle ayarlanan, kalçayı örten modeller rahat hareket sağlar. Seçenekleri sayfadaki beden filtresinden bedeninizi işaretleyerek listeleyebilirsiniz."
+      }
+    }
+  ]
+}

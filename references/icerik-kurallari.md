@@ -1,0 +1,301 @@
+# İçerik yazımı: yapı, ton ve bölüm kalıpları
+
+## İçindekiler
+
+1. Ton ve hitap
+2. Zaman kipi
+3. Yapı: iskelet araştırmadan çıkar
+4. Yapı taşı havuzu
+5. Uzunluk
+6. SEO, GEO ve AI Overview için yazım
+7. Kelime sahipliği metne nasıl yansır
+8. İç link metnin içinden çıkar
+9. Madde listesi, tablo ve kalın vurgu
+10. Bölüm bölüm ne yazılır
+11. SSS yanıtları
+12. Cümle kurgusu
+13. Yazarken kaçınılacaklar
+
+## 1. Ton ve hitap
+
+Bu metin tüketiciye dönük kategori içeriğidir, rapor değil; İçerik Dili Rehberi bu çıktıya uygulanmaz.
+
+**Hitap baştan sona "siz"dir.** Boyner'in sitedeki bütün metinleri ikinci çoğul konuşur
+("tamamlayabilirsiniz", "tercih edebilirsiniz"); mevcut içeriklerden alınan tek şey budur. "Sen" dili,
+birinci çoğul ("öneriyoruz", "tavsiye ederiz") ve "biz" kullanılmaz; marka kendinden "Boyner" diye söz eder.
+
+Mevcut kategori içeriklerinin **yapısı ve üslubu örnek alınmaz** (kullanıcı kararı, 02.10.2026). O metinler
+başlık hiyerarşisi tutmuyor (H3 ile başlıyor), liste ve tablo kullanmıyor, SSS taşımıyor ve "eşsiz bir
+yolculuğa davet ediyor", "ışıltınızı ortaya çıkaran parçalar" gibi bilgi taşımayan cümlelerle dolu.
+Yapı her kategoride araştırmadan kurulur.
+
+Ses: **bilgili bir mağaza danışmanı.** Okuyucu ya ne alacağını biliyor ve seçenekleri görmek istiyor, ya da
+iki tip arasında kararsız ve farkı öğrenmek istiyor. İkisi de süslü cümle değil, karar verdiren bilgi
+bekliyor. Bu yüzden:
+
+- **Sıfatla değil özellikle anlatılır.** "Göz alıcı montlar" yerine "kaz tüyü dolgulu, bel hizasında biten
+  montlar". "Kaliteli kumaş" yerine "su itici dış yüzey".
+- Moda dili serbesttir ama somut kalır: kalıp, boy, yaka, kumaş, renk, kombin. "Zahmetsiz şıklık",
+  "stil yolculuğu", "tarzınızı konuşturun" gibi içi boş kalıplar yazılmaz.
+- Ünlem en fazla bir yerde, kapanışta kullanılabilir.
+
+## 2. Zaman kipi
+
+Tek kipe kilitlenen metin makine çıktısı gibi okunur. Kip cümlenin işine göre değişir:
+
+| Cümle ne yapıyor | Kip | Örnek |
+|---|---|---|
+| Tanım, her zaman geçerli olan | Geniş zaman | "Şişme mont, dolgulu kanallarıyla ısıyı gövdede tutar." |
+| Ürün gamı, Boyner'de olan | Şimdiki zaman / isim cümlesi | "Kategoride kapüşonlu, uzun ve kısa kesim modeller bulunuyor." |
+| Okuyucuya öneri | İkinci çoğul, olasılık | "Bel hizasında biten bir model tercih edebilirsiniz." |
+| Kural, ölçüt | Gereklilik | "Beden seçerken içine giyilecek kat hesaba katılmalıdır." |
+
+Öneri kipi ("-ebilirsiniz") gövdenin baskın kipi olmamalı; her paragrafta bir kez yeter. Tanım ve ölçüt
+cümleleri düz bildirir.
+
+## 3. Yapı: iskelet araştırmadan çıkar
+
+Sayfada H1 kategori adı olarak zaten bulunur ("Kadın Mont Modelleri"). Gövdeye H1 yazılmaz; metin
+**başlıksız kısa bir girişle** açılır, ardından H2'ler gelir. H3 yalnız bir H2'nin altında açılır.
+
+**Sabit bir başlık iskeleti yoktur** (kullanıcı kararı, 02.10.2026). Boyner giyimden kozmetiğe, ev
+tekstilinden spor ekipmanına uzanır; mont için doğru olan iskelet parfüm, nevresim ya da koşu bandı için
+doğru değildir. Her kategorinin başlıkları **o kategorinin araştırmasından** kurulur. Dört kaynak vardır ve
+`scripts/baslik_adaylari.py` dördünü sahiplik süzgecinden geçirerek tek listede verir:
+
+1. **İlk 5 rakibin başlıkları.** Üç ya da daha fazla rakipte geçen konu, Google'ın o sorguda beklediği
+   kapsamdır ve iskelette karşılanır. Tek rakipte geçen iyi bir başlık fikir olarak alınabilir; başlık metni
+   kopyalanmaz, konu alınır.
+2. **PAA soruları** (kategori SERP'i ve bilgi niyetli SERP). Hacimli ve kategorinin özüne dokunan soru H2
+   olur ("Parfüm Nasıl Seçilir?"); dar soru SSS'ye gider.
+3. **SERBEST uzun kuyruk kümeleri.** Aynı niteleyeni paylaşan kelimeler (kışlık, kaz tüyü, su geçirmez;
+   kuru cilt için, kalıcı; çift kişilik, pamuk saten) bir H2 ya da H3'ün konusudur. Küme hacmi başlığın
+   önceliğini belirler.
+4. **Kategorinin arama eğilimi.** Mevsimsellik, yükselen niteleyenler ve otomatik tamamlama önerileri;
+   "insanlar bu kategoride en çok neyi soruyor" sorusunun cevabı.
+
+Sayfanın canlı kırılımları (alt kategoriler, filtre adları) başlık kaynağı değil, başlıkların altını
+dolduran malzemedir; ama filtre adları kategorinin hangi eksenlerde ayrıştığını gösterir (parfümde "koku
+ailesi" ve "konsantrasyon", nevresimde "ölçü" ve "kumaş") ve çoğu zaman en doğru H2'leri işaret eder.
+
+### İskeleti kurarken
+
+- **Her başlığın bir dayanağı olur:** rakip kapsamı, PAA, kelime kümesi ya da arama eğilimi. Dayanağı
+  olmayan başlık ("... ile Tarzınızı Yansıtın") açılmaz. Brief'te her H2'nin yanında dayanağı yazılır.
+- **Başlık başka sayfanın kelimesi olamaz.** `baslik_adaylari.py` çıktısında `[SAHİPLİ]` işaretli aday
+  başlık olmaz; o tür metinde bir kez, sahibine link veren anchor olarak geçer (bkz. bölüm 7). Rakipte
+  "Kadın Şişme Mont Modelleri" başlığının olması, bizde de olacağı anlamına gelmez: rakibin ayrı sayfası
+  yoktur, Boyner'in vardır.
+- **Sıra okuyucunun karar yolunu izler:** önce "ne var / nedir", sonra "hangisi bana uyar", sonra "nasıl
+  kullanırım / bakarım", sonda "nereden, hangi markadan". En çok aranan konu yukarıda durur.
+- **Sayı kapsama göre:** uç kategoride 3-5, ana kategoride 5-8 H2. Bir H2'nin altı iki paragrafı
+  dolduramıyorsa H3'e iner ya da SSS'ye gider.
+- Başlık kelimesi araştırmadan seçilir ("Çeşitleri" mi "Modelleri" mi: hangisi aranıyorsa). Başlık en fazla
+  iki konu taşır. Kategori adı her başlıkta tekrarlanmaz; dört beş başlıkta geçmesi yeter.
+- **Fiyat başlığı açılmaz** (rakipte olsa da): rakam yazılamadığı için altı boş kalır. Fiyat sorusu SSS'de,
+  fiyatı belirleyen etkenlerle yanıtlanır.
+- Kapanış bölümü ("Boyner'de {Kategori} Alışverişi") isteğe bağlıdır; söylenecek somut şey (filtreler,
+  teyitli hizmet) varsa açılır, yoksa son bölümün sonuna iki cümlelik çağrı yeter.
+
+## 4. Yapı taşı havuzu
+
+Aşağıdaki bloklar **şablon değil havuzdur**: araştırma hangilerini destekliyorsa onlar, desteklediği sırayla
+kullanılır; araştırmanın gösterdiği ama havuzda olmayan konu da başlık olur.
+
+| Blok | Ne zaman açılır | Tipik biçim |
+|---|---|---|
+| {Kategori} Nedir? / Ne İşe Yarar? | Ürün herkesçe bilinmiyorsa, "nedir" sorgusu varsa (serum, softshell, espadril) | 2-3 cümlelik tanım |
+| Çeşitleri / Modelleri | Kategorinin alt türleri varsa (hemen her kategoride) | tür başına tanım maddesi; alt kategori linkleri |
+| Nasıl Seçilir? / Alırken Nelere Dikkat Edilmeli? | Seçim sorusu PAA'da ya da rakiplerde varsa | ölçüt H3'leri + karşılaştırma tablosu |
+| İhtiyaç ekseni (mevsim, kullanım yeri, cilt tipi, yaş, ölçü, seviye) | SERBEST kümeleri bir eksende toplanıyorsa | eksen değerleri H3 |
+| Malzeme / İçerik / Teknoloji | Kumaş, dolgu, aktif madde, taban teknolojisi aranıyorsa | karşılaştırma tablosu |
+| Beden / Ölçü / Numara | Ölçü sorusu varsa (giyim, ayakkabı, nevresim, valiz) | marka-bağımsız ölçüt; tablo yalnız doğrulanabiliyorsa |
+| Nasıl Kombinlenir? | Giyim, ayakkabı, çanta, aksesuar | tür başına eşleşme maddesi; tamamlayıcı kategori linki |
+| Nasıl Kullanılır? / Nasıl Uygulanır? | Kozmetik, bakım, spor ekipmanı, ev aletleri | numaralı adımlar |
+| Hangi Aktivitede / Nerede Kullanılır? | Spor, outdoor, valiz, çanta | aktiviteye göre tip tablosu |
+| Markaları | Kategoride birden çok marka varsa ve marka sorusu aranıyorsa | kullanım amacına göre gruplar; marka + kategori linkleri |
+| Bakımı / Temizliği / Saklanması | Bakım sorusu varsa ve ürün bakım istiyorsa | numaralı adımlar |
+| Hediye olarak / Özel gün | Hediye niyeti aranıyorsa (parfüm, saat, takı, cüzdan) | kısa bölüm |
+| Boyner'de {Kategori} Alışverişi | Söylenecek somut şey varsa | filtreler, teyitli hizmet, çağrı |
+
+Aileye göre seçim ölçütleri değişir; bunlar da araştırmayla teyit edilir:
+
+| Aile | Sık çıkan eksenler ve ölçütler |
+|---|---|
+| Giyim | mevsim, kumaş ve dolgu, kalıp ve boy, beden, kombin, bakım |
+| Ayakkabı | kullanım (günlük, koşu, yürüyüş), taban ve malzeme, numara ve kalıp, zemin |
+| Çanta, aksesuar, saat, takı | kullanım, boyut/hacim, malzeme, mekanizma/kapama, hediye |
+| Kozmetik, cilt ve saç bakımı, parfüm | cilt/saç tipi, içerik, form, uygulama sırası, kalıcılık, koku ailesi |
+| Ev, tekstil, mutfak | ölçü, malzeme, kullanım alanı, set içeriği, yıkama |
+| Spor, outdoor | branş, zemin/koşul, teknoloji, seviye, bakım |
+| Çocuk, bebek | yaş/beden, malzeme ve güvenlik, mevsim, pratiklik |
+
+Kozmetikte sağlık iddiası kurulmaz ("lekeleri yok eder" değil; "leke görünümünü azaltmaya yardımcı
+içerikler"). Çocuk ve bebek ürünlerinde güvenlik bilgisi kaynağa dayanmadan yazılmaz.
+
+## 5. Uzunluk
+
+Sınır yoktur; uzunluğu iki şey belirler:
+
+1. **Rakip tabanı:** içerik taşıyan ilk 5 rakibin medyan kelime sayısı (`arastirma.py` çıktısı). Bunun altında
+   kalmak için bir gerekçe olmalı.
+2. **Kapsam:** HEDEF ve SERBEST kovasındaki kelime kümelerinin tamamı bir başlık, madde ya da SSS ile
+   karşılanana kadar yazılır.
+
+Pratikte uç kategori (ör. kadın peluş mont) 700-1.100, ana kategori (kadın mont) 1.200-2.000, üst kategori
+(kadın dış giyim) 1.800 ve üzeri kelimeye çıkar; SSS buna dahil değildir. Uzunluk hedef değil sonuçtur:
+**bilgi taşımayan paragraf uzunluk için eklenmez.** Her paragraf şu sorudan geçer: okuyucu bunu okuyunca
+bir şey öğrendi mi ya da bir karar verdi mi?
+
+Paragraf 3-4 cümleyi, 110 kelimeyi geçmez. Bir H2'nin altında 250 kelimeden fazla düz metin varsa H3'e ya da
+listeye bölünür.
+
+## 6. SEO, GEO ve AI Overview için yazım
+
+Kategori sorgusunda ("kadın mont") Google çoğunlukla AI Overview göstermez; bilgi sorgusunda ("kadın mont
+nasıl seçilir") gösterir. İçerik iki işi birlikte yapar: kategori kelimesinde sayfayı konu olarak
+derinleştirir, bilgi sorgularında alıntılanabilir yanıt üretir.
+
+- **Giriş tanımla açılır.** İlk cümle ana kelimeyi taşır ve kategorinin ne olduğunu söyler; 2-3 cümlede
+  (40-60 kelime) kendi başına okunabilir bir tanım oluşur. Yapay zeka yanıtlarında alıntılanan şey bu bloktur.
+- **Her H2'nin ilk cümlesi başlığın sorusunu doğrudan yanıtlar** (en fazla 30 kelime). Gerekçe ve ayrıntı
+  sonra gelir. "Kadın mont seçerken üç şeye bakılır: kullanılacağı mevsim, dolgu malzemesi ve kalıp."
+- **Bölüm kendi başına anlamlıdır.** "Yukarıda bahsedildiği gibi", "bu modeller" gibi öncesine yaslanan
+  ifadeler yerine özne açık yazılır; AI motorları bölümü bağlamından koparıp alır.
+- **Varlıklar adıyla geçer:** malzeme (kaz tüyü, polyester elyaf, softshell), kalıp (oversize, regular fit),
+  marka, ürün tipi. "Çeşitli malzemeler" yazılmaz, malzemeler sayılır.
+- **Karşılaştırma tabloyla, sayılabilir şeyler listeyle** verilir (bkz. bölüm 9). Liste ve tablo hem
+  featured snippet hem AI Overview için en çok alınan biçimdir.
+- **Sayı doğrulanmadan yazılmaz.** "Kaz tüyü 800 dolgu gücünde", "-20 dereceye kadar korur" gibi değerler
+  ancak kaynağı varsa (üretici, standart) yazılır. Ürün sayısı ("11.000 model") yazılmaz; yarın değişir.
+- **Uzun kuyruk doğal cümlede geçer.** "Kışlık kadın mont" H3 olabilir; "kışlık mont bayan" gibi devrik
+  arama ifadesi metne olduğu gibi yazılmaz, doğal sırasıyla ("kışlık kadın mont") karşılanır. "Bayan"
+  kelimesi kullanılmaz; "kadın" yazılır.
+- Ana kelime giriş, bir iki H2 ve kapanışta geçer; yoğunluk %3'ü geçmez. Çoğul, iyelik ve eş anlamlı
+  biçimler ("montlar", "kadın mont modelleri", "dış giyim") tekrarın yerini alır.
+
+## 7. Kelime sahipliği metne nasıl yansır
+
+`sahiplik.py` her kelimeyi bir kovaya koyar. Metindeki karşılığı:
+
+| Kova | Metinde |
+|---|---|
+| HEDEF | Giriş, H2'ler, kapanış. Sayfanın konusu. |
+| SERBEST | H2/H3 başlığı, madde ya da SSS sorusu. Bu sayfanın uzun kuyruk trafiği buradan gelir. |
+| BAŞKA SAYFA | Başlığa çıkmaz, SSS sorusu olmaz, ayrı paragraf almaz. Geçecekse **bir kez**, tanım cümlesi ya da madde içinde ve o sayfaya link veren anchor olarak geçer. |
+| KAPSAM DIŞI | Yazılmaz. |
+
+Örnek: "kadın şişme mont" kendi sayfasına sahipken kadın mont içeriğinde şöyle geçer:
+
+> **Şişme mont:** Dolgulu kanalları sayesinde hafif kalırken ısıyı gövdede tutar; soğuk ve kuru havalar için
+> [kadın şişme mont] modelleri öne çıkar.
+
+Şöyle geçmez: "Kadın Şişme Mont Modelleri" başlığı altında üç paragraf ve "Şişme mont nasıl yıkanır?" SSS'si.
+O içerik şişme mont sayfasına aittir; burada yazılırsa iki sayfa aynı sorguda yarışır ve ikisi de zayıflar.
+
+Bir alt türün kendi sayfası **yoksa** (SERBEST) durum tersine döner: o tür bu sayfada H3 ile işlenir, çünkü
+arayanı karşılayabilecek tek sayfa burasıdır.
+
+## 8. İç link metnin içinden çıkar
+
+Ayrıntı `ic-link-kurallari.md`'de. Yazarken akılda tutulacak üç şey:
+
+- **Anchor'ı sil, cümle hâlâ anlamlı mı?** "Kadın kaban modellerine göz atabilirsiniz" link taşımak için
+  kurulmuş cümledir. Doğrusu: "Diz altına inen, yün karışımlı modeller mont değil [kadın kaban] sınıfına girer."
+- Anchor, hedef sayfanın ana kelimesidir; bu sayfanın ana kelimesi asla başka sayfaya anchor olmaz.
+- Linkler bölümlere yayılır: tek paragrafta en fazla iki, tek H2'de en fazla dört.
+
+## 9. Madde listesi, tablo ve kalın vurgu
+
+**Madde listesi:** türler, ölçütler, adımlar gibi sayılabilir ve paralel şeyler paragrafa gömülmez. Biçim
+`**Etiket:** tek ya da iki cümlelik tanım.` Tanım etiketi tekrar etmez, bilgi ekler ("**Parka:** Kalçayı
+örten boyu ve kapüşonuyla rüzgârlı havalarda gövdeyi sarar."). Liste öncesinde onu tanıtan bir cümle bulunur.
+İki maddelik liste yapılmaz; sekizi geçen liste bölünür. Numaralı liste yalnız sıralı adımlar içindir
+(uygulama adımları, yıkama sırası).
+
+**Tablo:** iki ya da daha fazla şey birden çok ölçütte karşılaştırılıyorsa. En fazla dört sütun (mobilde
+okunmalı), 3-7 satır. Tipik tablolar: "kullanıma göre hangi tip", "malzeme karşılaştırması", "beden/ölçü".
+Tablo hücresinde link en fazla bir sütunda bulunur. Beden tablosu ancak marka-bağımsız ve doğrulanabilir
+ise verilir; markaya göre değişen ölçü tablosu uydurulmaz, "ürün sayfasındaki beden tablosu" işaret edilir.
+
+**Kalın vurgu:** bölüm başına iki üç yerde, okuyucunun aradığı net bilgi için (malzeme adı, ölçüt, karar
+cümlesi). Tam cümle, bölümün ilk kelimeleri ve başlıkta geçen ifade kalın yazılmaz.
+
+## 10. Bölüm bölüm ne yazılır
+
+**Yazmadan önce canlı kayıt okunur** (`kategori.py`): alt kategoriler, markalar ve filtre değerleri (ürün
+çeşidi, kalıp, materyal, renk...) metnin gerçeklik zeminidir. Sayfada filtrelenemeyen bir tür, sitede
+satılmayan bir marka yazılmaz. Taslak bittikten sonra aynı kayıt bir kez daha okunur: "sayfada olup içerikte
+olmayan ne var?"
+
+**Giriş (başlıksız).** Birinci paragraf: kategori nedir, hangi ihtiyacı karşılar (tanım; ana kelime ilk
+cümlede). İkinci paragraf: Boyner'deki gam; hangi türler, hangi kalıp ve malzemeler, hangi markalar
+(üç dört somut ad). Üst kategori linkinin doğal yeri burasıdır. "Günümüzde...", "Moda dünyasında..." gibi
+açılışlar yazılmaz.
+
+Aşağıdakiler havuzdaki blokların nasıl yazılacağını anlatır; iskelette olmayan blok yazılmaz.
+
+**Çeşitleri / Modelleri.** İlk cümle türleri sayar. Ardından madde listesi: her tür bir tanım cümlesi alır.
+Kendi sayfası olan türler anchor ile, olmayanlar düz metinle geçer. Alt kategori linklerinin (2-4) evi
+burasıdır.
+
+**Nasıl Seçilir?** İlk cümle ölçütleri sayar; her ölçüt bir H3 ya da madde. Karşılaştırma tablosunun doğal
+yeri ve sayfanın bilgi sorgularında alıntılanan bölümü.
+
+**İhtiyaç ekseni.** SERBEST kümeleri burada H3 olur ("Kışlık Kadın Mont", "Kuru Ciltler İçin Fondöten",
+"Çift Kişilik Nevresim Takımı"). Her H3 o ihtiyaç için hangi özelliğe bakılacağını söyler; yalnız
+"seçenekler Boyner'de" demek için H3 açılmaz. H2 eksene göre adlandırılır.
+
+**Malzeme / İçerik / Teknoloji.** Malzemeler adıyla ve farkıyla anlatılır; iki üç seçenek varsa tablo.
+Sayısal değer yalnız kaynakla.
+
+**Nasıl Kombinlenir? / Kullanılır? / Uygulanır?** Somut eşleşme ya da adım. Tamamlayıcı kategori linkleri
+(1-2) burada. Genel nasihat yazılmaz.
+
+**Markaları.** İlk cümle markaları ya da grupları sayar. Her marka neyle ayrıştığını bir cümleyle alır;
+bilgi markanın kendi tanımına ya da sayfadaki ürün gamına dayanır. Marka + kategori sayfası olanlardan
+1-2'sine link verilir. Yalnız Boyner'de o kategoride ürünü olan markalar yazılır.
+
+**Bakımı / Temizliği.** Malzemeye göre kısa yönerge; numaralı adım olabilir. "Etiketteki talimat esastır"
+bir kez geçer. Alt türe özgü bakım, o türün kendi sayfası varsa burada ayrıntılanmaz.
+
+**Boyner'de {Kategori} Alışverişi.** Sayfadaki filtrelerle seçimin nasıl daraltılacağı ve teyitli Boyner
+hizmetleri. Hizmet bilgisi (Boyner Now, mağazadan teslim, iade) yalnız `boyner.com.tr/content/...`
+sayfasından teyit edilerek ve süre/koşul rakamı verilmeden yazılır. Fiyat, indirim oranı, kampanya adı ve
+tarihi yazılmaz. Bir iki cümlelik çağrıyla biter.
+
+## 11. SSS yanıtları
+
+- 6-10 soru. Kaynak: PAA, bilgi niyetli SERP'in PAA'sı, otomatik tamamlama önerileri ve SERBEST kovasındaki
+  soru kalıpları. Soru uydurulmaz.
+- Gövdede bir H2 ile zaten yanıtlanan soru SSS'de tekrarlanmaz; SSS gövdenin giremediği uzun kuyruğu toplar.
+- Başka sayfanın kelimesini taşıyan soru alınmaz ("şişme mont nasıl yıkanır" şişme mont sayfasınındır).
+- Yanıt 30-70 kelime (en fazla 80). İlk cümle doğrudan yanıt: evet/hayır ya da net bilgi. Gerekçe ikinci
+  cümlede.
+- Yanıt kendi başına okunur, gövdeye gönderme yapmaz, kategori adını bir kez tam haliyle taşır.
+- Soru kullanıcının arama diliyle ama düzgün Türkçeyle yazılır: "kadın mont beden" değil "Kadın mont bedeni
+  nasıl seçilir?".
+- Fiyat sorusu ("kadın mont fiyatları ne kadar?") rakamla yanıtlanmaz; fiyatı belirleyen etkenlerle
+  (dolgu, marka, uzunluk) yanıtlanır.
+
+## 12. Cümle kurgusu
+
+- Yan cümlede özne açık olur; bilgi doğru özneye bağlanır (montu sıcak tutan dolgu ve astardır, renk değil).
+- Aynı cümlede aynı kök iki kez geçmez; art arda iki cümle aynı kalıpla açılmaz.
+- Olumsuzla koşul kurulmaz: "çok dar olmayan" yerine "omuzdan bir parmak boşluk bırakan".
+- Mecaz yerine düz anlatım: "soğuğa meydan okuyan" değil "astarlı ve rüzgâr geçirmeyen".
+- "Hem ... hem de", "sadece ... değil aynı zamanda" kalıpları sayfada en fazla bir kez.
+- Üçlü sıfat dizisi ("şık, rahat ve fonksiyonel") yazılmaz; bir özellik seçilip açıklanır.
+
+## 13. Yazarken kaçınılacaklar
+
+- Fiyat, indirim oranı, kampanya adı ve tarihi; yıl ("2026 modası"), "bu sezon", "yeni sezon trendi" gibi
+  zamanla eskiyen ifadeler. Sayfa bir yıl sonra da düzeltme istemeden doğru kalmalı.
+- Rakip perakendeci adı. Boyner'de satılmayan marka.
+- Sitede karşılığı olmayan tür, renk, malzeme (canlı kayıtla teyit edilmeden yazılan her ürün bilgisi).
+- "En iyi", "en kaliteli", "1 numara" gibi dayanağı olmayan üstünlük iddiası. "En çok tercih edilen" de
+  veriye dayanmıyorsa yazılmaz.
+- "Bayan" kelimesi; "kadın" kullanılır.
+- Link taşımak için kurulan cümle ("...modellerine göz atabilirsiniz", "...sayfamızı inceleyebilirsiniz").
+- Kaynak notu, künye, kelime sayısı gibi iç bilgiler belgeye basılmaz; sohbette söylenir.
+- Uzun tire, emoji, marka sembolü (® ™), çift boşluk.
