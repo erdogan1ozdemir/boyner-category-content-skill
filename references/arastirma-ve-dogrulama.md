@@ -9,7 +9,7 @@
 | Arama hacmi, mevsimsellik | `arastirma.py` kelime kümesi | Ahrefs / SEOmonitor MCP (bağlıysa) | 12 aylık ortalama + zirve ayı |
 | Sorular | SERP PAA, bilgi niyetli SERP PAA, otomatik tamamlama | Rakip SSS'leri | Uydurulmaz |
 | Rakip içerik yapısı | `arastirma.py` rakip_icerik | Sayfayı tarayıcıyla açmak | Başlıklar konu kapsamı için okunur, kopyalanmaz |
-| Hangi Boyner sayfası hangi kelimede | `arastirma.py` Boyner haritası | GSC `query,page` | SERP tek gün, GSC 90 gün |
+| Hangi Boyner sayfası hangi kelimede | GSC `query,page` (ücretsiz, 90 gün) | SEOmonitor `get_ranking_pages` (kampanya 84056, Boyner, 4.600 takipli kelime; ücretsiz, yalnız takipli kelimeler; Türkiye için domain araştırma verisi yok) → Ahrefs `site-explorer-organic-keywords` (yalnız `keyword,best_position,best_position_url` sütunları ücretsiz; hacim, KD ve trafik sütunları satır başına 10 birim) → `arastirma.py` Boyner haritası (DataForSEO, ücretli, son çare) | SERP tek gün, GSC 90 gün |
 | Malzeme, dolgu, kumaş bilgisi | Üretici / marka sayfası, standart (ör. dolgu gücü tanımı) | Genel başvuru kaynakları | Sayısal değer ancak kaynakla |
 | Bakım ve yıkama | Üretici bakım talimatı, tekstil bakım sembolleri | - | "Etiketteki talimat esastır" cümlesi eklenir |
 | Kozmetik içerik ve etki | Marka ürün sayfası | Dermatoloji kaynakları | İddia değil işlev: "yardımcı olur" |
@@ -26,8 +26,9 @@
 3. **Biçim:** rakiplerde tablo, liste, SSS var mı? Yoksa bunları eklemek tek başına fark yaratır.
 4. **Uzunluk tabanı:** içerik taşıyan rakiplerin medyanı.
 
-Rakip sayfa okunamadıysa (`kaynak: okunamadi`) ya da kelime sayısı 0 çıktıysa sayfa tarayıcı araçlarıyla
-açılıp bakılır; SEO metni çoğu zaman "devamını oku" katlamasının arkasındadır. Rakip metninden cümle alınmaz.
+Rakip sayfa okuma sırası: doğrudan indirme (ücretsiz) → `r.jina.ai` okuyucusu (ücretsiz; JavaScript ile oluşan
+sayfalarda çalışır) → DataForSEO sayfa ayrıştırma (ücretli). Hâlâ `kaynak: okunamadi` ise ya da kelime sayısı 0
+çıkarsa sayfa tarayıcı araçlarıyla (Playwright / yerleşik tarayıcı) açılıp bakılır; SEO metni çoğu zaman "devamını oku" katlamasının arkasındadır. Rakip metninden cümle alınmaz.
 
 SERP'te pazar yerleri (Trendyol, Hepsiburada) ile marka siteleri karışıktır. Pazar yerlerinin kategori
 metinleri genellikle kısa ve şablondur; marka sitelerininki (Lufian, Oxxo, Mavi) daha uzundur. Taban olarak

@@ -198,13 +198,27 @@ def sayfa_icerigi_js(url, auth):
             "sorular": [b for _, b in bas if b.strip().endswith("?")][:30], "ozet": t[:1200]}
 
 
+def sayfa_icerigi_jina(url):
+    """Yedek 1 (ücretsiz): r.jina.ai okuyucusu sayfayı tarayıcıda çalıştırıp markdown döndürür. JavaScript ile
+    oluşan ve doğrudan indirmede boş gelen rakip sayfalarda (ör. lcw) çalışır; bot korumalı sayfalar yine boş kalır."""
+    h = getir("https://r.jina.ai/" + url, saniye=60, deneme=1)
+    if not h or len(h.split()) < 150 or "Just a moment" in h[:500]:
+        return None
+    bas = [(f"H{len(m.group(1))}", m.group(2).strip()) for m in re.finditer(r"^(#{1,4})\s+(.+)$", h, re.M)]
+    bas = [(t, b) for t, b in bas if 3 < len(b) < 140]
+    par = [p.strip() for p in h.split("\n") if len(p.split()) >= 12 and not p.lstrip().startswith(("[", "!", "|", "*"))]
+    return {"url": url, "kaynak": "jina", "kelime": sum(len(p.split()) for p in par), "paragraf": len(par),
+            "basliklar": bas[:60], "sorular": [b for _, b in bas if b.endswith("?")][:30], "ozet": " ".join(par)[:1200]}
+
+
 def sayfa_icerigi(url, auth=None, _ikinci=False):
     """Rakip sayfanın içerik iskeleti. Önce doğrudan indirir; engellenirse ya da metin tarayıcıda
     oluşuyorsa DataForSEO içerik çözümlemesine düşer."""
     h = getir(url, saniye=30, deneme=1)
     kaynak = "dogrudan"
     if len(h) < 5000 or "Just a moment" in h[:800] or "captcha" in h[:3000].lower():
-        return (auth and sayfa_icerigi_js(url, auth)) or {"url": url, "kaynak": "okunamadi"}
+        # yedek sırası: 1) r.jina.ai (ücretsiz)  2) DataForSEO sayfa ayrıştırma (ücretli)  3) okunamadı
+        return sayfa_icerigi_jina(url) or (auth and sayfa_icerigi_js(url, auth)) or {"url": url, "kaynak": "okunamadi"}
     ham_h = h
     h2 = re.sub(r"<(script|style|noscript|svg|header|nav|footer)\b.*?</\1>", " ", h, flags=re.S | re.I)
     temiz = lambda x: re.sub(r"\s+", " ", html.unescape(re.sub(r"<[^>]+>", " ", x))).strip()
