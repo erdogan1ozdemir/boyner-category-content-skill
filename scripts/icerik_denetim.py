@@ -25,7 +25,7 @@ BICIM = [("—", "uzun tire"), ("–", "en tire"), (r"(?<=\S)  +(?=\S)", "çift 
          (r"[\U0001F300-\U0001FAFF☀-➿]", "emoji"), (r"\.\.(?!\.)", "çift nokta"), (r" ,| \.(?!\w)", "boşluk-noktalama"),
          (r"(?i)\b\d[\d.,]*\s*(TL|lira)\b|₺", "fiyat"), (r"(?i)%\s?\d+\s*(?:'?[ea]? varan )?indirim|\d+\s?%\s*indirim", "indirim oranı"),
          (r"\b20[2-3]\d\b", "yıl (zamana bağlı ifade)"),
-         (r"(?i)\bkategori(?:de|sinde|deki|sindeki|nin|si)\b|\bbu kategori", "'kategori' kelimesi (ürün grubu / Boyner ... modelleri arasında)"), 
+         (r"(?i)(?<!filtre )\bkategori(?:de|sinde|deki|sindeki|nin|si)\b(?! \d)|\bbu kategori", "'kategori' kelimesi (ürün grubu / Boyner ... modelleri arasında)"), 
          (r"(?i)\b\w+(?:abilirsin|ebilirsin|malısın|melisin)\b|\bsenin\b|\bsana\b", "'sen' hitabı (Boyner dili 'siz')"),
          (r"(?i)\btrendyol|hepsiburada|\bn11\b|amazon|morhipo|\bzara\b|\blcw\b|lc waikiki|\bkoton\b|\bbeymen\b|\bflo\b(?! [a-z])",
           "rakip perakendeci adı")]

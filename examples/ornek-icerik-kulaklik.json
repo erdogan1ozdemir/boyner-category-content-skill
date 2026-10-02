@@ -2,103 +2,415 @@
  "kategori": "Kulaklık",
  "url": "https://www.boyner.com.tr/kulaklik-modelleri-x-c600901",
  "main_kw": "kulaklık",
- "meta": "02.10.2026 · canlı kayıt (245 ürün, 29 marka), SERP, GSC ve elle gözden geçirilmiş sahiplik tablosuna göre yazıldı; bağımsız değerlendirme sonrası v2",
+ "meta": "02.10.2026 · v5 · kullanıcı revizeleri + iki tur bağımsız değerlendirme düzeltmeleri",
  "linkler": {
-  "LINK1": ["cep telefonu aksesuarları", "https://www.boyner.com.tr/cep-telefonu-aksesuarlari-x-c3666"],
-  "LINK2": ["kulak içi kulaklık", "https://www.boyner.com.tr/kulak-ici-kulaklik-x-c196"],
-  "LINK3": ["kulak üstü kulaklık", "https://www.boyner.com.tr/kulak-ustu-kulaklik-x-c197"],
-  "LINK4": ["bluetooth kulaklık", "https://www.boyner.com.tr/bluetooth-kulaklik-x-c3652"],
-  "LINK5": ["Sennheiser kulaklık", "https://www.boyner.com.tr/sennheiser-kulaklik-modelleri-x-b10183-c600901"],
-  "LINK6": ["Guess kulaklık", "https://www.boyner.com.tr/guess-kulaklik-modelleri-x-b202-c600901"],
-  "LINK7": ["bluetooth hoparlör", "https://www.boyner.com.tr/hoparlor-bluetooth-hoparlor-x-c600902"]
+  "LINK1": [
+   "cep telefonu aksesuarları",
+   "https://www.boyner.com.tr/cep-telefonu-aksesuarlari-x-c3666"
+  ],
+  "LINK2": [
+   "kulak içi kulaklık",
+   "https://www.boyner.com.tr/kulak-ici-kulaklik-x-c196"
+  ],
+  "LINK3": [
+   "kulak üstü kulaklık",
+   "https://www.boyner.com.tr/kulak-ustu-kulaklik-x-c197"
+  ],
+  "LINK4": [
+   "Bluetooth kulaklık",
+   "https://www.boyner.com.tr/bluetooth-kulaklik-x-c3652"
+  ],
+  "LINK5": [
+   "Sennheiser kulaklık",
+   "https://www.boyner.com.tr/sennheiser-kulaklik-modelleri-x-b10183-c600901"
+  ],
+  "LINK6": [
+   "Guess kulaklık",
+   "https://www.boyner.com.tr/guess-kulaklik-modelleri-x-b202-c600901"
+  ],
+  "LINK7": [
+   "bluetooth hoparlör",
+   "https://www.boyner.com.tr/hoparlor-bluetooth-hoparlor-x-c600902"
+  ]
  },
  "govde": [
-  ["p", "Kulaklık; telefon, bilgisayar ya da müzik çalardan gelen sesi doğrudan kulağa ileten, çoğu modelde mikrofonuyla görüşme yapmaya da yarayan kişisel bir ses cihazıdır. Müzikte, toplantıda, sporda ve oyunda çevreyi rahatsız etmeden dinlemenizi sağlar ve telefonla birlikte kullanılan başlıca [LINK1] arasında yer alır."],
-  ["p", "Boyner'de kulaklık modelleri kulak içi ve kulak üstü olmak üzere iki ana tipte sunuluyor. Kategoride şarj kutulu gerçek kablosuz (TWS) modeller, **Type-C, Lightning ve 3,5 mm uçlu** kablolu modeller, aktif gürültü önleyici (ANC) modeller, kemik iletimli spor kulaklıkları, oyuncu ve çocuk modelleri yer alıyor. JBL, Sennheiser, ttec, Wiwu, Skullcandy ve Guess gibi markaların uygun fiyatlı günlük modellerinden premium hi-fi serilere uzanan seçeneklerini aynı sayfada karşılaştırabilirsiniz."],
-
-  ["H2", "Kulaklık Çeşitleri ve Modelleri"],
-  ["p", "Kulaklık çeşitleri kulağa oturma biçimine, bağlantı türüne ve kullanım amacına göre ayrılır. Bu türler birbirini dışlamaz: gerçek kablosuz bir model aynı zamanda kulak içi ve ANC özellikli olabilir. Boyner'deki modeller başlıca şu türlerde toplanıyor:"],
-  ["mad", "**Kulak içi:** Kulak içi modeller kulak kanalına ya da kulak kepçesine oturur; küçük gövdeleri cepte taşınır ve yolda, sporda kolay kullanılır. Kanalı kapatan silikon uçlu [LINK2] modelleri dış sesi bir ölçüde keser."],
-  ["mad", "**Kulak üstü:** Kulak üstü modeller baş bandıyla takılır ve kulağı yastıklarıyla sarar ya da kulağın üzerine oturur; daha büyük sürücü (sesi üreten hoparlör birimi) taşır. Uzun dinleme ve masa başı çalışma için [LINK3] modelleri rahat bir seçimdir; katlanabilir olanlar çantada az yer tutar."],
-  ["mad", "**Gerçek kablosuz (TWS):** Gerçek kablosuz modellerde sağ ve sol parça arasında kablo bulunmaz; iki parça şarj kutusunda taşınır ve kutuda şarj olur. Telefona kablosuz bağlanan bu yapı, [LINK4] modellerinin en yaygın biçimidir."],
-  ["mad", "**Kablolu:** Kablolu modeller sesi 3,5 mm, Type-C ya da Lightning uçla alır; şarj gerektirmez ve cihaza takıldığı anda çalışır."],
-  ["mad", "**Açık kulak ve kemik iletimli:** Açık kulak modeller kulak kanalını kapatmaz; kanca ya da klipsle kulağa tutunur. Kemik iletimli modeller ise sesi titreşim olarak elmacık kemiği üzerinden iç kulağa iletir. İki yapıda da çevre sesleri duyulmaya devam eder."],
-  ["mad", "**Oyuncu:** Oyuncu modelleri, kulağı saran geniş yastıkları ve ağza uzanan mikrofonuyla uzun oyun oturumları için tasarlanmıştır. Kategoride kablolu ve kablosuz seçenekleri bulunuyor."],
-  ["mad", "**Çocuk:** Çocuk modelleri küçük baş ölçüsüne göre üretilir; bazılarında ses seviyesini sınırlayan bir devre (ses sınırlayıcı) yer alır."],
-  ["H3", "Kablolu Kulaklık ve Type-C Kulaklık Modelleri"],
-  ["p", "Kablolu kulaklık şarj gerektirmez, fark edilir bir ses gecikmesi oluşturmaz ve benzer ses kalitesindeki kablosuz modele göre çoğunlukla daha ekonomiktir. Seçerken belirleyici olan uçtaki bağlantıdır: 3,5 mm uçlu modeller kulaklık girişi olan telefon, bilgisayar ve müzik çalarlara; **Type-C kulaklık** modelleri USB-C girişli telefon ve tabletlere; Lightning uçlu modeller ise Lightning girişli cihazlara takılır. Kategoride ttec, Baseus, Polosmart, Wiwu ve Skullcandy'nin mikrofonlu kablolu modelleri bulunuyor. İki yapı arasındaki farkı şu tabloda görebilirsiniz:"],
-  ["tablo", [
-    ["Ölçüt", "Kablolu", "Kablosuz (Bluetooth)"],
-    ["Güç", "Şarj gerektirmez", "Pille çalışır, düzenli şarj ister"],
-    ["Ses gecikmesi", "Hissedilmez düzeyde", "Modele ve bağlantıya göre değişir"],
-    ["Hareket serbestliği", "Kablo boyuyla sınırlı", "Cihazdan uzaklaşılabilir"],
-    ["Uyumluluk", "Cihazdaki girişe bağlı", "Bluetooth ses desteği olan cihazlarla eşleşir"]
-  ]],
-
-  ["H2", "Kulaklık Nasıl Seçilir?"],
-  ["p", "Kulaklık seçimini dört ölçüt belirler: kullanım yeri, bağlanacağınız cihaz, günlük kullanım süresi ve gürültü önleme ihtiyacı. Pil ve dayanıklılık son adımlarda kontrol edilir. Karar vermek için şu adımları izleyebilirsiniz:"],
-  ["li", "Kullanım yerini belirleyin: yol, ofis, spor, oyun ya da evde müzik."],
-  ["li", "Cihazınızın girişine bakın: 3,5 mm, Type-C, Lightning ya da yalnız Bluetooth."],
-  ["li", "Kullanım süresine göre tipi seçin: kısa ve hareketli kullanım için kulak içi, saatler süren dinleme için kulak üstü."],
-  ["li", "Gürültülü ortamda kullanacaksanız ANC, sık görüşme yapacaksanız ENC özelliğini arayın."],
-  ["li", "Kablosuz modellerde pil süresini ve şarj kutusunun kaç ek şarj sağladığını ürün sayfalarında karşılaştırın."],
-  ["li", "Sporda kullanacaksanız IP derecesini, çocuk için alacaksanız ses sınırlayıcıyı kontrol edin."],
-  ["p", "İhtiyaca göre uygun kulaklık türü ve bakılacak özellik şöyle eşleşir:"],
-  ["tablo", [
-    ["İhtiyaç", "Uygun tür", "Bakılacak özellik"],
-    ["Toplu taşıma ve uçak yolculuğu", "ANC özellikli kulak üstü ya da kulak içi", "Gürültü önleme, pil süresi"],
-    ["Koşu ve salon antrenmanı", "Kancalı açık kulak ya da kemik iletimli", "IP derecesi, kulağa tutunma"],
-    ["Telefon görüşmesi ve çevrimiçi toplantı", "Mikrofonlu TWS ya da kulak üstü", "ENC, çift cihaz desteği"],
-    ["Evde müzik dinleme", "Kablolu hi-fi kulak üstü", "Sürücü, yastık konforu"],
-    ["Oyun", "Oyuncu modeli", "Ağza uzanan mikrofon, geniş yastık"],
-    ["Çocuk kullanımı", "Çocuk modeli", "Ses sınırlayıcı, ayarlanabilir baş bandı"]
-  ]],
-  ["p", "Tablodaki hi-fi terimi, kaydı olabildiğince aslına sadık vermeyi hedefleyen kulaklıkları anlatır."],
-  ["H3", "Gürültü Önleyici (ANC) Kulaklık Nedir, ENC'den Farkı Nedir?"],
-  ["p", "Gürültü önleyici (gürültü önlemeli) kulaklık, üzerindeki mikrofonlarla dış sesi ölçer ve bu sesin ters fazlı karşılığını üreterek kulağa ulaşan gürültüyü azaltır. **ANC** (aktif gürültü önleme) dinleyen kişi içindir ve en çok motor uğultusu gibi sabit, kalın seslerde işe yarar. **ENC** (çevresel gürültü önleme) ise görüşme sırasında mikrofonun aldığı ortam gürültüsünü süzer; yani sizin duyduğunuz sesi değil, karşınızdaki kişinin sizi ne kadar net duyduğunu etkiler. Ürün adında ANC/ENC birlikte yazıyorsa model iki işi de yapıyor demektir."],
-  ["H3", "Su Geçirmez Kulaklık ve IP Dereceleri"],
-  ["p", "Kulaklığın suya ve toza dayanıklılığını IP kodu gösterir; her IP derecesi su geçirmez anlamına gelmez. Kodun ilk rakamı toza, ikinci rakamı suya karşı korumayı belirtir; X harfi o başlıkta derece beyan edilmediğini gösterir. **IPX4** sıçrayan suya, **IP55** toz girişine ve düşük basınçlı su jetine dayanımı, **IP68** ise toz sızdırmazlığını ve üreticinin belirttiği derinlik ve sürede suya daldırmayı ifade eder. İlk iki derece suya dayanıklılıktır ve yağmur ile antrenman için genellikle yeterli kabul edilir; yüzme için IP68 ve üreticinin yüzme onayı aranır."],
-
-  ["H2", "Kullanım Amacına Göre Kulaklık Modelleri"],
-  ["p", "Kullanım amacına göre kulaklık modelleri üç grupta ele alınabilir: sporda tutunma ve ter dayanımı, çocuk kullanımında ses sınırlayıcı, görüşmede mikrofon belirleyicidir."],
-  ["H3", "Spor Kulaklığı Modelleri"],
-  ["p", "Spor kulaklık ya da sporcu kulaklığı seçerken iki özelliğe bakabilirsiniz: gövdenin harekette yerinden oynamaması ve tere dayanması. Kancalı ya da ense bantlı yapı koşuda kulaklığı sabitler; IP derecesi suya ve toza dayanıklılığı gösterir. Açık havada koşuyorsanız trafik sesini duymanızı sağlayan açık kulak ve kemik iletimli modelleri tercih edebilirsiniz. Kategoride Shokz'un kemik iletimli koşu ve yüzme kulaklıkları ile JBL'in Endurance serisi yer alıyor."],
-  ["H3", "Çocuk Kulaklığı Modelleri"],
-  ["p", "Çocuk kulaklığı modellerinde ilk bakılacak özellik ses sınırlayıcıdır. Sınırlayıcılı model, cihazın sesi sonuna kadar açılsa bile kulağa ulaşan düzeyi üreticinin belirlediği eşiğin altında tutar. Ayarlanabilir baş bandı, yumuşak yastık ve katlanabilir gövde günlük kullanımı kolaylaştırır. Boyner'de Onanoff'un ses sınırlayıcılı BuddyPhones serisi ile ttec, Wiwu ve Volkano'nun kablosuz çocuk modelleri bulunuyor."],
-  ["H3", "Görüşme ve Toplantı İçin Mikrofonlu Kulaklık Modelleri"],
-  ["p", "Mikrofonlu kulaklık, görüşme ve toplantı için ayrı bir mikrofona ihtiyaç bırakmaz. Kablolu modellerde mikrofon kablo üzerindeki kumandada, TWS modellerde gövdenin içinde, oyuncu modellerinde ise ağza uzanan bir kol üzerinde durur. Rüzgârlı ya da kalabalık ortamda konuşuyorsanız ENC özellikli bir model sesinizi karşı tarafa daha temiz iletir. Aynı anda telefona ve bilgisayara bağlanmak istiyorsanız ürün özelliklerinde çift cihaz desteğini arayabilirsiniz."],
-
-  ["H2", "Kulaklık Markaları"],
-  ["p", "Boyner'de öne çıkan kulaklık markaları ses odaklı, günlük kullanım, tasarım, spor, oyun ve çocuk olmak üzere altı grupta incelenebilir:"],
-  ["mad", "**Ses odaklı ve premium:** Ses odaklı grupta Momentum, Accentum ve HD serileriyle [LINK5] modelleri kablolu hi-fi seçeneklerden ANC'li kablosuz modellere uzanıyor. Bang & Olufsen, Focal, Marshall ve Sonos da bu grubun markalarıdır."],
-  ["mad", "**Günlük kullanım:** Günlük kullanım için JBL, ttec, Wiwu, Baseus, Skullcandy, Huawei, Belkin ve Polosmart; gerçek kablosuz, kablolu ve kulak üstü modeller sunuyor."],
-  ["mad", "**Tasarım ve moda:** Tasarım tarafında logo desenli kulak üstü [LINK6] modelleri, Karl Lagerfeld, DKNY, BMW ve Nautica ile birlikte kulaklığı bir aksesuar olarak görenlere hitap ediyor."],
-  ["mad", "**Spor:** Spor için Shokz kemik iletimli ve açık kulak modelleriyle, JBL ise Endurance serisiyle kategoride yer alıyor."],
-  ["mad", "**Oyun:** Oyun grubunda Razer'ın BlackShark, Kraken ve Barracuda serileri ile Polosmart ve MF Product'ın mikrofonlu modelleri var."],
-  ["mad", "**Çocuk:** Çocuklar için tasarlanmış baş bantlı modeller Onanoff, ttec, Wiwu ve Volkano markalarında bulunuyor."],
-
-  ["H2", "Kulaklık Fiyatları"],
-  ["p", "Kulaklık fiyatları bağlantı türüne, gürültü önleme özelliğine, sürücü ve malzeme kalitesine ve markaya göre değişir. Kategoride kablolu kulak içi modellerin çoğu ekonomik grupta yer alıyor; aynı yapıda üst seviye hi-fi modeller de bulunuyor. ANC, hi-fi sürücü, premium malzeme ve tasarımcı imzası fiyatı yukarı taşıyan başlıca özelliklerdir. Bütçenize uygun seçenekleri görmek için sayfadaki fiyat filtresini kullanabilir, listeyi fiyata göre sıralayabilirsiniz."],
-
-  ["H2", "Kulaklık Nasıl Temizlenir?"],
-  ["p", "Kulaklık, kuru ve tüy bırakmayan yumuşak bir bezle silinerek temizlenir; gövde suya tutulmaz. Düzenli temizlik için şu adımları izleyebilirsiniz:"],
-  ["li", "Kulaklığı kapatın ve varsa kablosunu cihazdan çıkarın."],
-  ["li", "Gövdeyi ve baş bandını kuru, yumuşak bir bezle silin."],
-  ["li", "Hoparlör ızgarasını aşağı bakacak şekilde tutup kiri kuru ve yumuşak kıllı bir fırçayla alın."],
-  ["li", "Çıkarılabilen silikon uçları gövdeden ayırıp suyla yıkayın ve tamamen kuruduktan sonra takın."],
-  ["li", "Şarj kutusunun içini ve temas noktalarını kuru bir bezle temizleyin."],
-  ["p", "Yastık kılıfları, deri yüzeyler ve suya dayanıklı modeller için temizlik yöntemi değişebilir; üreticinin kullanım kılavuzundaki talimat esastır."],
-
-  ["H2", "Boyner'de Kulaklık Alışverişi"],
-  ["p", "Boyner'de kulaklık ararken listeyi ürün çeşidi, marka, renk ve fiyat filtreleriyle daraltabilirsiniz. Ürün çeşidi filtresi kulak içi ve kulak üstü modelleri ayırır; renk filtresinde siyah ve beyazın yanında mavi, pembe ve mor gibi seçenekler bulunuyor. Bluetooth sürümü, ANC ya da ENC desteği ve IP derecesi ürün adında ya da ürün özelliklerinde yazıyor; garanti süresi de ürün sayfasındaki özellik alanında belirtiliyor. Sesi odadakilerle paylaşmak istediğinizde ise kulaklığın yerini [LINK7] modelleri alır."]
+  [
+   "p",
+   "Kulaklık; telefon, bilgisayar ya da müzik çalardan gelen sesi doğrudan kulağa ileten, çoğu modelde mikrofonuyla görüşme yapmaya da yarayan kişisel bir ses cihazıdır. Müzikte, toplantıda, sporda ve oyunda çevreyi rahatsız etmeden dinlemenizi sağlar ve günlük hayatta sık kullanılan [LINK1] arasında yer alır."
+  ],
+  [
+   "p",
+   "Boyner'de kulaklık modelleri kulak içi ve kulak üstü olmak üzere iki ana tipte sunulmaktadır. Kulaklık ürün grubunda şarj kutulu gerçek kablosuz (TWS) modeller, **Type-C, Lightning ve 3,5 mm uçlu** kablolu kulaklıklar, aktif gürültü önleyici (ANC) modeller, kemik iletimli spor kulaklıkları, oyuncu ve çocuk modelleri bulunmaktadır. JBL, Sennheiser, ttec, Wiwu, Skullcandy ve Guess gibi markaların uygun fiyatlı günlük modellerinden premium hi-fi serilerine uzanan seçeneklerini aynı sayfada karşılaştırabilirsiniz."
+  ],
+  [
+   "H2",
+   "Kulaklık Çeşitleri ve Modelleri"
+  ],
+  [
+   "p",
+   "Kulaklık çeşitleri kulağa oturma biçimine, bağlantı türüne ve kullanım amacına göre ayrılır. Bu türler birbirini dışlamaz: gerçek kablosuz bir model aynı zamanda kulak içi ve ANC özellikli olabilir. Boyner kulaklık modelleri arasında öne çıkan türleri sizin için derledik, bu sayede aradığınız yapıyı hızlıca bulabilirsiniz:"
+  ],
+  [
+   "mad",
+   "**Kulak içi kulaklık:** Kulak içi modeller kulak kanalına ya da kulak kepçesine oturur. Küçük gövdeleri cepte taşınır ve yolda, sporda kolay kullanılır. Kanalı kapatan silikon uçlu [LINK2] modelleri dış sesi bir ölçüde keser. Silikon uçlar çoğunlukla birkaç boyda gelir ve kulağa tam oturan boy hem bas seslerin duyulmasına hem de kulaklığın yerinde kalmasına yardımcı olur."
+  ],
+  [
+   "mad",
+   "**Kulak üstü kulaklık:** Kulak üstü modeller baş bandıyla takılır ve kulağı yastıklarıyla sarar ya da kulağın üzerine oturur. Gövdeleri, kulak içi modellere göre daha büyük bir sürücü taşır. Uzun dinleme ve masa başı çalışma için [LINK3] modelleri tercih edilebilir. Katlanabilir olanlar çantada az yer tutar."
+  ],
+  [
+   "mad",
+   "**Gerçek kablosuz (TWS) kulaklık:** Gerçek kablosuz modellerde sağ ve sol parça arasında kablo bulunmaz. İki parça şarj kutusunda taşınır ve kutuda şarj olur. Telefona kablosuz bağlanan bu yapı, [LINK4] modellerinin yaygın biçimlerinden biridir."
+  ],
+  [
+   "mad",
+   "**Kablolu kulaklık:** Kablolu modeller sesi 3,5 mm, Type-C ya da Lightning uçla alır ve cihaza takıldıkları anda çalışır."
+  ],
+  [
+   "mad",
+   "**Açık kulak (klipsli) kulaklık:** Açık kulak modeller kulak kanalını kapatmaz. Kancayla kulağın arkasına ya da küpe gibi klipsle kulak kepçesine tutunur. Çevre sesleri duyulmaya devam ettiği için ofiste ve açık havada tercih edilebilir."
+  ],
+  [
+   "mad",
+   "**Kemik iletimli kulaklık:** Kemik iletimli kulaklıklar sesi titreşim olarak elmacık kemiği üzerinden iç kulağa iletir. Kulak kanalı açık kaldığı için koşu ve bisiklet gibi çevreyi duymanın önemli olduğu sporlarda öncelik verilen yapılardandır."
+  ],
+  [
+   "mad",
+   "**Oyuncu kulaklığı:** Oyuncu modelleri, kulağı saran geniş yastıkları ve ağza uzanan mikrofonuyla uzun oyun oturumları için tasarlanmıştır. Boyner kulaklık modelleri arasında kablolu ve kablosuz oyuncu seçenekleri yer almaktadır."
+  ],
+  [
+   "mad",
+   "**Çocuk kulaklığı:** Çocuk kulaklıkları küçük baş ölçüsüne göre üretilir. Bazı çocuk kulaklığı modellerinde ses seviyesini sınırlayan bir devre (ses sınırlayıcı) bulunur."
+  ],
+  [
+   "mad",
+   "**Çeviri özellikli kulaklık:** Çeviri özellikli kulaklıklar, telefondaki uygulamayla birlikte çalışarak konuşmayı başka bir dile çevirmeye yardımcı olur. Bu yapı Boyner'de yapay zekâ çeviri özellikli kulak içi bir modelle temsil edilmektedir."
+  ],
+  [
+   "H3",
+   "Kablolu Kulaklık ve Type-C Kulaklık Modelleri"
+  ],
+  [
+   "p",
+   "Kablolu kulaklık, benzer ses kalitesindeki kablosuz modele göre çoğunlukla daha ekonomiktir. Seçerken belirleyici olan uçtaki bağlantıdır. 3,5 mm uçlu modeller kulaklık girişi olan telefon, bilgisayar ve müzik çalarlara takılır. **Type-C kulaklık** modelleri USB-C girişli telefon ve tabletlerle, Lightning uçlu modeller ise Lightning girişli cihazlarla kullanılır."
+  ],
+  [
+   "p",
+   "Boyner'de ttec, Baseus, Polosmart, Wiwu ve Skullcandy'nin mikrofonlu kablolu kulaklık modelleri bulunmaktadır. Kablolu ve kablosuz yapı arasında kararsızsanız iki seçeneği aynı ölçütlerle karşılaştırabilirsiniz:"
+  ],
+  [
+   "mad",
+   "**Kablolu kulaklık:** Kablolu kulaklık şarj gerektirmez ve hissedilir bir ses gecikmesi oluşturmaz. Hareket alanı kablo boyuyla sınırlıdır ve uyumluluk cihazdaki girişe bağlıdır."
+  ],
+  [
+   "mad",
+   "**Kablosuz (Bluetooth'lu) kulaklık:** Kablosuz model pille çalışır ve düzenli şarj ister. Ses gecikmesi modele ve bağlantıya göre değişiklik gösterebilir. Cihazdan uzaklaşmaya izin verir ve Bluetooth ses desteği olan cihazlarla eşleşir."
+  ],
+  [
+   "H3",
+   "Hi-Fi Kulaklık ve In-Ear Monitör (IEM) Kulaklık Modelleri"
+  ],
+  [
+   "p",
+   "Hi-fi kulaklık, kaydı olabildiğince aslına sadık vermeyi hedefleyen kulaklıktır. Baş bantlı hi-fi kulaklıklarda gövdenin arkası açık ya da kapalı olabilir. Açık sırtlı modellerin gövdesi hava ve ses geçirir. Bu yapı genellikle daha geniş bir sahne hissi verir, ancak dışarıya ses sızdırır ve dış sesi kesmez. Kapalı sırtlı modeller sesi içeride tutar ve ortam gürültüsünü bir ölçüde azaltır. Açık sırtlı yapı sessiz bir odada dinleme için, kapalı sırtlı yapı ise ofis ve ortak alanlar için tercih edilebilir."
+  ],
+  [
+   "p",
+   "In-ear monitör (IEM) kulaklık, kulak kanalına oturan ve ayrıntılı dinleme için tasarlanmış kablolu kulak içi hi-fi modeldir. Boyner'de Sennheiser'ın IE serisi IEM modelleri ile HD serisi baş bantlı modelleri, Focal'ın da baş bantlı hi-fi modelleri yer almaktadır. Empedansı yüksek, duyarlılığı düşük hi-fi modeller telefonda kısık kalabilir. Bu modellerde kulaklık amfisi kullanılması önerilir."
+  ],
+  [
+   "H2",
+   "Kulaklık Nasıl Seçilir?"
+  ],
+  [
+   "p",
+   "Kulaklık seçimini genellikle dört ölçüt belirler: kullanım yeri, bağlanacağınız cihaz, günlük kullanım süresi ve gürültü önleme ihtiyacı. Pil ve dayanıklılık son adımlarda kontrol edilebilir. Karar vermek için şu adımları izleyebilirsiniz:"
+  ],
+  [
+   "li",
+   "Kullanım yerini belirleyin: yol, ofis, spor, oyun ya da evde müzik."
+  ],
+  [
+   "li",
+   "Cihazınızın girişine bakın: 3,5 mm, Type-C, Lightning ya da yalnız Bluetooth."
+  ],
+  [
+   "li",
+   "Kullanım süresine göre tipi seçin: kısa ve hareketli kullanım için kulak içi, saatler süren dinleme için kulak üstü."
+  ],
+  [
+   "li",
+   "Gürültülü ortamda kullanacaksanız ANC, sık görüşme yapacaksanız ENC özelliğini arayın."
+  ],
+  [
+   "li",
+   "Kablosuz modellerde pil süresini ve şarj kutusunun kaç ek şarj sağladığını ürün sayfalarında karşılaştırın."
+  ],
+  [
+   "li",
+   "Sporda kullanacaksanız IP derecesini, çocuk için alacaksanız ses sınırlayıcıyı kontrol edin."
+  ],
+  [
+   "p",
+   "İhtiyacınıza göre hangi kulaklık türüne ve hangi özelliğe bakabileceğinizi sizin için eşleştirdik:"
+  ],
+  [
+   "mad",
+   "**Toplu taşıma ve uçak yolculuğu için kulaklık:** Toplu taşımada ve uçakta ANC özellikli kulak üstü ya da kulak içi modeller tercih edilebilir. Gürültü önleme düzeyine ve pil süresine bakılabilir."
+  ],
+  [
+   "mad",
+   "**Koşu ve salon antrenmanı için kulaklık:** Açık hava koşusunda açık kulak ya da kemik iletimli, salon antrenmanında kancalı ve kulağa sabitlenen modeller tercih edilebilir. IP derecesi ve kulağa tutunma öncelik verilen özelliklerdendir."
+  ],
+  [
+   "mad",
+   "**Görüşme ve çevrimiçi toplantı için kulaklık:** Görüşme ve toplantı için mikrofonlu TWS ya da baş bantlı modeller uygundur. ENC ve çift cihaz desteği aranabilir."
+  ],
+  [
+   "mad",
+   "**Evde müzik dinlemek için kulaklık:** Evde müzik dinlerken kablolu ve baş bantlı hi-fi modeller tercih edilebilir. Sürücü yapısı, sırt tipi ve yastık konforu belirleyicidir."
+  ],
+  [
+   "mad",
+   "**Oyun için kulaklık:** Oyun için ağza uzanan mikrofonu ve geniş yastıkları olan oyuncu modelleri uygundur. Bilgisayar ya da konsol uyumluluğu ürün özelliklerinden kontrol edilebilir."
+  ],
+  [
+   "mad",
+   "**Çocuklar için kulaklık:** Çocuklar için küçük baş ölçüsüne göre üretilen ve sesi sınırlayan çocuk modelleri önerilir."
+  ],
+  [
+   "H3",
+   "Kulaklık Alırken Sık Yapılan Hatalar"
+  ],
+  [
+   "p",
+   "Kulaklık alırken yapılan hataların çoğu uyumluluk ve kullanım yeriyle ilgilidir. Sık karşılaşılan dört durumu ve çözümünü sizin için sıraladık:"
+  ],
+  [
+   "mad",
+   "**Kulaklık ucunu kontrol etmemek:** Telefonunuzda kulaklık girişi yoksa 3,5 mm uçlu modeli doğrudan takamazsınız. Satın almadan önce cihazın girişine bakılması önerilir."
+  ],
+  [
+   "mad",
+   "**Kulaklıkta Bluetooth sürümünü ses kalitesi sanmak:** Bluetooth sürümü daha çok bağlantı kararlılığını ve enerji tüketimini etkiler. Ses kalitesinde sürücü ve codec desteği daha belirleyicidir."
+  ],
+  [
+   "mad",
+   "**Her IP dereceli kulaklığı yüzmeye uygun saymak:** IP derecesi olan her kulaklık yüzmeye uygun değildir ve sıçrayan suya dayanıklı bir model havuzda kullanılamaz. Yüzme için üreticinin yüzme onayı verdiği modeller tercih edilebilir."
+  ],
+  [
+   "mad",
+   "**Yoğun trafikte gürültü önleyici kulaklığı tam güçte kullanmak:** Gürültü önleme (ANC) çevre seslerini bastırdığı için yürürken ya da bisiklet sürerken farkındalık modunun açılması ya da açık kulak bir model seçilmesi önerilir."
+  ],
+  [
+   "H2",
+   "Kulaklık Özellikleri Ne Anlama Gelir?"
+  ],
+  [
+   "p",
+   "Kulaklık özellikleri, ürün adında ve özellik listesinde çoğunlukla kısaltmalarla yer alır. Bu özellikler üç başlıkta toplanabilir: gürültü önleme (ANC ve ENC), suya ve toza dayanıklılık (IP derecesi), ses ve bağlantı terimleri (sürücü, empedans, codec, çift cihaz desteği)."
+  ],
+  [
+   "H3",
+   "Gürültü Önleyici (ANC) Kulaklık Nedir, ENC'den Farkı Nedir?"
+  ],
+  [
+   "p",
+   "Gürültü önleyici (gürültü önlemeli) kulaklık, üzerindeki mikrofonlarla dış sesi ölçer ve bu sesin ters fazlı karşılığını üreterek kulağa ulaşan gürültüyü azaltır. **ANC** (aktif gürültü önleme) dinleyen kişi içindir ve genellikle motor uğultusu gibi sabit, kalın seslerde daha etkilidir. **ENC** (çevresel gürültü önleme) ise görüşme sırasında mikrofonun aldığı ortam gürültüsünü süzer. Yani sizin duyduğunuz sesi değil, karşınızdaki kişinin sizi ne kadar net duyduğunu etkiler. Ürün adında ANC/ENC birlikte yazıyorsa model iki işi de yapıyor demektir."
+  ],
+  [
+   "p",
+   "ANC'li modellerin çoğunda bir de farkındalık modu (şeffaf mod) bulunur. Farkındalık modu, mikrofonların aldığı çevre sesini içeri vererek kulaklığı çıkarmadan anonsları ve konuşmaları duymanıza yardımcı olur."
+  ],
+  [
+   "H3",
+   "Su Geçirmez Kulaklık ve IP Dereceleri"
+  ],
+  [
+   "p",
+   "Kulaklığın suya ve toza dayanıklılığını IP kodu gösterir. Ancak her IP derecesi su geçirmez anlamına gelmez. Kodun ilk rakamı toza, ikinci rakamı suya karşı korumayı belirtir. X harfi o koruma türü için derece beyan edilmediğini gösterir. **IPX4** sıçrayan suya, **IP55** toza karşı sınırlı korumayı ve düşük basınçlı su jetine dayanımı ifade eder. **IP68** ise toz sızdırmazlığını ve üreticinin belirttiği derinlik ve sürede suya daldırılmaya dayanımı ifade eder. IPX4 ve IP55 su geçirmezlik değil, suya dayanıklılık düzeyidir ve yağmur ile antrenman için genellikle yeterli kabul edilir. Yüzme kulaklığı arayanlar için IP68 ve üreticinin yüzme onayı öncelik verilen özelliklerdendir."
+  ],
+  [
+   "H3",
+   "Kulaklıklarda Sürücü, Empedans ve Codec Ne Demek?"
+  ],
+  [
+   "p",
+   "Sürücü, empedans, codec ve çift cihaz desteği, kulaklığın sesi nasıl ürettiğini ve cihazdan nasıl aldığını anlatan terimlerdir. Ürün özelliklerinde sık görülen terimleri sizin için kısaca açıkladık:"
+  ],
+  [
+   "mad",
+   "**Kulaklık sürücüsü:** Sürücü, elektrik sinyalini sese çeviren hoparlör birimidir. Sürücünün yapısı ve boyutu, kulaklığın ses karakterini belirleyen etkenlerdendir."
+  ],
+  [
+   "mad",
+   "**Kulaklık empedansı:** Empedans, kulaklığın elektrik akımına gösterdiği dirençtir ve ohm ile ölçülür. Düşük empedanslı modeller genellikle telefon ve bilgisayarla rahat çalışır. Yüksek empedanslı modeller çoğunlukla daha fazla güç ister. Ulaşılan ses yüksekliğini empedansla birlikte kulaklığın duyarlılığı belirler."
+  ],
+  [
+   "mad",
+   "**Kulaklık codec'i:** Codec, Bluetooth üzerinden sesin nasıl sıkıştırılıp iletileceğini belirler. SBC, Bluetooth ses cihazlarında genellikle bulunan temel codec'tir. AAC, aptX ve LDAC gibi codec'lerden yararlanmak için hem telefonun hem kulaklığın aynı codec'i desteklemesi gerekir."
+  ],
+  [
+   "mad",
+   "**Kulaklıkta çift cihaz desteği:** Çift cihaz desteği, kulaklığın aynı anda iki cihaza, örneğin telefona ve bilgisayara bağlı kalabilmesidir."
+  ],
+  [
+   "H2",
+   "Kullanım Amacına Göre Kulaklık Modelleri"
+  ],
+  [
+   "p",
+   "Kullanım amacına göre kulaklık modelleri dört grupta ele alınabilir: spor, çocuk, görüşme ve bilgisayar-konsol. Sporda tutunma ve ter dayanımı, çocuk kullanımında ses sınırlayıcı, görüşmede mikrofon, bilgisayar ve konsolda ise bağlantı türü belirleyicidir."
+  ],
+  [
+   "H3",
+   "Spor Kulaklığı Modelleri"
+  ],
+  [
+   "p",
+   "Spor kulaklığı (sporcu kulaklığı) seçerken iki özelliğe bakabilirsiniz: gövdenin harekette yerinden oynamaması ve tere dayanması. Kancalı ya da ense bantlı yapı koşuda kulaklığı sabitlemeye yardımcı olur. IP derecesi ise suya ve toza dayanıklılığı gösterir. Açık havada koşuyorsanız trafik sesini duymanızı sağlayan açık kulak ve kemik iletimli modelleri tercih edebilirsiniz. Boyner'de Shokz'un kemik iletimli koşu ve yüzme kulaklıkları ile JBL'in Endurance serisi yer almaktadır."
+  ],
+  [
+   "H3",
+   "Çocuk Kulaklığı Modelleri"
+  ],
+  [
+   "p",
+   "Çocuk kulaklığı modellerinde ses sınırlayıcı öncelik verilen özelliklerdendir. Ses sınırlayıcılı model, cihazın sesi sonuna kadar açılsa bile kulağa ulaşan düzeyi üreticinin belirlediği eşiğin altında tutar. Ayarlanabilir baş bandı, yumuşak yastık ve katlanabilir gövde günlük kullanımı kolaylaştırabilir. Boyner'de Onanoff'un ses sınırlayıcılı BuddyPhones serisi ile ttec, Wiwu ve Volkano'nun kablosuz çocuk modelleri bulunmaktadır."
+  ],
+  [
+   "H3",
+   "Görüşme ve Toplantı İçin Mikrofonlu Kulaklık Modelleri"
+  ],
+  [
+   "p",
+   "Mikrofonlu kulaklık, görüşme ve toplantı için ayrı bir mikrofona ihtiyaç bırakmaz. Kablolu modellerde mikrofon genellikle kablo üzerindeki kumandada, TWS modellerde gövdenin içinde, oyuncu modellerinde ise ağza uzanan bir kol üzerinde durur. Rüzgârlı ya da kalabalık ortamda konuşuyorsanız ENC özellikli bir model sesinizi karşı tarafa daha temiz iletebilir. Telefon ile bilgisayar arasında sık geçiş yapıyorsanız çift cihaz desteği olan bir model tercih edebilirsiniz."
+  ],
+  [
+   "H3",
+   "Bilgisayar ve PS5 İçin Kulaklık Modelleri"
+  ],
+  [
+   "p",
+   "Bilgisayar kulaklığı seçerken önce bağlantıya bakabilirsiniz. Bilgisayarlar 3,5 mm uçlu, USB uçlu ve Bluetooth'lu modellerle çalışabilir. Masaüstü bilgisayarlarda Bluetooth her zaman bulunmadığı için kablolu ya da USB alıcılı modeller genellikle daha sorunsuz bir seçimdir. PS5 için kulaklık arayanlarda durum farklıdır: PlayStation 5, Bluetooth ses cihazlarını doğrudan desteklemez. Konsolda USB kablosuz alıcısı olan modeller ya da oyun kumandasındaki 3,5 mm girişe takılan kablolu modeller kullanılabilir. Konsol uyumluluğunu ürün açıklamasından kontrol edebilirsiniz."
+  ],
+  [
+   "H2",
+   "Kulaklık Markaları"
+  ],
+  [
+   "p",
+   "Boyner'de öne çıkan kulaklık markalarını sizin için kullanım amacına göre altı grupta topladık, bu sayede hızlı bir seçim yapabilirsiniz:"
+  ],
+  [
+   "mad",
+   "**Hi-fi ve premium kulaklık markaları:** Hi-fi ve premium grupta Momentum, Accentum ve HD serileriyle [LINK5] modelleri kablolu hi-fi seçeneklerden ANC'li kablosuz modellere uzanmaktadır. Bang & Olufsen, Focal, Marshall ve Sonos da bu grubun markalarıdır."
+  ],
+  [
+   "mad",
+   "**Günlük kullanım için kulaklık markaları:** Günlük kullanım için JBL, ttec, Wiwu, Baseus, Skullcandy, Huawei, Belkin ve Polosmart gerçek kablosuz, kablolu ve kulak üstü modelleriyle Boyner'de yerini almaktadır."
+  ],
+  [
+   "mad",
+   "**Tasarım kulaklık markaları:** Tasarım tarafında logo desenli kulak üstü [LINK6] modelleri öne çıkmaktadır. Karl Lagerfeld, DKNY, BMW ve Nautica modelleri de kulaklığı bir aksesuar olarak görenlere hitap edebilir."
+  ],
+  [
+   "mad",
+   "**Spor kulaklığı markaları:** Spor için Shokz kemik iletimli ve açık kulak modelleriyle, JBL ise Endurance serisiyle Boyner kulaklık modelleri arasında yer almaktadır."
+  ],
+  [
+   "mad",
+   "**Oyuncu kulaklığı markaları:** Oyun grubunda Razer'ın BlackShark, Kraken ve Barracuda serileri ile Polosmart ve MF Product'ın mikrofonlu modelleri yer almaktadır."
+  ],
+  [
+   "mad",
+   "**Çocuk kulaklığı markaları:** Çocuk kulaklığında Onanoff'un BuddyPhones ve StoryPhones serileri yer almaktadır. Volkano ise lisanslı karakter desenli çocuk modeliyle Boyner'de bulunmaktadır."
+  ],
+  [
+   "H2",
+   "Kulaklık Fiyatları"
+  ],
+  [
+   "p",
+   "Kulaklık fiyatları bağlantı türüne, gürültü önleme özelliğine, sürücü ve malzeme kalitesine ve markaya göre değişiklik göstermektedir. Boyner'de kablolu kulak içi modellerin çoğu ekonomik grupta yer almaktadır. Aynı yapıda üst seviye hi-fi modeller de bulunur. ANC, hi-fi sürücü, premium malzeme ve tasarımcı imzası fiyatı yukarı taşıyan başlıca özelliklerdir. Bütçeye uygun bir kulaklık ararken önce vazgeçemeyeceğiniz özelliği belirlemeniz, ardından listeyi marka ve ürün çeşidi filtresiyle daraltıp o özelliği ürün adında aramanız önerilir."
+  ],
+  [
+   "H2",
+   "Kulaklık Nasıl Temizlenir ve Saklanır?"
+  ],
+  [
+   "p",
+   "Kulaklık genellikle kuru ve tüy bırakmayan yumuşak bir bezle silinerek temizlenir ve gövdenin suya tutulmaması önerilir. Düzenli temizlik için şu adımları izleyebilirsiniz:"
+  ],
+  [
+   "li",
+   "Kulaklığı kapatın ve varsa kablosunu cihazdan çıkarın."
+  ],
+  [
+   "li",
+   "Gövdeyi ve baş bandını kuru, yumuşak bir bezle silin."
+  ],
+  [
+   "li",
+   "Hoparlör ızgarasını aşağı bakacak şekilde tutup kiri kuru ve yumuşak kıllı bir fırçayla alın."
+  ],
+  [
+   "li",
+   "Çıkarılabilen silikon uçları gövdeden ayırıp suyla yıkayın ve tamamen kuruduktan sonra takın."
+  ],
+  [
+   "li",
+   "Şarj kutusunun içini ve temas noktalarını kuru bir bezle temizleyin."
+  ],
+  [
+   "p",
+   "Yastık kılıfları, deri yüzeyler ve suya dayanıklı modeller için temizlik yöntemi değişiklik gösterebilir. Üreticinin kullanım kılavuzundaki talimat esastır."
+  ],
+  [
+   "p",
+   "Saklarken TWS modellerin şarj kutusunda, baş bantlı modellerin ise varsa taşıma kılıfında tutulması önerilir. Kablolu kulaklığın kablosunu sıkı düğümlemek yerine gevşek sarmak, kablo içindeki tellerin zorlanmasını azaltabilir. Kablosuz bir modeli uzun süre kullanmayacaksanız pili tamamen boş bırakmamak ve ara ara şarj etmek genellikle önerilen bir uygulamadır. Cihazı sıcak araç içi gibi yüksek ısılı ortamlarda bırakmamak da pil ömrü açısından tercih edilir."
+  ],
+  [
+   "H2",
+   "Boyner'de Kulaklık Alışverişi"
+  ],
+  [
+   "p",
+   "Boyner'de kulaklık ararken listeyi ürün çeşidi, marka ve renk filtreleriyle daraltabilirsiniz. Ürün çeşidi filtresi kulak içi ve kulak üstü modelleri ayırır. Renk filtresinde siyah ve beyazın yanında mavi, pembe ve mor gibi seçenekler bulunmaktadır. Bluetooth sürümü, ANC ya da ENC desteği ve IP derecesi ürün adında ya da ürün özelliklerinde yazar. Garanti süresi de ürün sayfasındaki özellik alanında belirtilmektedir. Sesi odadakilerle paylaşmak istediğinizde ise kulaklığın yerini [LINK7] modelleri alabilir."
+  ]
  ],
  "sss": [
-  ["Kulaklık hangi kulağa takılır?", "Kulaklık üzerindeki L harfi sol, R harfi sağ kulağı gösterir. Harfler çoğunlukla gövdenin iç yüzünde ya da baş bandının iç kısmında yer alır. Doğru tarafa takılan kulaklık hem kulağa daha iyi oturur hem de müzikteki ve oyundaki sağ sol ses yönlerini olması gerektiği gibi verir."],
-  ["Kablolu kulaklık hâlâ tercih edilir mi?", "Evet, kablolu kulaklık hâlâ tercih edilir. Pili bitmediği için uzun yolculukta, masa başında ve oyunda kesintisiz kullanılır; evde müzik dinlemek isteyenlerin seçtiği hi-fi modellerin çoğu da kabloludur. Telefonunuzda kulaklık girişi yoksa Type-C ya da Lightning uçlu bir model seçebilirsiniz."],
-  ["Kulaklığın iyi olduğu nasıl anlaşılır?", "İyi bir kulaklık kısık seste de ayrıntıyı duyurur, yüksek seste cızırtı yapmaz ve kulağa baskı uygulamadan oturur. Ürün sayfasında pil süresine, gürültü önleme ve mikrofon özelliklerine, garanti süresine bakabilirsiniz. Bluetooth sürümü tek başına ses kalitesini göstermez; sürüm daha çok bağlantı kararlılığını ve enerji tüketimini etkiler."],
-  ["Kulaklık telefona nasıl bağlanır?", "Kablolu kulaklık, telefonun 3,5 mm, Type-C ya da Lightning girişine takıldığında kendiliğinden çalışır. Bluetooth'lu bir modelde önce kulaklık eşleştirme moduna alınır, ardından telefonun Bluetooth ayarlarında görünen kulaklık adına dokunulur. Eşleştirme çoğu modelde bir kez yapılır; sonraki kullanımlarda kulaklık açıldığında telefona kendiliğinden bağlanır."],
-  ["Telefon kulaklık modundan nasıl çıkar?", "Telefon kulaklık modunda kaldıysa önce bir kulaklığı takıp çıkarın ve telefonu yeniden başlatın. Sorun sürerse kulaklık ya da şarj girişindeki tozu kuru bir fırçayla alın, giriş nemliyse kurumasını bekleyin; Bluetooth açıksa telefona bağlı bir ses cihazı olup olmadığını kontrol edin. Bu adımlar sonuç vermezse yetkili servise başvurabilirsiniz."],
-  ["Hangi kulaklık türü daha sağlıklı?", "Kulak sağlığını kulaklığın türünden çok ses seviyesi ve dinleme süresi belirler. Dünya Sağlık Örgütü, sesin cihazın en yüksek seviyesinin %60'ını aşmamasını ve kulağa iyi oturan, gürültü önleyen modellerin tercih edilmesini öneriyor; dış sesi kesen bir model, sesi yükseltme ihtiyacını azaltır."],
-  ["Çocuklar kaç yaşında kulaklık kullanabilir?", "Çocuk kulaklıklarında alt yaş sınırını üretici belirler ve bu bilgi ürün açıklamasında yazar. Seçim yaparken ses sınırlayıcılı, baş bandı ayarlanabilen ve yumuşak yastıklı bir model tercih edebilirsiniz. Dinleme süresinin kısa tutulması ve ses seviyesinin bir yetişkin tarafından ayarlanması da önerilir."]
+  [
+   "Kulaklık hangi kulağa takılır?",
+   "Kulaklık üzerindeki L harfi sol, R harfi sağ kulağı gösterir. Harfler çoğunlukla gövdenin iç yüzünde ya da baş bandının iç kısmında yer alır. Doğru tarafa takılan kulaklık kulağa daha iyi oturur ve müzikteki, oyundaki sağ sol ses yönlerini olması gerektiği gibi verir."
+  ],
+  [
+   "Kablolu kulaklık hâlâ tercih edilir mi?",
+   "Evet, kablolu kulaklık hâlâ tercih edilir. Şarj gerektirmediği için uzun yolculukta, masa başında ve oyunda kesintisiz kullanılabilir. Evde müzik dinlemek isteyenlerin seçtiği hi-fi modellerin çoğu da kabloludur. Telefonunuzda kulaklık girişi yoksa Type-C ya da Lightning uçlu bir model seçebilirsiniz."
+  ],
+  [
+   "Kulaklığın iyi olduğu nasıl anlaşılır?",
+   "İyi bir kulaklık kısık seste de ayrıntıyı duyurur, yüksek seste cızırtı yapmaz ve kulağa baskı uygulamadan oturur. Ürün sayfasında pil süresine, gürültü önleme ve mikrofon özelliklerine, garanti süresine bakabilirsiniz. Mümkünse kulaklığı kendi dinlediğiniz müzikle denemeniz önerilir."
+  ],
+  [
+   "Kulaklık telefona nasıl bağlanır?",
+   "Kablolu kulaklık, telefonun 3,5 mm, Type-C ya da Lightning girişine takıldığında kendiliğinden çalışır. Bluetooth'lu bir modelde önce kulaklık eşleştirme moduna alınır, ardından telefonun Bluetooth ayarlarında görünen kulaklık adına dokunulur. Eşleştirme çoğu modelde bir kez yapılır. Sonraki kullanımlarda kulaklık açıldığında telefona kendiliğinden bağlanır."
+  ],
+  [
+   "Telefon kulaklık modundan nasıl çıkar?",
+   "Telefon kulaklık modunda kaldıysa önce bir kulaklığı takıp çıkarın ve telefonu yeniden başlatın. Sorun sürerse kulaklık ya da şarj girişindeki tozu kuru bir fırçayla alın, giriş nemliyse kurumasını bekleyin. Bluetooth açıksa telefona bağlı bir ses cihazı olup olmadığını kontrol edin. Bu adımlar sonuç vermezse yetkili servise başvurabilirsiniz."
+  ],
+  [
+   "Kulaklık neden bağlanmıyor?",
+   "Kulaklık çoğunlukla şarjı düşük olduğu, eşleştirme modunda olmadığı ya da daha önce eşleştiği başka bir cihaza bağlandığı için bağlanmaz. Kulaklığı şarj edip eşleştirme moduna alabilir, telefondaki eski kaydı silip yeniden eşleştirebilirsiniz. Kablolu modelde ise ucun girişe tam oturduğunu kontrol etmeniz önerilir."
+  ],
+  [
+   "Hangi kulaklık türü daha sağlıklı?",
+   "Kulak sağlığını kulaklığın türünden çok ses seviyesi ve dinleme süresi belirler. Dünya Sağlık Örgütü, sesin cihazın en yüksek seviyesinin %60'ını aşmamasını ve kulağa iyi oturan, gürültü önleyen kulaklık modellerinin tercih edilmesini önermektedir. Dış sesi kesen bir model, gürültülü ortamda sesi yükseltme ihtiyacını azaltabilir."
+  ],
+  [
+   "Çocuklar kaç yaşında kulaklık kullanabilir?",
+   "Çocuk kulaklıklarında alt yaş sınırını üretici belirler ve bu bilgi ürün açıklamasında yazar. Seçim yaparken ses sınırlayıcılı, baş bandı ayarlanabilen ve yumuşak yastıklı bir model tercih edebilirsiniz. Dinleme süresinin kısa tutulması ve ses seviyesinin bir yetişkin tarafından ayarlanması da önerilir."
+  ]
  ]
 }

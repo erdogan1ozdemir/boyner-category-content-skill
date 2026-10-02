@@ -326,7 +326,8 @@ için pantolonun dışında da giyilebilir.
 ```
 
 - Etiket aranan kelimeyi taşır (ürün adı, cinsiyetli sayfada cinsiyet): bkz. "Boyner anlatım kalıpları".
-- İlk cümle özneyi yeniden kurar ve bilgi ekler; etiket silindiğinde cümle anlamlı kalır.
+- İlk cümle özneyi yeniden kurar ve bilgi ekler; etiket silindiğinde cümle anlamlı kalır. İhtiyaç etiketleri
+  ("Soğuk ve kuru kış günleri için:") bunun dışındadır: cümle doğrudan öneriyle açılabilir.
 - Madde 2-4 cümle olabilir; bilgi taşıyorsa uzun olması sorun değildir.
 - Satır dizisinden önce onu tanıtan, okuyucuya dönen bir cümle bulunur.
 
@@ -378,14 +379,14 @@ Aşağıdakiler havuzdaki blokların nasıl yazılacağını anlatır; iskelette
 Kendi sayfası olan türler anchor ile, olmayanlar düz metinle geçer. Alt kategori linklerinin (2-4) evi
 burasıdır.
 
-**Nasıl Seçilir?** İlk cümle ölçütleri sayar; her ölçüt bir H3 ya da madde. Karşılaştırma tablosunun doğal
+**Nasıl Seçilir?** İlk cümle ölçütleri sayar; her ölçüt bir H3 ya da madde. Karşılaştırma satırlarının doğal
 yeri ve sayfanın bilgi sorgularında alıntılanan bölümü.
 
 **İhtiyaç ekseni.** SERBEST kümeleri burada H3 olur ("Kışlık Kadın Mont", "Kuru Ciltler İçin Fondöten",
 "Çift Kişilik Nevresim Takımı"). Her H3 o ihtiyaç için hangi özelliğe bakılacağını söyler; yalnız
 "seçenekler Boyner'de" demek için H3 açılmaz. H2 eksene göre adlandırılır.
 
-**Malzeme / İçerik / Teknoloji.** Malzemeler adıyla ve farkıyla anlatılır; iki üç seçenek varsa tablo.
+**Malzeme / İçerik / Teknoloji.** Malzemeler adıyla ve farkıyla anlatılır; iki üç seçenek varsa seçenek başına bir "•" satırı.
 Sayısal değer yalnız kaynakla.
 
 **Nasıl Kombinlenir? / Kullanılır? / Uygulanır?** Somut eşleşme ya da adım. Tamamlayıcı kategori linkleri

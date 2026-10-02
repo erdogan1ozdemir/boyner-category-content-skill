@@ -196,7 +196,8 @@ kullanımı, başlıkların arama diline uygunluğu, bilgi doğruluğu, iç çel
 Ajana bilinçli kısıtlar (rakam yok, sahipli kelimelere başlık yok, link sayısı, tablo ve liste biçimi yok,
 yumuşatma ve etiket tekrarı bilinçli) söylenir ve `kayit.json` yolu verilir ki teyitli filtre ve markaları
 yeniden sormasın, kısıtları eksik saymasın. Değerlendirici "şart düzeltme" listesi verdiyse düzeltmelerden sonra **ikinci bir puanlama turu**
-yapılır; teslim notunda hangi sürümün puanlandığı açıkça yazılır. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
+yapılır; **en çok üç tur** (son turda çıkanlar uygulanıp raporlanır). Teslim notunda hangi sürümün puanlandığı
+açıkça yazılır. Bulgular körü körüne uygulanmaz: skill kurallarıyla çelişen öneri (sayısal eşik ekleme, sahipli
 kelimeye başlık) alınmaz. Düzeltmelerden sonra denetim betiği yeniden çalıştırılır ve Word dosyası üretilir.
 
 Çıktılar çalışma klasörüne kaydedilir ve kullanıcıya gönderilir. Teslim notunda üç şey söylenir: hangi bilgi
